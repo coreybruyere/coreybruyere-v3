@@ -1,4 +1,21 @@
 const config = require('./src/utils/siteConfig')
+let contentfulConfig
+
+try {
+  contentfulConfig = require('./.contentful')
+} catch (e) {
+  contentfulConfig = {
+    production: {
+      spaceId: process.env.SPACE_ID,
+      accessToken: process.env.ACCESS_TOKEN,
+    },
+  }
+} finally {
+  const { spaceId, accessToken } = contentfulConfig.production
+  if (!spaceId || !accessToken) {
+    throw new Error('Contentful space ID and access token need to be provided.')
+  }
+}
 
 let contentfulConfig
 
@@ -9,9 +26,10 @@ try {
 
 // Overwrite the Contentful config with environment variables if they exist
 contentfulConfig = {
-  spaceId: process.env.SPACE_ID || contentfulConfig.spaceId,
-  accessToken: process.env.ACCESS_TOKEN || contentfulConfig.accessToken,
-  host: process.env.HOST,
+  spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
+  accessToken:
+    process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN || contentfulConfig.accessToken,
+  host: process.env.CONTENTFUL_HOST,
 }
 
 const { spaceId, accessToken } = contentfulConfig
