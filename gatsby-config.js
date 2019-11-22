@@ -9,9 +9,9 @@ const contentfulConfig = {
   host: process.env.CONTENTFUL_HOST,
 }
 
-const { spaceId, accessToken, host } = contentfulConfig
+const { spaceId, accessToken } = contentfulConfig
 
-if (!spaceId || !accessToken || !host) {
+if (!spaceId || !accessToken) {
   throw new Error(
     'Contentful spaceId and the access token need to be provided.'
   )
