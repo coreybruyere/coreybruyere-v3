@@ -10,7 +10,9 @@ try {
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
   accessToken:
-    process.env.CONTENTFUL_ACCESS_TOKEN || contentfulConfig.accessToken,
+    process.env.CONTENTFUL_ACCESS_TOKEN ||
+    process.env.CONTENTFUL_DELIVERY_TOKEN ||
+    contentfulConfig.accessToken,
   host: process.env.CONTENTFUL_HOST,
 }
 
