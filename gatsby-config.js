@@ -1,3 +1,4 @@
+const config = require('./src/utils/siteConfig')
 let contentfulConfig
 
 try {
