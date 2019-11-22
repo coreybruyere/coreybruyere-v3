@@ -13,6 +13,8 @@ contentfulConfig = {
   host: process.env.HOST,
 }
 
+GATSBY_CONTENTFUL_OFFLINE = true
+
 const { spaceId, accessToken } = contentfulConfig
 
 if (!spaceId || !accessToken) {
