@@ -1,20 +1,24 @@
-const config = require('./src/utils/siteConfig')
 let contentfulConfig
 
 try {
+  // Load the Contentful config from the .contentful.json
   contentfulConfig = require('./.contentful')
-} catch (e) {
-  contentfulConfig = {
-    production: {
-      spaceId: process.env.SPACE_ID,
-      accessToken: process.env.ACCESS_TOKEN,
-    },
-  }
-} finally {
-  const { spaceId, accessToken } = contentfulConfig.production
-  if (!spaceId || !accessToken) {
-    throw new Error('Contentful space ID and access token need to be provided.')
-  }
+} catch (_) {}
+
+// Overwrite the Contentful config with environment variables if they exist
+contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
+  accessToken:
+    process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN || contentfulConfig.accessToken,
+  host: process.env.CONTENTFUL_HOST,
+}
+
+const { spaceId, accessToken } = contentfulConfig
+
+if (!spaceId || !accessToken) {
+  throw new Error(
+    'Contentful spaceId and the delivery token need to be provided.'
+  )
 }
 
 module.exports = {
@@ -61,10 +65,7 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     {
       resolve: 'gatsby-source-contentful',
-      options:
-        process.env.NODE_ENV === 'development'
-          ? contentfulConfig.development
-          : contentfulConfig.production,
+      options: contentfulConfig,
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
