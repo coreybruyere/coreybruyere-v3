@@ -44,7 +44,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "develop": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "npm run build && gatsby serve",
     "test": "npm run lint:css && npm run lint:js && npm run check-pretty",
