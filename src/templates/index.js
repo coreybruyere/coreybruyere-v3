@@ -28,7 +28,7 @@ const Index = ({ data, pageContext }) => {
         {isFirstPage ? (
           <>
             <Card>
-              Custom layout here with home page query with name and about
+              Custom layout here with home page query with name and about.
             </Card>
             <CardList>
               <CardItem {...featuredPost} featured />
