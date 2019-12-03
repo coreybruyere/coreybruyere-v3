@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import CardList from '../components/CardList'
 import Card from '../components/Card'
+import CardList from '../components/CardList'
+import CardItem from '../components/CardItem'
 import Helmet from 'react-helmet'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
@@ -25,16 +26,21 @@ const Index = ({ data, pageContext }) => {
       )}
       <Container>
         {isFirstPage ? (
-          <CardList>
-            <Card {...featuredPost} featured />
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} />
-            ))}
-          </CardList>
+          <>
+            <Card>
+              Custom layout here with home page query with name and about
+            </Card>
+            <CardList>
+              <CardItem {...featuredPost} featured />
+              {posts.slice(1).map(({ node: post }) => (
+                <CardItem key={post.id} {...post} />
+              ))}
+            </CardList>
+          </>
         ) : (
           <CardList>
             {posts.map(({ node: post }) => (
-              <Card key={post.id} {...post} />
+              <CardItem key={post.id} {...post} />
             ))}
           </CardList>
         )}
