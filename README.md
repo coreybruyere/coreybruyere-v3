@@ -4,6 +4,14 @@
 
 A starter template to build amazing static websites with Gatsby, Contentful and Netlify. Inspired by [gatsby-contentful-starter](https://github.com/contentful-userland/gatsby-contentful-starter).
 
+## Additional README items
+
+Spend time customzing README to adhere to personal set up. Add items below:
+
+### Environment set up
+
+Create `.env.development` and `.env.production` files in the root of the project with a `CONTENTFUL_SPACE_ID` variable and `CONTENTFUL_ACCESS_TOKEN` variable with their associated values that can be found in Contentful. `.env.development` will need an additional variable of `CONTENTFUL_HOST` with a value of `preview.contentful.com`.
+
 ## Features
 
 - Contentful integration with ready to go placeholder content
