@@ -42,7 +42,7 @@ const Item = styled.li`
 `
 
 const Footer = () => (
-  <Wrapper>
+  <Wrapper role="contentinfo">
     <List>
       <Item>
         {/* <a
