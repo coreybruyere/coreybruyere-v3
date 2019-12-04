@@ -25,7 +25,8 @@ const Index = ({ data, pageContext }) => {
         </Helmet>
       )}
       <Container>
-        {isFirstPage ? (
+        New site coming soon yo! <small>coreybruyere-v3</small>
+        {/* {isFirstPage ? (
           <>
             <Card>
               Custom layout here with home page query with name and about
@@ -43,9 +44,9 @@ const Index = ({ data, pageContext }) => {
               <CardItem key={post.id} {...post} />
             ))}
           </CardList>
-        )}
+        )} */}
       </Container>
-      <Pagination context={pageContext} />
+      {/* <Pagination context={pageContext} /> */}
     </Layout>
   )
 }

@@ -45,7 +45,7 @@ const Footer = () => (
   <Wrapper>
     <List>
       <Item>
-        <a
+        {/* <a
           href="https://www.contentful.com/"
           rel="nofollow noopener noreferrer"
           target="_blank"
@@ -55,24 +55,7 @@ const Footer = () => (
             style={{ width: '100px' }}
             alt="Powered by Contentful"
           />
-        </a>
-      </Item>
-      <Item>
-        <a
-          href="https://github.com/ryanwiemer/gatsby-starter-gcn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          gatsby-starter-gcn
-        </a>{' '}
-        by{' '}
-        <a
-          href="https://github.com/ryanwiemer"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @ryanwiemer
-        </a>
+        </a> */}
       </Item>
     </List>
   </Wrapper>
