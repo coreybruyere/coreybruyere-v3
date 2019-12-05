@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
       // Create main home page
       createPage({
         path: `/`,
-        component: path.resolve(`./src/templates/index.js`),
+        component: path.resolve(`./src/templates/index.jsx`),
         context: {
           limit: postsPerFirstPage,
           skip: 0,
@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
           path: `/${i + 2}/`,
-          component: path.resolve(`./src/templates/index.js`),
+          component: path.resolve(`./src/templates/index.jsx`),
           context: {
             limit: postsPerPage,
             skip: i * postsPerPage + postsPerFirstPage,
@@ -59,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
         const next = i === posts.length - 1 ? null : posts[i + 1].node
         createPage({
           path: `${edge.node.slug}/`,
-          component: path.resolve(`./src/templates/post.js`),
+          component: path.resolve(`./src/templates/post.jsx`),
           context: {
             slug: edge.node.slug,
             prev,
@@ -97,7 +97,7 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path:
               i === 0 ? `/tag/${node.slug}/` : `/tag/${node.slug}/${i + 1}/`,
-            component: path.resolve(`./src/templates/tag.js`),
+            component: path.resolve(`./src/templates/tag.jsx`),
             context: {
               slug: node.slug,
               limit: postsPerPage,
@@ -128,7 +128,7 @@ exports.createPages = ({ graphql, actions }) => {
       pages.map(({ node }) => {
         createPage({
           path: `${node.slug}/`,
-          component: path.resolve(`./src/templates/page.js`),
+          component: path.resolve(`./src/templates/page.jsx`),
           context: {
             slug: node.slug,
           },

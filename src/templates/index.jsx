@@ -1,12 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardList from '../components/CardList'
 import CardItem from '../components/CardItem'
+import FeatureGrid from '../components/FeatureGrid'
 import Helmet from 'react-helmet'
 import Container from '../components/Container'
-import Pagination from '../components/Pagination'
+// import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
 
@@ -24,9 +26,10 @@ const Index = ({ data, pageContext }) => {
           <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
         </Helmet>
       )}
+
       <Container>
-        New site coming soon yo! <small>coreybruyere-v3</small>
-        {/* {isFirstPage ? (
+        <FeatureGrid />
+        {isFirstPage ? (
           <>
             <Card>
               Custom layout here with home page query with name and about.
@@ -44,7 +47,8 @@ const Index = ({ data, pageContext }) => {
               <CardItem key={post.id} {...post} />
             ))}
           </CardList>
-        )} */}
+        )}{' '}
+        */}
       </Container>
       {/* <Pagination context={pageContext} /> */}
     </Layout>
