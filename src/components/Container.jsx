@@ -9,7 +9,7 @@ const Container = props => {
   return (
     <Grid
       display="grid"
-      gridTemplateColumns={'2fr minmax(auto, 44.8rem) 1fr 1fr'}
+      gridTemplateColumns={'1fr minmax(auto, 44.8rem) 1fr 2fr'}
       px={4}
       py={3}
       as="section"

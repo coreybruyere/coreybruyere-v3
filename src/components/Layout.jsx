@@ -1,16 +1,20 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Helmet from 'react-helmet'
+import { Box } from 'rebass'
+
 import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
 import config from '../utils/siteConfig'
+
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
+import Position from '../components/Position'
 
 const Template = ({ children }) => {
   return (
-    <div className="siteRoot">
+    <>
       <Helmet>
         <title>{config.siteTitle}</title>
         <meta charSet="utf-8" />
@@ -20,15 +24,17 @@ const Template = ({ children }) => {
 
       <ThemeProvider theme={theme}>
         <>
-          <div className="siteContent">
+          <Position position="relative">
             <Menu />
-            {children}
-          </div>
+            <main id="main" role="main">
+              {children}
+            </main>
+          </Position>
           <Footer />
         </>
       </ThemeProvider>
       <GlobalStyle />
-    </div>
+    </>
   )
 }
 
