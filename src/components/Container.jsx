@@ -1,16 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.section`
-  margin: 0 auto auto;
-  width: 100%;
-  max-width: ${props => props.theme.sizes.maxWidth};
-  padding: 3em 1.5em 2em;
-  flex-grow: 1;
-`
+import Grid from './Grid'
+
+const Wrapper = styled(Grid)``
 
 const Container = props => {
-  return <Wrapper>{props.children}</Wrapper>
+  return (
+    <Grid
+      display="grid"
+      gridTemplateColumns={'2fr minmax(auto, 44.8rem) 1fr 1fr'}
+      px={4}
+      py={3}
+      as="section"
+    >
+      <Grid gridColumn={'2/span 2'}>{props.children}</Grid>
+    </Grid>
+  )
 }
 
 export default Container
