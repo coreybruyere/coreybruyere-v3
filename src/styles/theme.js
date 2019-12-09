@@ -1,4 +1,5 @@
 const theme = {
+  breakpoints: ['42em', '56em', '68em', '74em'],
   colors: {
     base: '#121212', // Black
     secondary: '#e9e9e9', // Medium Gray
@@ -6,7 +7,7 @@ const theme = {
     highlight: '#5b8bf7', // Light Blue
   },
   sizes: {
-    maxWidth: '1050px',
+    maxWidth: '75rem',
     maxWidthCentered: '650px',
   },
   responsive: {
