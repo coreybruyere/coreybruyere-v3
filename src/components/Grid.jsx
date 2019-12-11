@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { grid, layout, space, color } from 'styled-system'
+import { Box } from 'rebass'
 
-const Grid = styled.div`
+const Grid = styled(Box)`
   ${grid}
   ${layout}
   ${space}

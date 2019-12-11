@@ -21,8 +21,6 @@ const Container = props => {
             `1fr minmax(auto, ${theme.sizes.maxWidth}) 4fr`,
           ]}
           px={4}
-          py={3}
-          as="section"
         >
           <Grid
             display="grid"

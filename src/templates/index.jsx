@@ -1,5 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Box } from 'rebass'
+import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import Card from '../components/Card'
@@ -7,8 +9,8 @@ import CardList from '../components/CardList'
 import CardItem from '../components/CardItem'
 import FeatureGrid from '../components/FeatureGrid'
 import Grid from '../components/Grid'
-import Helmet from 'react-helmet'
 import Container from '../components/Container'
+import Section from '../components/Section'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
@@ -29,11 +31,46 @@ const Index = ({ data, pageContext }) => {
       )}
 
       <Container>
-        {/* <FeatureGrid /> */}
+        <Section id="test">
+          <Grid
+            display="grid"
+            gridGap={3}
+            gridTemplateColumns={'repeat(8, 1fr)'}
+          >
+            <Grid gridColumn={'1/span 5'}>
+              <h1>Hi, I'm Corey Bruyere</h1>
 
-        <Grid gridColumn={'1/span 1'}>HELLO</Grid>
+              <p>
+                This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
+                repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
+                cumque ea, laborum recusandae repudiandae nobis aliquid.
+              </p>
+            </Grid>
+            <Grid gridColumn={'1/span 4'}>
+              <h1>Hi, I'm Corey Bruyere</h1>
 
-        {isFirstPage ? (
+              <p>
+                This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
+                repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
+                cumque ea, laborum recusandae repudiandae nobis aliquid.
+              </p>
+            </Grid>
+            <Grid gridColumn={'5/span 4'}>
+              <h1>Hi, I'm Corey Bruyere</h1>
+
+              <p>
+                This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
+                repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
+                cumque ea, laborum recusandae repudiandae nobis aliquid.
+              </p>
+            </Grid>
+          </Grid>
+
+          {/* Create Archive Page to display all posts. */}
+          {/* {isFirstPage ? (
           <>
             <Card>
               Custom layout here with home page query with name and about.
@@ -50,10 +87,11 @@ const Index = ({ data, pageContext }) => {
             {posts.map(({ node: post }) => (
               <CardItem key={post.id} {...post} />
             ))}
-          </CardList>
-        )}
+          </CardList> 
+        )}*/}
+        </Section>
       </Container>
-      <Pagination context={pageContext} />
+      {/* <Pagination context={pageContext} /> */}
     </Layout>
   )
 }
