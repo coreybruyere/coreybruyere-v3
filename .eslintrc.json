@@ -2,5 +2,13 @@
   "extends": "gatsby-standard",
   "rules": {
     "no-unsafe-finally": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }

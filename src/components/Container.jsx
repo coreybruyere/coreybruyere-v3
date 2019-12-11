@@ -24,7 +24,13 @@ const Container = props => {
           py={3}
           as="section"
         >
-          <Grid gridColumn={'2/span 1'}>{props.children}</Grid>
+          <Grid
+            display="grid"
+            gridColumn={'2/span 1'}
+            gridTemplateColumns={'subgrid'}
+          >
+            {props.children}
+          </Grid>
         </Grid>
       )}
     </ThemeConsumer>

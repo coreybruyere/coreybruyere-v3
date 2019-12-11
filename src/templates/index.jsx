@@ -6,6 +6,7 @@ import Card from '../components/Card'
 import CardList from '../components/CardList'
 import CardItem from '../components/CardItem'
 import FeatureGrid from '../components/FeatureGrid'
+import Grid from '../components/Grid'
 import Helmet from 'react-helmet'
 import Container from '../components/Container'
 // import Pagination from '../components/Pagination'
@@ -28,7 +29,10 @@ const Index = ({ data, pageContext }) => {
       )}
 
       <Container>
-        <FeatureGrid />
+        {/* <FeatureGrid /> */}
+
+        <Grid gridColumn={'1/span 1'}>HELLO</Grid>
+
         {isFirstPage ? (
           <>
             <Card>
