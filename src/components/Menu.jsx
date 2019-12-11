@@ -1,32 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { Box } from 'rebass'
 
-const Header = styled.header`
-  background: ${props => props.theme.colors.base};
-  width: 100%;
-  padding: 1.5em 0;
-`
+import Position from './Position'
+
+const Header = styled(Position)``
 const Nav = styled.nav`
-  width: 100%;
+  /* width: 100%;
   max-width: ${props => props.theme.sizes.maxWidth};
   margin: 0 auto;
-  padding: 0 1.5em;
-
-  ul {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  li {
-    display: inline-block;
-    margin-left: 1em;
-    &:first-child {
-      position: relative;
-      margin: 0;
-      flex-basis: 100%;
-    }
-  }
+  padding: 0 1.5em; */
 
   a {
     text-decoration: none;
@@ -46,7 +30,16 @@ const activeLinkStyle = {
 
 const Menu = () => {
   return (
-    <Header>
+    <Position
+      position="sticky"
+      width={'10vw'}
+      color="red"
+      top={0}
+      left={[0, 0, 0, 0, 0, 'auto']}
+      right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}
+      as="header"
+    >
+      <Box width="40px">hi</Box>
       <Nav>
         <ul>
           <li>
@@ -66,7 +59,7 @@ const Menu = () => {
           </li>
         </ul>
       </Nav>
-    </Header>
+    </Position>
   )
 }
 
