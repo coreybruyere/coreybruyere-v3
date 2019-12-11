@@ -15,6 +15,10 @@ const Container = props => {
           gridTemplateColumns={[
             `4fr minmax(auto, ${theme.sizes.maxWidthCentered}) 1fr`,
             `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
+            `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
+            `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
+            `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
+            `1fr minmax(auto, ${theme.sizes.maxWidth}) 4fr`,
           ]}
           px={4}
           py={3}
