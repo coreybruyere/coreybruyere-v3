@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { Box } from 'rebass'
+// import { Box } from 'rebass'
 
 import Position from './Position'
 
-const Header = styled(Position)``
+// const Header = styled(Position)``
 const Nav = styled.nav`
   /* width: 100%;
   max-width: ${props => props.theme.sizes.maxWidth};
@@ -39,7 +39,6 @@ const Menu = () => {
       right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}
       as="header"
     >
-      <Box width="40px">hi</Box>
       <Nav>
         <ul>
           <li>
