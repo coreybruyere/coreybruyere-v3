@@ -20,7 +20,6 @@ const Container = props => {
             `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
             `1fr minmax(auto, ${theme.sizes.maxWidth}) 4fr`,
           ]}
-          px={4}
         >
           <Grid
             display="grid"
