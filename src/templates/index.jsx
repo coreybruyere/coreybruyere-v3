@@ -37,35 +37,93 @@ const Index = ({ data, pageContext }) => {
             gridGap={3}
             gridTemplateColumns={'repeat(8, 1fr)'}
           >
-            <Grid gridColumn={'1/span 5'}>
-              <h1>Hi, I'm Corey Bruyere</h1>
+            <Grid
+              display="grid"
+              gridColumn={'1/span 8'}
+              gridTemplateColumns="subgrid"
+              p={4}
+              backgroundColor="red"
+            >
+              <Grid gridColumn={'1/span 5'} backgroundColor="red">
+                <h1>Hi, I'm Corey Bruyere</h1>
 
-              <p>
-                This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
-                repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
-                cumque ea, laborum recusandae repudiandae nobis aliquid.
-              </p>
+                <p>
+                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Nisi harum eaque reiciendis debitis
+                  blanditiis repellat, aliquam ex tenetur numquam iusto quisquam
+                  culpa minus cumque ea, laborum recusandae repudiandae nobis
+                  aliquid. QUERY HOME PAGE ABOUT
+                </p>
+              </Grid>
             </Grid>
-            <Grid gridColumn={'1/span 4'}>
-              <h1>Hi, I'm Corey Bruyere</h1>
-
-              <p>
-                This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
-                repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
-                cumque ea, laborum recusandae repudiandae nobis aliquid.
-              </p>
+            <Grid gridColumn={'1/span 3'} p={4}>
+              <a href="#work">Work V</a>
             </Grid>
-            <Grid gridColumn={'5/span 4'}>
-              <h1>Hi, I'm Corey Bruyere</h1>
+            <Grid gridColumn={'4/span 5'} p={4}>
+              <Box>
+                <h2>Blog Post 1</h2>
 
-              <p>
-                This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
-                repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
-                cumque ea, laborum recusandae repudiandae nobis aliquid.
-              </p>
+                <p>
+                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Nisi harum eaque reiciendis debitis
+                  blanditiis repellat. QUERY LAST 3 BLOG POSTS ON HOME PAGE.
+                  DISPLAY VIEW MORE BUTTON THAT LINKS TO PAGINATED ARCHIVE
+                </p>
+
+                <button>Read More</button>
+              </Box>
+
+              <Box>
+                <h2>Blog Post 1</h2>
+
+                <p>
+                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Nisi harum eaque reiciendis debitis
+                  blanditiis repellat,
+                </p>
+
+                <button>Read More</button>
+              </Box>
+
+              <Box>
+                <h2>Blog Post 1</h2>
+
+                <p>
+                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Nisi harum eaque reiciendis debitis
+                  blanditiis repellat,
+                </p>
+
+                <button>Read More</button>
+              </Box>
+
+              <Box>
+                <h2>Blog Post 1</h2>
+
+                <p>
+                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Nisi harum eaque reiciendis debitis
+                  blanditiis repellat,
+                </p>
+
+                <button>Read More</button>
+              </Box>
+            </Grid>
+
+            <Grid gridColumn={'span 2'} id="work">
+              <Card>Item</Card>
+            </Grid>
+
+            <Grid gridColumn={'span 2'} id="work">
+              <Card>Item</Card>
+            </Grid>
+
+            <Grid gridColumn={'span 2'} id="work">
+              <Card>Item</Card>
+            </Grid>
+
+            <Grid gridColumn={'span 2'} id="work">
+              <Card>Item</Card>
             </Grid>
           </Grid>
 
