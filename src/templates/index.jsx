@@ -31,12 +31,8 @@ const Index = ({ data, pageContext }) => {
       )}
 
       <Container>
-        <Section id="test">
-          <Grid
-            display="grid"
-            gridGap={3}
-            gridTemplateColumns={'repeat(8, 1fr)'}
-          >
+        <Section id="hero">
+          <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
             <Grid
               display="grid"
               gridColumn={'1/span 8'}
@@ -56,6 +52,11 @@ const Index = ({ data, pageContext }) => {
                 </p>
               </Grid>
             </Grid>
+          </Grid>
+        </Section>
+
+        <Section id="content">
+          <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
             <Grid gridColumn={'1/span 3'} p={4}>
               <a href="#work">Work V</a>
             </Grid>
@@ -126,9 +127,10 @@ const Index = ({ data, pageContext }) => {
               <Card>Item</Card>
             </Grid>
           </Grid>
+        </Section>
 
-          {/* Create Archive Page to display all posts. */}
-          {/* {isFirstPage ? (
+        {/* Create Archive Page to display all posts. */}
+        {/* {isFirstPage ? (
           <>
             <Card>
               Custom layout here with home page query with name and about.
@@ -147,7 +149,6 @@ const Index = ({ data, pageContext }) => {
             ))}
           </CardList> 
         )}*/}
-        </Section>
       </Container>
       {/* <Pagination context={pageContext} /> */}
     </Layout>
