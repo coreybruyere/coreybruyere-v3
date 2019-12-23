@@ -6,8 +6,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardList from '../components/CardList'
-import CardItem from '../components/CardItem'
-import FeatureGrid from '../components/FeatureGrid'
+import PostCard from '../components/PostCard'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import Section from '../components/Section'
@@ -31,16 +30,15 @@ const Index = ({ data, pageContext }) => {
       )}
 
       <Container>
-        <Section id="hero">
+        <Section id="about">
           <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
             <Grid
               display="grid"
               gridColumn={'1/span 8'}
               gridTemplateColumns="subgrid"
               p={4}
-              backgroundColor="red"
             >
-              <Grid gridColumn={'1/span 5'} backgroundColor="red">
+              <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
                 <h1>Hi, I'm Corey Bruyere</h1>
 
                 <p>
@@ -55,12 +53,12 @@ const Index = ({ data, pageContext }) => {
           </Grid>
         </Section>
 
-        <Section id="content">
+        <Section id="posts">
           <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
-            <Grid gridColumn={'1/span 3'} p={4}>
+            <Grid gridColumn={'1 / span 2'} p={4}>
               <a href="#work">Work V</a>
             </Grid>
-            <Grid gridColumn={'4/span 5'} p={4}>
+            <Grid gridColumn={'3 / span 6'} p={4}>
               <Box>
                 <h2>Blog Post 1</h2>
 
@@ -110,31 +108,12 @@ const Index = ({ data, pageContext }) => {
                 <button>Read More</button>
               </Box>
             </Grid>
-
-            <Grid gridColumn={'span 2'} id="work">
-              <Card>Item</Card>
-            </Grid>
-
-            <Grid gridColumn={'span 2'} id="work">
-              <Card>Item</Card>
-            </Grid>
-
-            <Grid gridColumn={'span 2'} id="work">
-              <Card>Item</Card>
-            </Grid>
-
-            <Grid gridColumn={'span 2'} id="work">
-              <Card>Item</Card>
-            </Grid>
           </Grid>
         </Section>
 
         {/* Create Archive Page to display all posts. */}
         {/* {isFirstPage ? (
           <>
-            <Card>
-              Custom layout here with home page query with name and about.
-            </Card>
             <CardList>
               <CardItem {...featuredPost} featured />
               {posts.slice(1).map(({ node: post }) => (
@@ -149,8 +128,36 @@ const Index = ({ data, pageContext }) => {
             ))}
           </CardList> 
         )}*/}
+        {/* <Pagination context={pageContext} /> */}
+
+        <>
+          <CardList>
+            {posts.splice(0, 4).map(({ node: post }) => (
+              <PostCard key={post.id} {...post} />
+            ))}
+          </CardList>
+        </>
       </Container>
-      {/* <Pagination context={pageContext} /> */}
+
+      <Section id="work">
+        <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
+          <Grid gridColumn={'span 2'} id="work">
+            <Card>Item</Card>
+          </Grid>
+
+          <Grid gridColumn={'span 2'} id="work">
+            <Card>Item</Card>
+          </Grid>
+
+          <Grid gridColumn={'span 2'} id="work">
+            <Card>Item</Card>
+          </Grid>
+
+          <Grid gridColumn={'span 2'} id="work">
+            <Card>Item</Card>
+          </Grid>
+        </Grid>
+      </Section>
     </Layout>
   )
 }
