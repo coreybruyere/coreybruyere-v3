@@ -59,7 +59,7 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `
 
-const CardItem = ({
+const PostCard = ({
   slug,
   heroImage,
   title,
@@ -87,4 +87,4 @@ const CardItem = ({
   )
 }
 
-export default CardItem
+export default PostCard
