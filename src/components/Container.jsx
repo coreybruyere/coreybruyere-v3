@@ -13,7 +13,6 @@ const Container = props => {
         <Grid
           display="grid"
           gridTemplateColumns={[
-            `4fr minmax(auto, ${theme.sizes.maxWidthCentered}) 1fr`,
             `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
             `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
             `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
