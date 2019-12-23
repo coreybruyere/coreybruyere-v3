@@ -1,33 +1,31 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Box } from 'rebass'
-import Helmet from 'react-helmet'
+// import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardList from '../components/CardList'
 import PostCard from '../components/PostCard'
+import WorkCard from '../components/WorkCard'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import Section from '../components/Section'
-import Pagination from '../components/Pagination'
+// import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
-import config from '../utils/siteConfig'
+// import config from '../utils/siteConfig'
 
 const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
-  const featuredPost = posts[0].node
-  const { currentPage } = pageContext
-  const isFirstPage = currentPage === 1
+  const works = data.allContentfulWork.edges
+
+  // const featuredPost = posts[0].node
+  // const { currentPage } = pageContext
+  // const isFirstPage = currentPage === 1
 
   return (
     <Layout>
       <SEO />
-      {!isFirstPage && (
-        <Helmet>
-          <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
-        </Helmet>
-      )}
 
       <Container>
         <Section id="about">
@@ -111,29 +109,15 @@ const Index = ({ data, pageContext }) => {
           </Grid>
         </Section>
 
-        {/* Create Archive Page to display all posts. */}
-        {/* {isFirstPage ? (
-          <>
-            <CardList>
-              <CardItem {...featuredPost} featured />
-              {posts.slice(1).map(({ node: post }) => (
-                <CardItem key={post.id} {...post} />
-              ))}
-            </CardList>
-          </>
-        ) : (
-          <CardList>
-            {posts.map(({ node: post }) => (
-              <CardItem key={post.id} {...post} />
-            ))}
-          </CardList> 
-        )}*/}
-        {/* <Pagination context={pageContext} /> */}
-
         <>
           <CardList>
             {posts.splice(0, 4).map(({ node: post }) => (
               <PostCard key={post.id} {...post} />
+            ))}
+          </CardList>
+          <CardList>
+            {works.map(({ node: post }) => (
+              <WorkCard key={post.id} {...post} />
             ))}
           </CardList>
         </>
@@ -162,8 +146,34 @@ const Index = ({ data, pageContext }) => {
   )
 }
 
-export const query = graphql`
+export const postsQuery = graphql`
   query($skip: Int!, $limit: Int!) {
+    allContentfulWork(
+      sort: { fields: [publishDate], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          title
+          id
+          slug
+          publishDate(formatString: "MMMM DD, YYYY")
+          heroImage {
+            title
+            fluid(maxWidth: 1800) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+          }
+          body {
+            childMarkdownRemark {
+              html
+              excerpt(pruneLength: 80)
+            }
+          }
+        }
+      }
+    }
     allContentfulPost(
       sort: { fields: [publishDate], order: DESC }
       limit: $limit

@@ -1,10 +1,7 @@
 import React from 'react'
-import styled, { ThemeConsumer } from 'styled-components'
-import { rem } from 'polished'
+import { ThemeConsumer } from 'styled-components'
 
 import Grid from './Grid'
-
-const Wrapper = styled(Grid)``
 
 const Container = props => {
   return (
