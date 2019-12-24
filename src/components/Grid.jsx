@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { grid, layout, space, color } from 'styled-system'
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 
 const Grid = styled(Box)`
   ${grid}

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-// import { Box } from 'rebass'
 
 import Position from './Position'
 
@@ -32,8 +31,6 @@ const Menu = () => {
   return (
     <Position
       position="sticky"
-      width={'10vw'}
-      color="red"
       top={0}
       left={[0, 0, 0, 0, 0, 'auto']}
       right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import Helmet from 'react-helmet'
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 
 import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'
