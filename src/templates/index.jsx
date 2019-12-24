@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Box } from 'rebass'
+import { Box, Flex } from 'rebass'
 // import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
@@ -18,6 +18,8 @@ import SEO from '../components/SEO'
 const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
   const works = data.allContentfulWork.edges
+
+  const DEFAULT_WORK_CARD_WIDTH = 320
 
   // const featuredPost = posts[0].node
   // const { currentPage } = pageContext
@@ -124,23 +126,35 @@ const Index = ({ data, pageContext }) => {
       </Container>
 
       <Section id="work">
-        <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
-          <Grid gridColumn={'span 2'} id="work">
-            <Card>Item</Card>
-          </Grid>
+        <Flex justifyContent="space-between">
+          <Flex
+            flex="0 1 auto"
+            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
+          >
+            <Card width={1}>Item</Card>
+          </Flex>
 
-          <Grid gridColumn={'span 2'} id="work">
-            <Card>Item</Card>
-          </Grid>
+          <Flex
+            flex="0 1 auto"
+            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
+          >
+            <Card width={1}>Item</Card>
+          </Flex>
 
-          <Grid gridColumn={'span 2'} id="work">
-            <Card>Item</Card>
-          </Grid>
+          <Flex
+            flex="0 1 auto"
+            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
+          >
+            <Card width={1}>Item</Card>
+          </Flex>
 
-          <Grid gridColumn={'span 2'} id="work">
-            <Card>Item</Card>
-          </Grid>
-        </Grid>
+          <Flex
+            flex="0 1 auto"
+            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
+          >
+            <Card width={1}>Item</Card>
+          </Flex>
+        </Flex>
       </Section>
     </Layout>
   )
@@ -157,7 +171,6 @@ export const postsQuery = graphql`
         node {
           title
           id
-          slug
           publishDate(formatString: "MMMM DD, YYYY")
           heroImage {
             title
