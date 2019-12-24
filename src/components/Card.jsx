@@ -10,8 +10,8 @@ const Wrap = styled(Box)`
   box-shadow: rgba(0, 0, 0, 0.125) 0 0 ${rem(4)};
 `
 
-const Card = ({ children }) => {
-  return <Wrap>{children}</Wrap>
+const Card = ({ children, ...props }) => {
+  return <Wrap {...props}>{children}</Wrap>
 }
 
 export default Card
