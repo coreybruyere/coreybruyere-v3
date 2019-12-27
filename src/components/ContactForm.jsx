@@ -22,7 +22,7 @@ const Form = styled.form`
     border: none;
     outline: none;
     background: ${props => props.theme.colors.tertiary};
-    color: ${props => props.theme.colors.base};
+    color: ${props => props.theme.colors.text};
     border-radius: 2px;
     padding: 1em;
     &::-webkit-input-placeholder {
@@ -84,12 +84,12 @@ const Message = styled.textarea`
 `
 
 const Submit = styled.input`
-  background: ${props => props.theme.colors.base} !important;
+  background: ${props => props.theme.colors.text} !important;
   color: white !important;
   cursor: pointer;
   transition: 0.2s;
   &:hover {
-    background: ${props => props.theme.colors.highlight} !important;
+    background: ${props => props.theme.colors.secondary} !important;
   }
 `
 
@@ -121,7 +121,7 @@ const Modal = styled.div`
 `
 
 const Button = styled.div`
-  background: ${props => props.theme.colors.base};
+  background: ${props => props.theme.colors.text};
   font-size: 1em;
   display: inline-block;
   margin: 0 auto;
@@ -138,7 +138,7 @@ const Button = styled.div`
     outline: none;
   }
   &:hover {
-    background: ${props => props.theme.colors.highlight};
+    background: ${props => props.theme.colors.secondary};
   }
 `
 

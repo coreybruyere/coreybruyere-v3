@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import Toggle from 'react-toggle'
 
+import { useTheme } from '../context/theme-context'
 import Position from './Position'
 
 // const Header = styled(Position)``
@@ -16,7 +18,7 @@ const Nav = styled.nav`
     color: DarkGray;
     font-weight: 600;
     transition: all 0.2s;
-    border-bottom: 2px solid ${props => props.theme.colors.base};
+    border-bottom: 2px solid ${({ theme }) => theme.colors.text};
     &:hover {
       color: white;
     }
@@ -28,6 +30,7 @@ const activeLinkStyle = {
 }
 
 const Menu = () => {
+  const { theme, toggleTheme } = useTheme()
   return (
     <Position
       position="sticky"
@@ -36,6 +39,10 @@ const Menu = () => {
       right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}
       as="header"
     >
+      <label>
+        <Toggle defaultChecked={theme === 'dark'} onChange={toggleTheme} />
+        <span>Wrapper label tag</span>
+      </label>
       <Nav>
         <ul>
           <li>

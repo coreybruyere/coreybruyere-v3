@@ -1,20 +1,40 @@
-const theme = {
-  breakpoints: ['42em', '56em', '68em', '80em', '125em'], // 672, 896, 1088, 1184, 2000
-  colors: {
-    base: '#121212', // Black
-    secondary: '#e9e9e9', // Medium Gray
-    tertiary: '#f3f3f3', // Light Gray
-    highlight: '#5b8bf7', // Light Blue
-  },
+export const breakpoints = ['42em', '56em', '68em', '80em', '125em'] // 672, 896, 1088, 1184, 2000
+
+export const sizes = {
   sizes: {
     maxWidth: '92rem',
     maxWidthCentered: '650px',
   },
-  responsive: {
-    small: '35em',
-    medium: '50em',
-    large: '70em',
-  },
 }
 
-export default theme
+export const responsive = {
+  small: '35em',
+  medium: '50em',
+  large: '70em',
+}
+
+export const lightTheme = {
+  breakpoints,
+  colors: {
+    text: '#515554', // Dark Gray
+    background: '#f9f9f9', // Offwhite
+    primary: '#009688', // Teal
+    secondary: '#ca5000', // Orange
+    muted: '#f1f1f1', // Light Gray
+  },
+  sizes,
+  responsive,
+}
+
+export const darkTheme = {
+  breakpoints,
+  colors: {
+    text: '#f9f9f9', // Dark Gray
+    background: '#515554', // Offwhite
+    primary: '#009688', // Teal
+    secondary: '#ca5000', // Orange
+    muted: '#f1f1f1', // Light Gray
+  },
+  sizes,
+  responsive,
+}
