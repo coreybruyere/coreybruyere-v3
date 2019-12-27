@@ -31,12 +31,12 @@ const Item = styled.li`
   a {
     font-weight: 600;
     transition: all 0.2s;
-    color: ${props => props.theme.colors.base};
+    color: ${props => props.theme.colors.text};
     &:hover {
-      color: ${props => props.theme.colors.highlight};
+      color: ${props => props.theme.colors.secondary};
     }
     &:visited {
-      color: ${props => props.theme.colors.base};
+      color: ${props => props.theme.colors.text};
     }
   }
 `
