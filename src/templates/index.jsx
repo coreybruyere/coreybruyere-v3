@@ -6,6 +6,8 @@ import { Box, Flex } from 'rebass/styled-components'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardList from '../components/CardList'
+import WorkList from '../components/CardList'
+
 import PostCard from '../components/PostCard'
 import WorkCard from '../components/WorkCard'
 import Grid from '../components/Grid'
@@ -117,43 +119,19 @@ const Index = ({ data, pageContext }) => {
               <PostCard key={post.id} {...post} />
             ))}
           </CardList>
-          <CardList>
-            {works.map(({ node: post }) => (
-              <WorkCard key={post.id} {...post} />
-            ))}
-          </CardList>
         </>
       </Container>
 
       <Section id="work">
-        <Flex justifyContent="space-between">
-          <Flex
-            flex="0 1 auto"
-            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
-          >
-            <Card width={1}>Item</Card>
-          </Flex>
-
-          <Flex
-            flex="0 1 auto"
-            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
-          >
-            <Card width={1}>Item</Card>
-          </Flex>
-
-          <Flex
-            flex="0 1 auto"
-            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
-          >
-            <Card width={1}>Item</Card>
-          </Flex>
-
-          <Flex
-            flex="0 1 auto"
-            style={{ minWidth: `${DEFAULT_WORK_CARD_WIDTH}px` }}
-          >
-            <Card width={1}>Item</Card>
-          </Flex>
+        <Flex
+          as="ul"
+          sx={{
+            overflowX: 'auto',
+          }}
+        >
+          {works.map(({ node: post }) => (
+            <WorkCard key={post.id} {...post} />
+          ))}
         </Flex>
       </Section>
     </Layout>
