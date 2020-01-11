@@ -1,68 +1,67 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Toggle from 'react-toggle'
+import { Flex, Box } from 'rebass/styled-components'
+import { rgba } from 'polished'
 
 import { useTheme } from '../context/theme-context'
+import BareList from './BareList'
+import Button from './Button'
 import Position from './Position'
+import Container from './Container'
 
-// const Header = styled(Position)``
-const Nav = styled.nav`
-  /* width: 100%;
-  max-width: ${props => props.theme.sizes.maxWidth};
-  margin: 0 auto;
-  padding: 0 1.5em; */
-
-  a {
-    text-decoration: none;
-    color: DarkGray;
-    font-weight: 600;
-    transition: all 0.2s;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.text};
-    &:hover {
-      color: white;
-    }
-  }
+const Header = styled(Position)``
+const Nav = styled(Box)`
+  background-color: ${({ theme }) => rgba(theme.colors.background, 0.8)};
+  font-family: 'Open Sans', sans-serif;
 `
 
-const activeLinkStyle = {
-  color: 'white',
-}
-
 const Menu = () => {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, mode, toggleTheme } = useTheme()
+  const activeStyle = { color: theme.colors.primary }
   return (
-    <Position
+    <Header
+      as="header"
       position="sticky"
       top={0}
       left={[0, 0, 0, 0, 0, 'auto']}
       right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}
-      as="header"
+      zIndex={100}
     >
-      <label>
-        <Toggle defaultChecked={theme === 'dark'} onChange={toggleTheme} />
-        <span>Wrapper label tag</span>
-      </label>
-      <Nav>
-        <ul>
-          <li>
-            <Link to="/" activeStyle={activeLinkStyle}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about/" activeStyle={activeLinkStyle}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact/" activeStyle={activeLinkStyle}>
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </Nav>
-    </Position>
+      <Container p={3}>
+        <Flex justifyContent="space-between">
+          <Nav as="nav" mt={-3} ml={-3} p={3} pb={0}>
+            <BareList>
+              <li>
+                <Link to="/" activeStyle={activeStyle}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/" activeStyle={activeStyle}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact/" activeStyle={activeStyle}>
+                  Contact
+                </Link>
+              </li>
+            </BareList>
+          </Nav>
+
+          <Box>
+            <Button
+              aria-pressed={mode === 'dark'}
+              isSmall
+              onClick={toggleTheme}
+            >
+              {mode === 'light' ? 'Dark' : 'Light'}
+            </Button>
+          </Box>
+        </Flex>
+      </Container>
+    </Header>
   )
 }
 

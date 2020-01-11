@@ -3,7 +3,7 @@ import { ThemeConsumer } from 'styled-components'
 
 import Grid from './Grid'
 
-const Container = props => {
+const Container = ({ ...props }) => {
   return (
     <ThemeConsumer>
       {theme => (
@@ -16,6 +16,7 @@ const Container = props => {
             `4fr minmax(auto, ${theme.sizes.maxWidth}) 1fr`,
             `1fr minmax(auto, ${theme.sizes.maxWidth}) 4fr`,
           ]}
+          {...props}
         >
           <Grid
             display="grid"
