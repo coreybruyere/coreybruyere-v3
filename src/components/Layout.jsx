@@ -29,9 +29,9 @@ const Template = ({ children }) => {
             </main>
           </Position>
           <Footer />
+          <GlobalStyle />
         </>
       </ThemeProvider>
-      <GlobalStyle />
     </>
   )
 }

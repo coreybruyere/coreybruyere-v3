@@ -1,9 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'polished'
+import { darken } from 'polished'
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize()}
-
   * {
 		&,
 		&:before,
@@ -12,14 +10,23 @@ const GlobalStyle = createGlobalStyle`
 		}
 	}
 
-	html {
+	:root {
 		height: 100%;
-		box-sizing: border-box;
 	}
 
 	body {
 		box-sizing: border-box !important;
+		background-color: ${({ theme }) => theme.colors.background};
 		-moz-osx-font-smoothing: initial;
+	}
+
+	a {
+    color: ${({ theme }) => theme.colors.secondary};
+
+		&:hover,
+		&:focus {
+			color: ${({ theme }) => darken(0.5, theme.colors.secondary)};
+		}
 	}
 `
 export default GlobalStyle
