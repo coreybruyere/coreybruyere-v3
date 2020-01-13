@@ -29,9 +29,9 @@ const Menu = () => {
       zIndex={100}
     >
       <Container p={3}>
-        <Flex justifyContent="space-between">
+        <Flex justifyContent="space-between" alignContent="center">
           <Nav as="nav" mt={-3} ml={-3} p={3} pb={0}>
-            <BareList>
+            <BareList isFlex>
               <li>
                 <Link to="/" activeStyle={activeStyle}>
                   Home
