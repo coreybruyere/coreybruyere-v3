@@ -8,7 +8,7 @@ import config from '../utils/siteConfig'
 
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
-import Position from '../components/Position'
+import Grid from '../components/Grid'
 
 const Template = ({ children }) => {
   return (
@@ -22,13 +22,13 @@ const Template = ({ children }) => {
 
       <ThemeProvider>
         <>
-          <Position position="relative">
+          <Grid display="grid" gridTemplateColumns="1fr auto">
             <Menu />
             <main id="main" role="main">
               {children}
             </main>
-          </Position>
-          <Footer />
+            <Footer gridColumn={'2/3'} />
+          </Grid>
           <GlobalStyle />
         </>
       </ThemeProvider>

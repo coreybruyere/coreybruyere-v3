@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { darken } from 'polished'
+import { darken, rem } from 'polished'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -23,9 +23,15 @@ const GlobalStyle = createGlobalStyle`
 	a {
     color: ${({ theme }) => theme.colors.secondary};
 
+		@supports (text-underline-offset: .25rem) {
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-underline-offset: ${({ theme }) => theme.space.xs};
+		}
+
 		&:hover,
 		&:focus {
-			color: ${({ theme }) => darken(0.5, theme.colors.secondary)};
+			color: ${({ theme }) => darken(0.2, theme.colors.secondary)};
 		}
 	}
 `

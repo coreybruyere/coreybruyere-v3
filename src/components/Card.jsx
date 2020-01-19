@@ -3,15 +3,12 @@ import { Box } from 'rebass/styled-components'
 import styled from 'styled-components'
 import { rem } from 'polished'
 
-const Wrap = styled(Box)`
+const Card = styled(({ ...props }) => <Box {...props} />)`
   padding: ${rem(8)};
-  border: ${rem(1)} solid ${props => props.theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.cardBackground};
   border-radius: ${rem(2)};
-  box-shadow: rgba(0, 0, 0, 0.125) 0 0 ${rem(4)};
+  box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
+    0 ${rem(1)} ${rem(3)} 0 rgba(63, 63, 68, 0.15);
 `
-
-const Card = ({ children, ...props }) => {
-  return <Wrap {...props}>{children}</Wrap>
-}
 
 export default Card

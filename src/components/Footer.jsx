@@ -1,24 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.footer`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 0 auto;
+import Grid from '../components/Grid'
+import BareList from '../components/BareList'
+
+const Wrapper = styled(Grid)`
   max-width: ${props => props.theme.sizes.maxWidth};
 `
 
-const List = styled.ul`
+const List = styled(BareList)`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   border-top: 1px solid ${props => props.theme.colors.secondary};
-  padding: 1em 0 2em;
-  margin: 0 1.5em;
 `
 
 const Item = styled.li`
@@ -41,8 +37,8 @@ const Item = styled.li`
   }
 `
 
-const Footer = () => (
-  <Wrapper role="contentinfo">
+const Footer = ({ ...props }) => (
+  <Wrapper display="grid" as="footer" role="contentinfo" {...props}>
     <List>
       <Item>
         <a
