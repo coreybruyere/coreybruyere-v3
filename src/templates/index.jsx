@@ -21,8 +21,6 @@ const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
   const works = data.allContentfulWork.edges
 
-  const DEFAULT_WORK_CARD_WIDTH = 320
-
   // const featuredPost = posts[0].node
   // const { currentPage } = pageContext
   // const isFirstPage = currentPage === 1
@@ -38,7 +36,6 @@ const Index = ({ data, pageContext }) => {
               display="grid"
               gridColumn={'1/span 8'}
               gridTemplateColumns="subgrid"
-              p={4}
             >
               <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
                 <h1>Hi, I'm Corey Bruyere</h1>
@@ -61,65 +58,15 @@ const Index = ({ data, pageContext }) => {
               <a href="#work">Work V</a>
             </Grid>
             <Grid gridColumn={'3 / span 6'} p={4}>
-              <Box>
-                <h2>Blog Post 1</h2>
-
-                <p>
-                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Nisi harum eaque reiciendis debitis
-                  blanditiis repellat. QUERY LAST 3 BLOG POSTS ON HOME PAGE.
-                  DISPLAY VIEW MORE BUTTON THAT LINKS TO PAGINATED ARCHIVE
-                </p>
-
-                <button>Read More</button>
-              </Box>
-
-              <Box>
-                <h2>Blog Post 1</h2>
-
-                <p>
-                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Nisi harum eaque reiciendis debitis
-                  blanditiis repellat,
-                </p>
-
-                <button>Read More</button>
-              </Box>
-
-              <Box>
-                <h2>Blog Post 1</h2>
-
-                <p>
-                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Nisi harum eaque reiciendis debitis
-                  blanditiis repellat,
-                </p>
-
-                <button>Read More</button>
-              </Box>
-
-              <Box>
-                <h2>Blog Post 1</h2>
-
-                <p>
-                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Nisi harum eaque reiciendis debitis
-                  blanditiis repellat,
-                </p>
-
-                <button>Read More</button>
-              </Box>
+              <CardList>
+                {console.log(posts)}
+                {posts.map(({ node: post }) => (
+                  <PostCard key={post.id} {...post} />
+                ))}
+              </CardList>
             </Grid>
           </Grid>
         </Section>
-
-        <>
-          <CardList>
-            {posts.splice(0, 4).map(({ node: post }) => (
-              <PostCard key={post.id} {...post} />
-            ))}
-          </CardList>
-        </>
       </Container>
 
       <Section id="work">

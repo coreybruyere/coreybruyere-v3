@@ -8,12 +8,18 @@ import { useTheme } from '../context/theme-context'
 import BareList from './BareList'
 import Button from './Button'
 import Position from './Position'
-import Container from './Container'
 
-const Header = styled(Position)``
+const Header = styled(Position)`
+  height: 100vh;
+`
+
 const Nav = styled(Box)`
   background-color: ${({ theme }) => rgba(theme.colors.background, 0.8)};
   font-family: 'Open Sans', sans-serif;
+`
+
+const Column = styled(Flex)`
+  height: 100%;
 `
 
 const Menu = () => {
@@ -28,39 +34,38 @@ const Menu = () => {
       right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}
       zIndex={100}
     >
-      <Container p={3}>
-        <Flex justifyContent="space-between" alignContent="center">
-          <Nav as="nav" mt={-3} ml={-3} p={3} pb={0}>
-            <BareList isFlex>
-              <li>
-                <Link to="/" activeStyle={activeStyle}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about/" activeStyle={activeStyle}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact/" activeStyle={activeStyle}>
-                  Contact
-                </Link>
-              </li>
-            </BareList>
-          </Nav>
+      <Column
+        flexDirection="column"
+        justifyContent="space-between"
+        alignContent="center"
+        p={3}
+      >
+        <Nav as="nav" mt={-3} ml={-3} px={3} py={5}>
+          <BareList isFlex>
+            <li>
+              <Link to="/" activeStyle={activeStyle}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about/" activeStyle={activeStyle}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact/" activeStyle={activeStyle}>
+                Contact
+              </Link>
+            </li>
+          </BareList>
+        </Nav>
 
-          <Box>
-            <Button
-              aria-pressed={mode === 'dark'}
-              isSmall
-              onClick={toggleTheme}
-            >
-              {mode === 'light' ? 'Dark' : 'Light'}
-            </Button>
-          </Box>
-        </Flex>
-      </Container>
+        <Box>
+          <Button aria-pressed={mode === 'dark'} isSmall onClick={toggleTheme}>
+            {mode === 'light' ? 'Dark' : 'Light'}
+          </Button>
+        </Box>
+      </Column>
     </Header>
   )
 }

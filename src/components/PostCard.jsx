@@ -1,39 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { rem } from 'polished'
+import { Link as BaseLink } from 'gatsby'
 
-const Post = styled.li`
-  position: relative;
-  border: 1px solid ${props => props.theme.colors.secondary};
-  border-radius: 2px;
-  margin: 0 0 1em 0;
+import Card from '../components/Card'
+
+const Post = styled(Card)`
   width: 100%;
-  transition: background 0.2s;
-  @media screen and (min-width: ${props => props.theme.responsive.small}) {
-    flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
-    margin: 0 0 2vw 0;
-  }
-  @media screen and (min-width: ${props => props.theme.responsive.medium}) {
-    flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
-  }
+  list-style-type: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+
   &:hover {
-    background: ${props => props.theme.colors.tertiary};
-  }
-  a {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    width: 100%;
-    color: ${props => props.theme.colors.text};
-    text-decoration: none;
-    .gatsby-image-wrapper {
-      height: 0;
-      padding-bottom: 60%;
-      @media screen and (min-width: ${props => props.theme.responsive.small}) {
-        padding-bottom: ${props => (props.featured ? '40%' : '60%')};
-      }
-    }
+    transform: scale(1.05);
+    box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
+      0 ${rem(1)} ${rem(7)} 0 rgba(63, 63, 68, 0.15);
   }
 `
 
@@ -42,6 +22,35 @@ const Title = styled.h2`
   font-weight: 600;
   text-transform: capitalize;
   margin: 1rem 1rem 0.5rem 1rem;
+
+  &:after {
+    content: '(unread!)';
+    color: hotpink;
+    display: inline-block;
+    font-size: 0.6em;
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }
+`
+
+const Link = styled(BaseLink)`
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+    ${Title} {
+      text-decoration: underline;
+    }
+  }
+
+  &:visited {
+    ${Title} {
+      &:after {
+        color: white;
+      }
+    }
+  }
 `
 
 const Date = styled.h3`
@@ -71,9 +80,8 @@ const PostCard = ({
   ...props
 }) => {
   return (
-    <Post featured={props.featured}>
+    <Post as="li" featured={props.featured}>
       <Link to={`/${slug}/`}>
-        <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
         <Title>{title}</Title>
         <Date>{publishDate}</Date>
         <ReadingTime>{timeToRead} min read</ReadingTime>
