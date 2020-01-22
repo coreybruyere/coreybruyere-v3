@@ -38,6 +38,7 @@ const Menu = () => {
         flexDirection="column"
         justifyContent="space-between"
         alignContent="center"
+        alignItems="flex-end"
         p={3}
       >
         <Nav as="nav" mt={-3} ml={-3} px={3} py={5}>
