@@ -27,18 +27,20 @@ export const space = [
 export const lightColors = {
   text: '#515554', // Dark Gray
   background: '#f9f9f9', // Offwhite
-  cardBackground: '#ffffff', // White
+  card: '#ffffff', // White
   primary: '#009688', // Teal
   secondary: '#ca5000', // Orange
+  tertiary: '#F93140', // Red
   muted: '#f1f1f1', // Light Gray
 }
 
 export const darkColors = {
   text: '#f9f9f9', // Dark Gray
   background: '#515554', // Offwhite
-  cardBackground: '#000000', // Black
+  card: '#000000', // Black
   primary: '#009688', // Teal
   secondary: '#ca5000', // Orange
+  tertiary: '#F93140', // Red
   muted: '#f1f1f1', // Light Gray
 }
 

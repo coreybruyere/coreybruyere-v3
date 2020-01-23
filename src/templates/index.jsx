@@ -59,7 +59,6 @@ const Index = ({ data, pageContext }) => {
             </Grid>
             <Grid gridColumn={'3 / span 6'} p={4}>
               <CardList>
-                {console.log(posts)}
                 {posts.map(({ node: post }) => (
                   <PostCard key={post.id} {...post} />
                 ))}

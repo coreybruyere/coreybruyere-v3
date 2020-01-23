@@ -9,6 +9,9 @@ import BareList from './BareList'
 import Button from './Button'
 import Position from './Position'
 
+import Moon from '../../assets/moon.svg'
+import Sun from '../../assets/sun.svg'
+
 const Header = styled(Position)`
   height: 100vh;
 `
@@ -63,7 +66,7 @@ const Menu = () => {
 
         <Box>
           <Button aria-pressed={mode === 'dark'} isSmall onClick={toggleTheme}>
-            {mode === 'light' ? 'Dark' : 'Light'}
+            {mode === 'light' ? <Moon /> : <Sun />}
           </Button>
         </Box>
       </Column>

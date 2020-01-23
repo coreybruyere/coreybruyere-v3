@@ -5,7 +5,7 @@ import { rem } from 'polished'
 
 const Card = styled(({ ...props }) => <Box {...props} />)`
   padding: ${rem(8)};
-  background-color: ${({ theme }) => theme.colors.cardBackground};
+  background-color: ${({ theme }) => theme.colors.card};
   border-radius: ${rem(2)};
   box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
     0 ${rem(1)} ${rem(3)} 0 rgba(63, 63, 68, 0.15);

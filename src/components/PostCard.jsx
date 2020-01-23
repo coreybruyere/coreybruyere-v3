@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Box } from 'rebass'
 import { rem } from 'polished'
 import { Link as BaseLink } from 'gatsby'
+import dayjs from 'dayjs'
 
 import Card from '../components/Card'
 
@@ -17,18 +19,13 @@ const Post = styled(Card)`
   }
 `
 
-const Title = styled.h2`
-  font-size: 1.5em;
-  font-weight: 600;
-  text-transform: capitalize;
-  margin: 1rem 1rem 0.5rem 1rem;
-
+const Title = styled(({ ...props }) => <Box my={2} as="h2" {...props} />)`
   &:after {
-    content: '(unread!)';
-    color: hotpink;
+    content: '(unread)';
+    color: ${({ theme }) => theme.colors.tertiary};
     display: inline-block;
-    font-size: 0.6em;
-    margin-left: 0.5em;
+    font-size: small;
+    margin-left: ${({ theme }) => theme.space.base};
     vertical-align: middle;
   }
 `
@@ -53,18 +50,15 @@ const Link = styled(BaseLink)`
   }
 `
 
-const Date = styled.h3`
-  margin: 0 1rem 0.5rem 1rem;
+const Time = styled(({ ...props }) => <Box as="time" {...props} />)`
   color: gray;
 `
 
 const ReadingTime = styled.h4`
-  margin: 0 1rem 1.5rem 1rem;
   color: gray;
 `
 
 const Excerpt = styled.p`
-  margin: 0 1rem 1rem 1rem;
   line-height: 1.6;
 `
 
@@ -79,12 +73,14 @@ const PostCard = ({
   },
   ...props
 }) => {
+  const dateTime = dayjs(publishDate).format('YYYY-MM-DD')
+  console.log(dateTime)
+
   return (
     <Post as="li" featured={props.featured}>
       <Link to={`/${slug}/`}>
-        <Title>{title}</Title>
-        <Date>{publishDate}</Date>
-        <ReadingTime>{timeToRead} min read</ReadingTime>
+        <Title my={2}>{title}</Title>
+        <Time dateTime={dateTime}>{publishDate}</Time>
         <Excerpt
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.excerpt,
