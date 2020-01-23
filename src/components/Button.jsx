@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Button as BareButton } from 'rebass/styled-components'
+import { Button as Base } from 'rebass/styled-components'
 import styled from 'styled-components'
 import { rem } from 'polished'
 
-const Wrap = styled(BareButton)`
+const Wrap = styled(Base)`
   padding: ${({ small, theme }) => (small ? theme.space.xs : theme.space.base)};
   box-shadow: rgba(0, 0, 0, 0.125) 0 0 ${rem(4)};
 `
