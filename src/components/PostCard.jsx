@@ -74,13 +74,13 @@ const PostCard = ({
   ...props
 }) => {
   const dateTime = dayjs(publishDate).format('YYYY-MM-DD')
-  console.log(dateTime)
 
   return (
     <Post as="li" featured={props.featured}>
       <Link to={`/${slug}/`}>
         <Title my={2}>{title}</Title>
         <Time dateTime={dateTime}>{publishDate}</Time>
+        <ReadingTime>{timeToRead} min read</ReadingTime>
         <Excerpt
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.excerpt,
