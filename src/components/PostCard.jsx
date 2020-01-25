@@ -44,6 +44,7 @@ const Link = styled(BaseLink)`
   &:visited {
     ${Title} {
       &:after {
+        content: '';
         color: white;
       }
     }

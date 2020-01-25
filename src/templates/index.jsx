@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Box, Flex } from 'rebass/styled-components'
+import { Flex, Box } from 'rebass/styled-components'
 // import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
-import Card from '../components/Card'
+// import Card from '../components/Card'
 import CardList from '../components/CardList'
-import WorkList from '../components/CardList'
+// import WorkList from '../components/CardList'
 
 import PostCard from '../components/PostCard'
 import WorkCard from '../components/WorkCard'
@@ -38,7 +38,9 @@ const Index = ({ data, pageContext }) => {
               gridTemplateColumns="subgrid"
             >
               <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
-                <h1>Hi, I'm Corey Bruyere</h1>
+                <Box mt={[2, 2, 5]} as="h1">
+                  Hi, I'm Corey Bruyere
+                </Box>
 
                 <p>
                   This is a paragraph. Lorem, ipsum dolor sit amet consectetur
