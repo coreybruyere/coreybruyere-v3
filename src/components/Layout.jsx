@@ -22,7 +22,10 @@ const Template = ({ children }) => {
 
       <ThemeProvider>
         <>
-          <Grid display="grid" gridTemplateColumns="1fr auto">
+          <Grid
+            display={['block', 'block', 'grid']}
+            gridTemplateColumns={'1fr'}
+          >
             <Menu />
             <main id="main" role="main">
               {children}

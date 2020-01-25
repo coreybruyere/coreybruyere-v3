@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from 'rebass/styled-components'
+import { Box, Flex } from 'rebass/styled-components'
 
-const BareList = styled(({ ...props }) => <Box {...props} />)`
+const BareList = styled(({ isFlex, ...props }) =>
+  isFlex ? <Flex as="ul" {...props} /> : <Box as="ul" {...props} />
+)`
   padding: 0;
   margin: 0;
   list-style-type: none;
 `
-
-BareList.defaultProps = {
-  as: 'ul',
-}
 
 export default BareList
