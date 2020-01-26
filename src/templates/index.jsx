@@ -1,20 +1,25 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Flex, Box } from 'rebass/styled-components'
+import { rem } from 'polished'
 // import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
-// import Card from '../components/Card'
 import CardList from '../components/CardList'
+// import Card from '../components/Card'
 // import WorkList from '../components/CardList'
-
 import PostCard from '../components/PostCard'
 import WorkCard from '../components/WorkCard'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import Section from '../components/Section'
-// import Pagination from '../components/Pagination'
+import VerticalText from '../components/VerticalText'
+import Position from '../components/Position'
 import SEO from '../components/SEO'
+
+import ChevronDown from '../../assets/chevronDown.svg'
+
+// import Pagination from '../components/Pagination'
 // import config from '../utils/siteConfig'
 
 const Index = ({ data, pageContext }) => {
@@ -56,10 +61,19 @@ const Index = ({ data, pageContext }) => {
 
         <Section id="posts">
           <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
-            <Grid gridColumn={'1 / span 2'} p={4}>
-              <a href="#work">Work V</a>
+            <Grid gridColumn={'1 / span 1'} pt={4} pb={3}>
+              <Position position="sticky" top={rem(72)} id="YOLO">
+                <Box fontSize={5}>
+                  <VerticalText as="a" href="#work">
+                    WORK
+                    <Box as="span" mt={2}>
+                      <ChevronDown />
+                    </Box>
+                  </VerticalText>
+                </Box>
+              </Position>
             </Grid>
-            <Grid gridColumn={'3 / span 6'} p={4}>
+            <Grid gridColumn={'2 / span 7'} p={3}>
               <CardList>
                 {posts.map(({ node: post }) => (
                   <PostCard key={post.id} {...post} />
@@ -97,7 +111,7 @@ export const postsQuery = graphql`
         node {
           title
           id
-          publishDate(formatString: "MMMM DD, YYYY")
+          publishDate(formatString: "MMM DD, YYYY")
           heroImage {
             title
             fluid(maxWidth: 1800) {
@@ -123,7 +137,7 @@ export const postsQuery = graphql`
           title
           id
           slug
-          publishDate(formatString: "MMMM DD, YYYY")
+          publishDate(formatString: "MMM DD, YYYY")
           heroImage {
             title
             fluid(maxWidth: 1800) {
