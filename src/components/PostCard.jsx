@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 import { rem } from 'polished'
 import { Link as BaseLink } from 'gatsby'
 import dayjs from 'dayjs'
@@ -19,7 +19,7 @@ const Post = styled(Card)`
   }
 `
 
-const Title = styled(({ ...props }) => <Box my={2} as="h2" {...props} />)`
+const Title = styled(({ ...props }) => <Box as="h2" {...props} />)`
   &:after {
     content: '(unread)';
     color: ${({ theme }) => theme.colors.tertiary};
@@ -79,7 +79,7 @@ const PostCard = ({
   return (
     <Post as="li" featured={props.featured}>
       <Link to={`/${slug}/`}>
-        <Title my={2}>{title}</Title>
+        <Title m={3}>{title}</Title>
         <Time dateTime={dateTime}>{publishDate}</Time>
         <ReadingTime>{timeToRead} min read</ReadingTime>
         <Excerpt
