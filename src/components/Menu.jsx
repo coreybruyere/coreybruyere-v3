@@ -17,7 +17,7 @@ import Sun from '../../assets/sun.svg'
 import ArrowRight from '../../assets/arrowRight.svg'
 
 const Header = styled(Position)`
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     height: 100vh;
   }
 `

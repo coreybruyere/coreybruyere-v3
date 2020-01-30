@@ -11,9 +11,12 @@ const Post = styled(Card)`
   width: 100%;
   list-style-type: none;
   transition: transform 0.2s, box-shadow 0.2s;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transform: translateZ(0);
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.048);
+    zoom: 150%;
     box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
       0 ${rem(1)} ${rem(7)} 0 rgba(63, 63, 68, 0.15);
   }
@@ -32,6 +35,15 @@ const Title = styled(({ ...props }) => <Box as="h2" {...props} />)`
 
 const Link = styled(BaseLink)`
   text-decoration: none;
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   &:hover,
   &:active {
@@ -78,16 +90,21 @@ const PostCard = ({
 
   return (
     <Post as="li" featured={props.featured}>
-      <Link to={`/${slug}/`}>
-        <Title m={3}>{title}</Title>
-        <Time dateTime={dateTime}>{publishDate}</Time>
-        <ReadingTime>{timeToRead} min read</ReadingTime>
+      <article>
+        <header>
+          <Link to={`/${slug}/`}>
+            <Title m={3}>{title}</Title>
+          </Link>
+
+          <Time dateTime={dateTime}>{publishDate}</Time>
+          <ReadingTime>{timeToRead} min read</ReadingTime>
+        </header>
         <Excerpt
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.excerpt,
           }}
         />
-      </Link>
+      </article>
     </Post>
   )
 }
