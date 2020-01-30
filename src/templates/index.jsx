@@ -42,8 +42,11 @@ const Index = ({ data, pageContext }) => {
               gridColumn={'1/span 8'}
               gridTemplateColumns="subgrid"
             >
-              <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
-                <Box mt={[2, 2, 5]} as="h1">
+              <Grid
+                gridColumn={['1/span 8', '1/span 8', '1/span 5']}
+                pt={[1, 1, 2]}
+              >
+                <Box mt={[2, 2, 4]} mb={[2, 2, 3]} as="h1">
                   Hi, I'm Corey Bruyere
                 </Box>
 
@@ -62,18 +65,18 @@ const Index = ({ data, pageContext }) => {
         <Section id="posts">
           <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
             <Grid gridColumn={'1 / span 1'} pt={4} pb={3}>
-              <Position position="sticky" top={rem(72)} id="YOLO">
-                <Box fontSize={5}>
+              <Position position="sticky" top={rem(72)}>
+                <Flex justifyContent="left" fontSize={5}>
                   <VerticalText as="a" href="#work">
                     WORK
                     <Box as="span" mt={2}>
                       <ChevronDown />
                     </Box>
                   </VerticalText>
-                </Box>
+                </Flex>
               </Position>
             </Grid>
-            <Grid gridColumn={'2 / span 7'} p={3}>
+            <Grid gridColumn={'2 / span 7'}>
               <CardList>
                 {posts.map(({ node: post }) => (
                   <PostCard key={post.id} {...post} />
