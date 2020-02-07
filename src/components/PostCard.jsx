@@ -8,25 +8,17 @@ import dayjs from 'dayjs'
 import Card from '../components/Card'
 
 const Post = styled(Card)`
+  position: relative;
   width: 100%;
   list-style-type: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  -webkit-font-smoothing: subpixel-antialiased;
-  transform: translateZ(0);
-
-  &:hover {
-    transform: scale(1.048);
-    zoom: 150%;
-    box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
-      0 ${rem(1)} ${rem(7)} 0 rgba(63, 63, 68, 0.15);
-  }
 `
 
 const Title = styled(({ ...props }) => <Box as="h2" {...props} />)`
   &:after {
     content: '(unread)';
-    color: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.primary};
     display: inline-block;
+    font-style: italic;
     font-size: small;
     margin-left: ${({ theme }) => theme.space.base};
     vertical-align: middle;
@@ -35,11 +27,15 @@ const Title = styled(({ ...props }) => <Box as="h2" {...props} />)`
 
 const Link = styled(BaseLink)`
   text-decoration: none;
+  /* position: relative;
+  z-index: 1; */
 
   &:before {
     display: block;
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -57,22 +53,23 @@ const Link = styled(BaseLink)`
     ${Title} {
       &:after {
         content: '';
-        color: white;
+        color: ${({ theme }) => theme.colors.card};
       }
     }
   }
 `
 
 const Time = styled(({ ...props }) => <Box as="time" {...props} />)`
-  color: gray;
+  font-style: oblique;
+  font-size: smaller;
 `
 
-const ReadingTime = styled.h4`
-  color: gray;
-`
+// const ReadingTime = styled.h4`
+//   color: gray;
+// `
 
 const Excerpt = styled.p`
-  line-height: 1.6;
+  margin: ${({ theme }) => theme.space.base} 0;
 `
 
 const PostCard = ({
@@ -89,15 +86,15 @@ const PostCard = ({
   const dateTime = dayjs(publishDate).format('YYYY-MM-DD')
 
   return (
-    <Post as="li" featured={props.featured}>
+    <Post as="li" isHoverable>
       <article>
         <header>
+          <Time dateTime={dateTime}>{publishDate}</Time>
           <Link to={`/${slug}/`}>
-            <Title m={3}>{title}</Title>
+            <Title>{title}</Title>
           </Link>
 
-          <Time dateTime={dateTime}>{publishDate}</Time>
-          <ReadingTime>{timeToRead} min read</ReadingTime>
+          {/* <ReadingTime>{timeToRead} min read</ReadingTime> */}
         </header>
         <Excerpt
           dangerouslySetInnerHTML={{

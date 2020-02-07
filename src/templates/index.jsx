@@ -66,7 +66,7 @@ const Index = ({ data, pageContext }) => {
           <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
             <Grid gridColumn={'1 / span 1'} pt={4} pb={3}>
               <Position position="sticky" top={rem(72)}>
-                <Flex justifyContent="left" fontSize={5}>
+                <Flex justifyContent="center" fontSize={5}>
                   <VerticalText as="a" href="#work">
                     WORK
                     <Box as="span" mt={2}>
