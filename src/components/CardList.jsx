@@ -6,6 +6,7 @@ const List = styled.ul`
   flex-flow: row wrap;
   justify-content: space-between;
   margin: 0 auto;
+  padding: 0;
   &::after {
     content: '';
     flex: 0 0 32%;

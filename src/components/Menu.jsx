@@ -24,7 +24,7 @@ const Header = styled(Position)`
 
 const Nav = styled(Box)`
   background-color: ${({ theme }) => rgba(theme.colors.background, 0.8)};
-  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
 
   svg {
     fill: currentColor;
