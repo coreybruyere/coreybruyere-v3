@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useContext,
-  useCallback,
-  useEffect,
-  createContext,
-} from 'react'
+import React, { useState, useContext, useCallback, createContext } from 'react'
 import {
   ThemeProvider as BaseThemeProvider,
   ThemeContext as BaseThemeContext,
