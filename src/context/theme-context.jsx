@@ -1,4 +1,10 @@
-import React, { useState, useContext, useCallback, createContext } from 'react'
+import React, {
+  useState,
+  useContext,
+  useCallback,
+  useEffect,
+  createContext,
+} from 'react'
 import {
   ThemeProvider as BaseThemeProvider,
   ThemeContext as BaseThemeContext,
@@ -9,10 +15,12 @@ import { theme, lightColors, darkColors } from '../styles/theme'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const [themeString, setThemeString] = useState('light')
+  const storedThemeValue = localStorage.getItem('theme')
+  const [themeString, setThemeString] = useState(storedThemeValue || 'light')
   const lightTheme = { ...theme, colors: { ...lightColors } }
   const darkTheme = { ...theme, colors: { ...darkColors } }
   const themeObject = themeString === 'dark' ? darkTheme : lightTheme
+
   return (
     <ThemeContext.Provider value={{ themeString, setThemeString }}>
       <BaseThemeProvider theme={themeObject}>{children}</BaseThemeProvider>
@@ -25,8 +33,13 @@ function useTheme() {
   if (!context) throw new Error('useTheme must be used within a ThemeProvider')
   const { themeString, setThemeString } = context
   const toggleTheme = useCallback(() => {
-    if (themeString === 'light') setThemeString('dark')
-    else if (themeString === 'dark') setThemeString('light')
+    if (themeString === 'light') {
+      window.localStorage.setItem('theme', 'dark')
+      setThemeString('dark')
+    } else if (themeString === 'dark') {
+      window.localStorage.setItem('theme', 'light')
+      setThemeString('light')
+    }
   }, [themeString])
   return {
     mode: themeString,
