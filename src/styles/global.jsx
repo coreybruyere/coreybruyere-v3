@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Syne";
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
+    font-display: block;
     src:
       local("Syne"),
       local("Syne"),
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Syne";
     font-style: normal;
     font-weight: 700;
-    font-display: swap;
+    font-display: block;
     src:
       local("Syne Bold"),
       local("Syne-Bold"),
@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Syne";
     font-style: italic;
     font-weight: 400;
-    font-display: swap;
+    font-display: block;
     src:
       local("Syne Italic"),
       local("Syne-Italic"),
@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Syne";
     font-style: oblique;
     font-weight: 400;
-    font-display: swap;
+    font-display: block;
     src:
       local("Syne Mono"),
       local("Syne-Mono"),
@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Syne";
     font-style: normal;
     font-weight: 800;
-    font-display: swap;
+    font-display: block;
     src:
       local("Syne Extra"),
       local("Syne-Extra"),
