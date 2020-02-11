@@ -9,7 +9,9 @@ import { theme, lightColors, darkColors } from '../styles/theme'
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
-  const storedThemeValue = localStorage.getItem('theme')
+  const storedThemeValue =
+    typeof window !== 'undefined' ? localStorage.getItem('theme') : null
+
   const [themeString, setThemeString] = useState(storedThemeValue || 'light')
   const lightTheme = { ...theme, colors: { ...lightColors } }
   const darkTheme = { ...theme, colors: { ...darkColors } }
