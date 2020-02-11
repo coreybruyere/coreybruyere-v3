@@ -4,6 +4,11 @@ import { darken, normalize } from 'polished'
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
+  /** Root fonts added to inline fonts.css file to prevent excessive FOUT  know to be an issue wit styled-components */
+	:root {
+    color: ${({ theme }) => theme.colors.text};
+	}
+
   * {
 		&,
 		&:before,
