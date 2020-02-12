@@ -22,10 +22,9 @@ const PageTemplate = ({ data }) => {
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} pageSEO />
 
-      <Container>
-        <PageTitleSection id="about" title="About" />
-        <PageBody body={body} />
-      </Container>
+      <PageTitleSection id="about" title="About" />
+
+      <PageBody body={body} />
     </Layout>
   )
 }

@@ -35,53 +35,51 @@ const Index = ({ data, pageContext }) => {
     <Layout>
       <SEO />
 
-      <Container>
-        <PageTitleSection id="intro" title="Hi, I'm Corey Bruyere">
-          <p>
-            This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
-            repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
-            cumque ea, laborum recusandae repudiandae nobis aliquid. QUERY HOME
-            PAGE ABOUT
-          </p>
-        </PageTitleSection>
+      <PageTitleSection id="intro" title="Hi, I'm Corey Bruyere" isArticle>
+        <p>
+          This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+          adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
+          repellat, aliquam ex tenetur numquam iusto quisquam culpa minus cumque
+          ea, laborum recusandae repudiandae nobis aliquid. QUERY HOME PAGE
+          ABOUT
+        </p>
+      </PageTitleSection>
 
-        <Section id="posts" pl={[2, 3]}>
-          <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
-            <Grid gridColumn={'1 / span 1'} pb={3}>
-              <Position position="sticky" top={rem(72)}>
-                <Flex justifyContent="center" fontSize={5}>
-                  <VerticalText as="a" href="#work">
-                    WORK
-                    <Box as="span" mt={2}>
-                      <ChevronDown />
-                    </Box>
-                  </VerticalText>
-                </Flex>
-              </Position>
-            </Grid>
-            <Grid gridColumn={'2 / span 7'}>
-              <CardList>
-                {posts.map(({ node: post }) => (
-                  <PostCard key={post.id} {...post} />
-                ))}
-              </CardList>
-            </Grid>
-          </Grid>
-        </Section>
-      </Container>
+      <Section id="posts" pl={[2, 3]}>
+        <Grid gridColumn={'1 / span 1'} pb={3} as="aside">
+          <Position position="sticky" top={rem(72)}>
+            <Flex justifyContent="center" fontSize={5}>
+              <VerticalText as="a" href="#work">
+                WORK
+                <Box as="span" mt={2}>
+                  <ChevronDown />
+                </Box>
+              </VerticalText>
+            </Flex>
+          </Position>
+        </Grid>
+        <Grid gridColumn={'2 / span 7'} as="section">
+          <CardList>
+            {posts.map(({ node: post }) => (
+              <PostCard key={post.id} {...post} />
+            ))}
+          </CardList>
+        </Grid>
+      </Section>
 
       <Section id="work">
-        <Flex
-          as="ul"
-          sx={{
-            overflowX: 'auto',
-          }}
-        >
-          {works.map(({ node: post }) => (
-            <WorkCard key={post.id} {...post} />
-          ))}
-        </Flex>
+        <Grid gridColumn={'1 / span 8'}>
+          <Flex
+            as="ul"
+            sx={{
+              overflowX: 'auto',
+            }}
+          >
+            {works.map(({ node: post }) => (
+              <WorkCard key={post.id} {...post} />
+            ))}
+          </Flex>
+        </Grid>
       </Section>
     </Layout>
   )

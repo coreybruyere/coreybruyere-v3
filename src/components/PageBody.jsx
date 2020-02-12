@@ -2,9 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Section from '../components/Section'
+import Grid from '../components/Grid'
+
 // require('prismjs/themes/prism.css')
 
-const Body = styled.div`
+const Body = styled(Grid)`
   margin-right: auto;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
 /* 
@@ -103,6 +105,7 @@ const PageBody = props => {
   return (
     <Section>
       <Body
+        gridColumn={'1 / span 8'}
         dangerouslySetInnerHTML={{
           __html: props.body.childMarkdownRemark.html,
         }}
