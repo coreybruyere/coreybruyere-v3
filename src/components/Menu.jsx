@@ -2,7 +2,7 @@ import React from 'react'
 import { Match } from '@reach/router'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { Flex, Box } from 'rebass/styled-components'
+import { Flex, Box, Text } from 'rebass/styled-components'
 import { rem, rgba } from 'polished'
 
 import { useTheme } from '../context/theme-context'
@@ -23,6 +23,7 @@ const Header = styled(Position)`
 `
 
 const Nav = styled(Box)`
+  width: 100%;
   background-color: ${({ theme }) => rgba(theme.colors.background, 0.8)};
   font-weight: 800;
 
@@ -42,7 +43,6 @@ const ThemeToggle = styled(Button).attrs(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
-  align-self: center;
   height: ${rem(40)};
   width: ${rem(40)};
   border-radius: 50%;
@@ -70,14 +70,14 @@ const Menu = () => {
     return (
       <Match path={to}>
         {({ match }) => (
-          <Box as="li" pr={[3, 3, 0]}>
+          <Text as="li" pr={[3, 3, 0]} textAlign="right">
             <Link to={to}>
-              <Flex alignItems="center">
+              <Flex alignItems="center" justifyContent="flex-start">
                 {match && <ArrowRight style={activeStyle} />}
                 {children}
               </Flex>
             </Link>
-          </Box>
+          </Text>
         )}
       </Match>
     )
@@ -91,15 +91,16 @@ const Menu = () => {
       left={[0, 0, 0, 0, 0, 'auto']}
       right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}
       zIndex={100}
+      role="banner"
     >
       <Column
         flexDirection={['row', 'row', 'column']}
         justifyContent="space-between"
-        alignContent="center"
-        alignItems={['center', 'center', 'flex-start']}
+        alignContent="flex-start"
+        alignItems={'flex-start'}
         p={3}
       >
-        <Nav as="nav" mt={[0, 0, 3]} py={[0, 0, 4]}>
+        <Nav as="nav" mt={[0, 0, 3]} py={[0, 0, 4]} role="navigation">
           <BareList>
             {primaryNavigation.map(({ link, text }) => {
               return (
@@ -111,15 +112,13 @@ const Menu = () => {
           </BareList>
         </Nav>
 
-        <Box alignSelf="start">
-          <ThemeToggle
-            aria-pressed={mode === 'dark'}
-            isDefaultTheme={mode === 'light'}
-            onClick={toggleTheme}
-          >
-            {mode === 'light' ? <Moon /> : <Sun />}
-          </ThemeToggle>
-        </Box>
+        <ThemeToggle
+          aria-pressed={mode === 'dark'}
+          isDefaultTheme={mode === 'light'}
+          onClick={toggleTheme}
+        >
+          {mode === 'light' ? <Moon /> : <Sun />}
+        </ThemeToggle>
       </Column>
     </Header>
   )

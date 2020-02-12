@@ -4,7 +4,7 @@ export const breakpoints = ['42em', '56em', '68em', '80em', '125em'] // 672, 896
 
 export const sizes = {
   maxWidth: '92rem',
-  maxWidthCentered: '650px',
+  maxWidthCentered: '56rem',
 }
 
 export const responsive = {
