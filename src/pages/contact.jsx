@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
-import PageTitle from '../components/PageTitle'
+import PageTitleSection from '../components/PageTitleSection'
 import ContactForm from '../components/ContactForm'
 import SEO from '../components/SEO'
 
@@ -20,7 +20,7 @@ const Contact = ({ data }) => {
       <SEO postNode={postNode} pagePath="contact" customTitle />
 
       <Container>
-        <PageTitle>Contact</PageTitle>
+        <PageTitleSection id="contact" title="Contact" />
         <ContactForm />
       </Container>
     </Layout>

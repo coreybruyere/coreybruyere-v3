@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { rem } from 'polished'
 
 import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'
@@ -24,7 +25,7 @@ const Template = ({ children }) => {
         <>
           <Grid
             display={['block', 'block', 'grid']}
-            gridTemplateColumns={'1fr'}
+            gridTemplateColumns={`${rem(192)} 1fr`}
           >
             <Menu />
             <main id="main" role="main">

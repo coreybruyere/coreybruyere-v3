@@ -3,7 +3,7 @@ import { Box } from 'rebass/styled-components'
 
 const Section = ({ children, ...rest }) => {
   return (
-    <Box {...rest} as="section" p={3}>
+    <Box as="section" p={3} {...rest}>
       {children}
     </Box>
   )
