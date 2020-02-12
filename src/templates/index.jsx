@@ -133,7 +133,7 @@ export const postsQuery = graphql`
             childMarkdownRemark {
               timeToRead
               html
-              excerpt(pruneLength: 80)
+              excerpt(pruneLength: 180)
             }
           }
         }

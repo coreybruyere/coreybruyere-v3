@@ -3,7 +3,7 @@ import { rem, lighten } from 'polished'
 export const breakpoints = ['42em', '56em', '68em', '80em', '125em'] // 672, 896, 1088, 1184, 2000
 
 export const sizes = {
-  maxWidth: '92rem',
+  maxWidth: '82rem',
   maxWidthCentered: '56rem',
 }
 
