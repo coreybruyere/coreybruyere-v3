@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { rem } from 'polished'
+import styled from 'styled-components'
 
 import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'
@@ -10,6 +11,11 @@ import config from '../utils/siteConfig'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
 import Grid from '../components/Grid'
+
+const Document = styled(Grid)`
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
+  margin: auto;
+`
 
 const Template = ({ children }) => {
   return (
@@ -23,16 +29,17 @@ const Template = ({ children }) => {
 
       <ThemeProvider>
         <>
-          <Grid
+          <Document
             display={['block', 'block', 'grid']}
             gridTemplateColumns={`${rem(192)} 1fr`}
+            role="document"
           >
             <Menu />
             <main id="main" role="main">
               {children}
             </main>
             <Footer gridColumn={'2/3'} />
-          </Grid>
+          </Document>
           <GlobalStyle />
         </>
       </ThemeProvider>
