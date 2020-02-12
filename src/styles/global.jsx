@@ -39,5 +39,9 @@ const GlobalStyle = createGlobalStyle`
 			color: ${({ theme }) => darken(0.2, theme.colors.secondary)};
 		}
 	}
+
+	h1, h2, h3 {
+		font-weight: 700;
+	}
 `
 export default GlobalStyle

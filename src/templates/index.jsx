@@ -13,6 +13,7 @@ import WorkCard from '../components/WorkCard'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import Section from '../components/Section'
+import PageTitleSection from '../components/PageTitleSection'
 import VerticalText from '../components/VerticalText'
 import Position from '../components/Position'
 import SEO from '../components/SEO'
@@ -35,34 +36,17 @@ const Index = ({ data, pageContext }) => {
       <SEO />
 
       <Container>
-        <Section id="about">
-          <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
-            <Grid
-              display="grid"
-              gridColumn={'1/span 8'}
-              gridTemplateColumns="subgrid"
-            >
-              <Grid
-                gridColumn={['1/span 8', '1/span 8', '1/span 5']}
-                pt={[1, 1, 2]}
-              >
-                <Box mt={[2, 2, 4]} mb={[2, 2, 3]} as="h1">
-                  Hi, I'm Corey Bruyere
-                </Box>
+        <PageTitleSection id="intro" title="Hi, I'm Corey Bruyere">
+          <p>
+            This is a paragraph. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
+            repellat, aliquam ex tenetur numquam iusto quisquam culpa minus
+            cumque ea, laborum recusandae repudiandae nobis aliquid. QUERY HOME
+            PAGE ABOUT
+          </p>
+        </PageTitleSection>
 
-                <p>
-                  This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Nisi harum eaque reiciendis debitis
-                  blanditiis repellat, aliquam ex tenetur numquam iusto quisquam
-                  culpa minus cumque ea, laborum recusandae repudiandae nobis
-                  aliquid. QUERY HOME PAGE ABOUT
-                </p>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Section>
-
-        <Section id="posts">
+        <Section id="posts" pl={[2, 3]}>
           <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
             <Grid gridColumn={'1 / span 1'} pb={3}>
               <Position position="sticky" top={rem(72)}>

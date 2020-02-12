@@ -96,16 +96,10 @@ const Menu = () => {
         flexDirection={['row', 'row', 'column']}
         justifyContent="space-between"
         alignContent="center"
-        alignItems={['center', 'center', 'flex-end']}
+        alignItems={['center', 'center', 'flex-start']}
         p={3}
       >
-        <Nav
-          as="nav"
-          mt={[0, 0, -3]}
-          ml={[0, 0, -3]}
-          px={[0, 0, 3]}
-          py={[0, 0, 5]}
-        >
+        <Nav as="nav" mt={[0, 0, 3]} py={[0, 0, 4]}>
           <BareList>
             {primaryNavigation.map(({ link, text }) => {
               return (

@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-require('prismjs/themes/prism.css')
+
+import Section from '../components/Section'
+// require('prismjs/themes/prism.css')
 
 const Body = styled.div`
-  margin: 0 auto;
+  margin-right: auto;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
-
+/* 
   h1,
   h2,
   h3 {
@@ -94,14 +96,18 @@ const Body = styled.div`
     span {
       background: inherit !important;
     }
-  }
+  } */
 `
 
 const PageBody = props => {
   return (
-    <Body
-      dangerouslySetInnerHTML={{ __html: props.body.childMarkdownRemark.html }}
-    />
+    <Section>
+      <Body
+        dangerouslySetInnerHTML={{
+          __html: props.body.childMarkdownRemark.html,
+        }}
+      />
+    </Section>
   )
 }
 

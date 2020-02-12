@@ -1,11 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { Flex, Box } from 'rebass/styled-components'
+
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
-import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
+import Grid from '../components/Grid'
+import PageTitleSection from '../components/PageTitleSection'
 import SEO from '../components/SEO'
 
 const PageTemplate = ({ data }) => {
@@ -20,7 +23,7 @@ const PageTemplate = ({ data }) => {
       <SEO pagePath={slug} postNode={postNode} pageSEO />
 
       <Container>
-        <PageTitle>{title}</PageTitle>
+        <PageTitleSection id="about" title="About" />
         <PageBody body={body} />
       </Container>
     </Layout>
