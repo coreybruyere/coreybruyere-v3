@@ -9,7 +9,7 @@ const contentfulConfig = {
   host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com',
 }
 
-const { spaceId, accessToken, host } = contentfulConfig
+const { spaceId, accessToken } = contentfulConfig
 
 if (!spaceId || !accessToken) {
   throw new Error(
