@@ -26,6 +26,12 @@ import ChevronDown from '../../assets/chevronDown.svg'
 const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
   const works = data.allContentfulWork.edges
+  const {
+    heading,
+    workSectionCtaHref,
+    workSectionCtaText,
+    aboutBody,
+  } = data.contentfulHomePage
 
   // const featuredPost = posts[0].node
   // const { currentPage } = pageContext
@@ -35,22 +41,20 @@ const Index = ({ data, pageContext }) => {
     <Layout>
       <SEO />
 
-      <PageTitleSection id="intro" title="Hi, I'm Corey Bruyere" isArticle>
-        <p>
-          This is a paragraph. Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Nisi harum eaque reiciendis debitis blanditiis
-          repellat, aliquam ex tenetur numquam iusto quisquam culpa minus cumque
-          ea, laborum recusandae repudiandae nobis aliquid. QUERY HOME PAGE
-          ABOUT
-        </p>
+      <PageTitleSection id="intro" title={heading} isArticle>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: aboutBody.childMarkdownRemark.html,
+          }}
+        />
       </PageTitleSection>
 
       <Section id="posts" pl={[2, 3]}>
         <Grid gridColumn={'1 / span 1'} pb={3} as="aside">
           <Position position="sticky" top={rem(72)}>
             <Flex justifyContent="center" fontSize={5}>
-              <VerticalText as="a" href="#work">
-                WORK
+              <VerticalText as="a" href={workSectionCtaHref}>
+                {workSectionCtaText}
                 <Box as="span" mt={2}>
                   <ChevronDown />
                 </Box>
@@ -136,6 +140,16 @@ export const postsQuery = graphql`
               excerpt(pruneLength: 80)
             }
           }
+        }
+      }
+    }
+    contentfulHomePage {
+      heading
+      workSectionCtaHref
+      workSectionCtaText
+      aboutBody {
+        childMarkdownRemark {
+          html
         }
       }
     }
