@@ -16,6 +16,7 @@ import Section from '../components/Section'
 import PageTitleSection from '../components/PageTitleSection'
 import VerticalText from '../components/VerticalText'
 import Position from '../components/Position'
+import AboutImage from '../components/AboutImage'
 import SEO from '../components/SEO'
 
 import ChevronDown from '../../assets/chevronDown.svg'
@@ -41,7 +42,12 @@ const Index = ({ data, pageContext }) => {
     <Layout>
       <SEO />
 
-      <PageTitleSection id="intro" title={heading} isArticle>
+      <PageTitleSection
+        id="intro"
+        title={heading}
+        aside={<AboutImage />}
+        isArticle
+      >
         <div
           dangerouslySetInnerHTML={{
             __html: aboutBody.childMarkdownRemark.html,
@@ -137,7 +143,7 @@ export const postsQuery = graphql`
             childMarkdownRemark {
               timeToRead
               html
-              excerpt(pruneLength: 80)
+              excerpt(pruneLength: 180)
             }
           }
         }
