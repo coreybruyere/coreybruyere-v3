@@ -24,7 +24,6 @@ const Header = styled(Position)`
 
 const Nav = styled(Box)`
   width: 100%;
-  background-color: ${({ theme }) => rgba(theme.colors.background, 0.8)};
   font-weight: 800;
 
   a {
