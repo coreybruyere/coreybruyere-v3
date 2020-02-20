@@ -11,17 +11,23 @@ const Title = forwardRef(({ children, ...props }, ref) => (
   </Box>
 ))
 
+const Text = styled(Grid)`
+  @supports not (grid-template-columns: subgrid) {
+    /* Display something here */
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+    max-width: 62%;
+  }
+`
+
 const PageTitleSection = forwardRef(
   ({ children, title, id, isArticle, aside, ...props }, ref) => (
     <Section id={id} ref={ref} {...props}>
-      <Grid
+      <Text
         display="grid"
         gridColumn={'1/span 8'}
         gridTemplateColumns="subgrid"
         as={isArticle ? 'article' : 'div'}
-        css={{
-          maxWidth: '62%',
-        }}
       >
         <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']} pt={[1, 1, 2]}>
           <header>
@@ -44,7 +50,7 @@ const PageTitleSection = forwardRef(
             {aside}
           </Grid>
         )}
-      </Grid>
+      </Text>
     </Section>
   )
 )
