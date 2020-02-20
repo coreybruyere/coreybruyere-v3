@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { darken, normalize } from 'polished'
+import { darken, lighten, normalize, rem } from 'polished'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -23,6 +23,19 @@ const GlobalStyle = createGlobalStyle`
 		background-color: ${({ theme }) => theme.colors.background};
 		-moz-osx-font-smoothing: initial;
     font-size: 115%;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: ${rem(4)};
+			background: linear-gradient(60deg, ${({ theme }) => theme.colors.text} 25%, ${({
+  theme,
+}) => theme.colors.primary} 0, ${({ theme }) => theme.colors.primary} 50%, ${({
+  theme,
+}) => theme.colors.secondary} 0, ${({ theme }) =>
+  theme.colors.secondary} 75%, ${({ theme }) => theme.colors.tertiary} 0);
+		}
 	}
 
 	a {
@@ -32,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
 			text-decoration: underline;
 			text-decoration-style: solid;
 			text-underline-offset: ${({ theme }) => theme.space.xs};
+			text-decoration-color: ${({ theme }) => theme.colors.primary};
 		}
 
 		&:hover,
