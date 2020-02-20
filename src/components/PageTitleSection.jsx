@@ -12,13 +12,16 @@ const Title = forwardRef(({ children, ...props }, ref) => (
 ))
 
 const PageTitleSection = forwardRef(
-  ({ children, title, id, isArticle, ...props }, ref) => (
+  ({ children, title, id, isArticle, aside, ...props }, ref) => (
     <Section id={id} ref={ref} {...props}>
       <Grid
         display="grid"
         gridColumn={'1/span 8'}
         gridTemplateColumns="subgrid"
         as={isArticle ? 'article' : 'div'}
+        css={{
+          maxWidth: '62%',
+        }}
       >
         <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']} pt={[1, 1, 2]}>
           <header>
@@ -29,6 +32,18 @@ const PageTitleSection = forwardRef(
 
           {children && children}
         </Grid>
+
+        {aside && (
+          <Grid
+            gridColumn={['1/span 8', '1/span 8', '6/span 3']}
+            pt={[0, 0, 6]}
+            pl={[0, 0, 4]}
+            pb={[0, 0, 4]}
+            mr={[0, 0, -3, -3, 0]}
+          >
+            {aside}
+          </Grid>
+        )}
       </Grid>
     </Section>
   )

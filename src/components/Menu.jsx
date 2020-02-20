@@ -27,6 +27,10 @@ const Nav = styled(Box)`
   background-color: ${({ theme }) => rgba(theme.colors.background, 0.8)};
   font-weight: 800;
 
+  a {
+    text-decoration-color: ${({ theme }) => theme.colors.secondary};
+  }
+
   svg {
     fill: currentColor;
   }
