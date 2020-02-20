@@ -23,7 +23,6 @@ const Header = styled(Position)`
 `
 
 const Nav = styled(Box)`
-  width: 100%;
   font-weight: 800;
 
   a {
@@ -73,9 +72,12 @@ const Menu = () => {
     return (
       <Match path={to}>
         {({ match }) => (
-          <Text as="li" pr={[3, 3, 0]} textAlign="right">
+          <Text as="li" pr={[3, 3, 0]}>
             <Link to={to}>
-              <Flex alignItems="center" justifyContent="flex-start">
+              <Flex
+                alignItems="center"
+                justifyContent={['flex-start', 'flex-start', 'flex-end']}
+              >
                 {match && <ArrowRight style={activeStyle} />}
                 {children}
               </Flex>
@@ -100,7 +102,7 @@ const Menu = () => {
         flexDirection={['row', 'row', 'column']}
         justifyContent="space-between"
         alignContent="flex-start"
-        alignItems={'flex-start'}
+        alignItems={['flex-start', 'flex-start', 'flex-end']}
         p={3}
       >
         <Nav as="nav" mt={[0, 0, 3]} py={[0, 0, 4]} role="navigation">

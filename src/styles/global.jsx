@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
 			display: block;
 			width: 100%;
 			height: ${rem(4)};
+			margin-bottom: ${rem(-4)};
 			background: linear-gradient(60deg, ${({ theme }) => theme.colors.text} 25%, ${({
   theme,
 }) => theme.colors.primary} 0, ${({ theme }) => theme.colors.primary} 50%, ${({
