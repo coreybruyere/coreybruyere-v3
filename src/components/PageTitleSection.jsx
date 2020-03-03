@@ -28,6 +28,7 @@ const PageTitleSection = forwardRef(
         gridColumn={'1/span 8'}
         gridTemplateColumns="subgrid"
         as={isArticle ? 'article' : 'div'}
+        role={isArticle ? 'article' : null}
       >
         <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']} pt={[1, 1, 2]}>
           <header>

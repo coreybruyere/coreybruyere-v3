@@ -87,7 +87,7 @@ const PostCard = ({
 
   return (
     <Post as="li" isHoverable>
-      <article>
+      <article role="article">
         <header>
           <Time dateTime={dateTime}>{publishDate}</Time>
           <Link to={`/${slug}/`}>
