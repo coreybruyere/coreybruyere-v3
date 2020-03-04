@@ -28,11 +28,14 @@ const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
   const works = data.allContentfulWork.edges
   const {
+    preHeading,
     heading,
     workSectionCtaHref,
     workSectionCtaText,
     aboutBody,
   } = data.contentfulHomePage
+
+  console.log(preHeading)
 
   // const featuredPost = posts[0].node
   // const { currentPage } = pageContext
@@ -44,6 +47,7 @@ const Index = ({ data, pageContext }) => {
 
       <PageTitleSection
         id="intro"
+        preTitle={preHeading}
         title={heading}
         aside={<AboutImage />}
         isArticle
@@ -150,6 +154,7 @@ export const postsQuery = graphql`
       }
     }
     contentfulHomePage {
+      preHeading
       heading
       workSectionCtaHref
       workSectionCtaText

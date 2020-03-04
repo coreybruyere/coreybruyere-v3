@@ -1,9 +1,15 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { Box } from 'rebass/styled-components'
+import { Box, Text as BaseText } from 'rebass/styled-components'
 
 import Section from './Section'
 import Grid from './Grid'
+
+const PreTitle = forwardRef(({ children, ...props }, ref) => (
+  <BaseText ref={ref} {...props}>
+    {children}
+  </BaseText>
+))
 
 const Title = forwardRef(({ children, ...props }, ref) => (
   <Box ref={ref} {...props}>
@@ -21,7 +27,7 @@ const Text = styled(Grid)`
 `
 
 const PageTitleSection = forwardRef(
-  ({ children, title, id, isArticle, aside, ...props }, ref) => (
+  ({ children, preTitle, title, id, isArticle, aside, ...props }, ref) => (
     <Section id={id} ref={ref} {...props}>
       <Text
         display="grid"
@@ -32,7 +38,16 @@ const PageTitleSection = forwardRef(
       >
         <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']} pt={[1, 1, 2]}>
           <header>
-            <Title mt={[2, 2, 4]} fontSize={6} as="h1">
+            {preTitle && (
+              <PreTitle fontSize={4} mt={[2, 2, 4]} mb={-2} ariaHidden>
+                {preTitle}
+              </PreTitle>
+            )}
+            <Title
+              mt={[!preTitle && 2, !preTitle && 2, !preTitle && 4]}
+              fontSize={6}
+              as="h1"
+            >
               {title}
             </Title>
           </header>
