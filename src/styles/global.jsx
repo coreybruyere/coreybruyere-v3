@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
 			text-decoration: underline;
 			text-decoration-style: solid;
 			text-underline-offset: ${({ theme }) => theme.space.xs};
-			text-decoration-color: ${({ theme }) => theme.colors.primary};
+			text-decoration-color: ${({ theme }) => theme.colors.secondary};
 		}
 
 		&:hover,

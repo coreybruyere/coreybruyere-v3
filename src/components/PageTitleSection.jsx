@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
-import styled from 'styled-components'
+import React, { forwardRef, useContext } from 'react'
+import styled, { ThemeConsumer } from 'styled-components'
 import { Box, Text as BaseText } from 'rebass/styled-components'
 
 import Section from './Section'
@@ -27,48 +27,60 @@ const Text = styled(Grid)`
 `
 
 const PageTitleSection = forwardRef(
-  ({ children, preTitle, title, id, isArticle, aside, ...props }, ref) => (
-    <Section id={id} ref={ref} {...props}>
-      <Text
-        display="grid"
-        gridColumn={'1/span 8'}
-        gridTemplateColumns="subgrid"
-        as={isArticle ? 'article' : 'div'}
-        role={isArticle ? 'article' : null}
-      >
-        <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']} pt={[1, 1, 2]}>
-          <header>
-            {preTitle && (
-              <PreTitle fontSize={4} mt={[2, 2, 4]} mb={-2} ariaHidden>
-                {preTitle}
-              </PreTitle>
-            )}
-            <Title
-              mt={[!preTitle && 2, !preTitle && 2, !preTitle && 4]}
-              fontSize={6}
-              as="h1"
-            >
-              {title}
-            </Title>
-          </header>
-
-          {children && children}
-        </Grid>
-
-        {aside && (
+  ({ children, preTitle, title, id, isArticle, aside, ...props }, ref) => {
+    const theme = useContext(ThemeConsumer)
+    return (
+      <Section id={id} ref={ref} {...props}>
+        <Text
+          display="grid"
+          gridColumn={'1/span 8'}
+          gridTemplateColumns="subgrid"
+          as={isArticle ? 'article' : 'div'}
+          role={isArticle ? 'article' : null}
+        >
           <Grid
-            gridColumn={['1/span 8', '1/span 8', '6/span 3']}
-            pt={[0, 0, 6]}
-            pl={[0, 0, 4]}
-            pb={[0, 0, 4]}
-            mr={[0, 0, -3, -3, 0]}
+            gridColumn={['1/span 8', '1/span 8', '1/span 5']}
+            pt={[1, 1, 2]}
           >
-            {aside}
+            <header>
+              {preTitle && (
+                <PreTitle
+                  color={theme.colors.primary}
+                  fontSize={4}
+                  mt={[2, 2, 4]}
+                  mb={-3}
+                  aria-hidden
+                >
+                  {preTitle}
+                </PreTitle>
+              )}
+              <Title
+                mt={[!preTitle && 2, !preTitle && 2, !preTitle && 4]}
+                fontSize={6}
+                as="h1"
+              >
+                {title}
+              </Title>
+            </header>
+
+            {children && children}
           </Grid>
-        )}
-      </Text>
-    </Section>
-  )
+
+          {aside && (
+            <Grid
+              gridColumn={['1/span 8', '1/span 8', '6/span 3']}
+              pt={[0, 0, 6]}
+              pl={[0, 0, 4]}
+              pb={[0, 0, 4]}
+              mr={[0, 0, -3, -3, 0]}
+            >
+              {aside}
+            </Grid>
+          )}
+        </Text>
+      </Section>
+    )
+  }
 )
 
 PageTitleSection.displayName = 'PageTitleSection'
