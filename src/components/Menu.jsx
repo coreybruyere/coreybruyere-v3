@@ -24,9 +24,11 @@ const Header = styled(Position)`
 
 const Nav = styled(Box)`
   font-weight: 800;
+  line-height: 1.25;
 
   a {
-    text-decoration-color: ${({ theme }) => theme.colors.secondary};
+    text-transform: uppercase;
+    text-decoration: none;
   }
 
   svg {
