@@ -2,7 +2,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
   src: local('Syne'), local('Syne'),
     url('/fonts/Syne-Regular.woff2') format('woff2'),
     url('/fonts/Syne-Regular.woff') format('woff');
@@ -12,7 +12,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
   src: local('Syne Bold'), local('Syne-Bold'),
     url('/fonts/Syne-Bold.woff2') format('woff2'),
     url('/fonts/Syne-Bold.woff') format('woff');
@@ -22,7 +22,7 @@
   font-family: 'Syne';
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
   src: local('Syne Italic'), local('Syne-Italic'),
     url('/fonts/Syne-Italic.woff2') format('woff2'),
     url('/fonts/Syne-Italic.woff') format('woff');
@@ -32,7 +32,7 @@
   font-family: 'Syne';
   font-style: oblique;
   font-weight: 400;
-  font-display: swap;
+  font-display: fallback;
   src: local('Syne Mono'), local('Syne-Mono'),
     url('/fonts/Syne-Mono.woff2') format('woff2'),
     url('/fonts/Syne-Mono.woff') format('woff');
@@ -42,7 +42,7 @@
   font-family: 'Syne';
   font-style: normal;
   font-weight: 800;
-  font-display: swap;
+  font-display: fallback;
   src: local('Syne Extra'), local('Syne-Extra'),
     url('/fonts/Syne-Extra.woff2') format('woff2'),
     url('/fonts/Syne-Extra.woff') format('woff');
