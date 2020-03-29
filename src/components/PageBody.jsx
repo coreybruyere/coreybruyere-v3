@@ -103,14 +103,12 @@ const Body = styled(Grid)`
 
 const PageBody = props => {
   return (
-    <Section>
-      <Body
-        gridColumn={'1 / span 8'}
-        dangerouslySetInnerHTML={{
-          __html: props.body.childMarkdownRemark.html,
-        }}
-      />
-    </Section>
+    <Body
+      gridColumn={'1 / span 8'}
+      dangerouslySetInnerHTML={{
+        __html: props.body.childMarkdownRemark.html,
+      }}
+    />
   )
 }
 

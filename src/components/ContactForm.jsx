@@ -21,7 +21,7 @@ const Form = styled.form`
     font-size: inherit;
     border: none;
     outline: none;
-    background: ${props => props.theme.colors.tertiary};
+    background: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.text};
     border-radius: 2px;
     padding: 1em;

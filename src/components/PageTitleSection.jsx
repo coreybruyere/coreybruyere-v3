@@ -40,7 +40,7 @@ const PageTitleSection = forwardRef(
         >
           <Grid
             gridColumn={['1/span 8', '1/span 8', '1/span 5']}
-            pt={[1, 1, preTitle && 2]}
+            pt={[1, 1, preTitle && 3]}
           >
             <header>
               {preTitle && (
