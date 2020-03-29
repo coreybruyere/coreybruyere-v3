@@ -14,7 +14,7 @@ const Tag = styled.li`
   a {
     float: left;
     transition: 0.2s;
-    background: ${props => props.theme.colors.tertiary};
+    background: ${props => props.theme.colors.secondary};
     padding: 0.5em;
     border-radius: 2px;
     text-transform: capitalize;

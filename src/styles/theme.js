@@ -37,10 +37,10 @@ export const fontSizes = [
 
 export const lightColors = {
   text: '#515554', // Dark Gray
-  background: '#fffcf9', // Offwhite
+  background: '#f6fffe', // Offwhite
   card: '#ffffff', // White
-  primary: '#006157', // Teal
-  secondary: '#ca5000', // Orange
+  primary: '#883F58', // Maroon
+  secondary: '#006157', // Teal
   tertiary: '#F93140', // Red
   muted: '#bcbcbc', // Light Gray
 }
@@ -49,8 +49,8 @@ export const darkColors = {
   text: '#f9f9f9', // Dark Gray
   background: '#1f1f1f', // Offwhite
   card: '#151515', // Light Black
-  primary: '#00c7b3', // Teal
-  secondary: lighten('.25', lightColors.secondary), // Orange
+  primary: lighten('.35', lightColors.primary), // Maroon
+  secondary: '#00c7b3', // Teal
   tertiary: '#F93140', // Red
   muted: '#bcbcbc', // Light Gray
 }

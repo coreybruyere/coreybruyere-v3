@@ -28,7 +28,7 @@
     url('/fonts/Syne-Italic.woff') format('woff');
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Syne';
   font-style: oblique;
   font-weight: 400;
@@ -36,7 +36,7 @@
   src: local('Syne Mono'), local('Syne-Mono'),
     url('/fonts/Syne-Mono.woff2') format('woff2'),
     url('/fonts/Syne-Mono.woff') format('woff');
-}
+} */
 
 @font-face {
   font-family: 'Syne';

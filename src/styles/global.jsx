@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 			margin-bottom: ${rem(-4)};
 			background: linear-gradient(60deg, ${({ theme }) => theme.colors.text} 25%, ${({
   theme,
-}) => theme.colors.primary} 0, ${({ theme }) => theme.colors.primary} 50%, ${({
+}) => theme.colors.primary} 3, ${({ theme }) => theme.colors.primary} 50%, ${({
   theme,
 }) => theme.colors.secondary} 0, ${({ theme }) =>
   theme.colors.secondary} 75%, ${({ theme }) => theme.colors.tertiary} 0);
@@ -51,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
 
 		&:hover,
 		&:focus {
-			color: ${({ theme }) => darken(0.2, theme.colors.secondary)};
+			color: ${({ theme }) => darken(0.05, theme.colors.secondary)};
 		}
 	}
 
