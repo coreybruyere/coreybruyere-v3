@@ -24,7 +24,8 @@ const GlobalStyle = createGlobalStyle`
 		-moz-osx-font-smoothing: initial;
     font-size: 115%;
 
-		&:before {
+		${
+      '' /* &:before {
 			content: '';
 			display: block;
 			width: 100%;
@@ -36,7 +37,8 @@ const GlobalStyle = createGlobalStyle`
   theme,
 }) => theme.colors.secondary} 0, ${({ theme }) =>
   theme.colors.secondary} 75%, ${({ theme }) => theme.colors.tertiary} 0);
-		}
+		} */
+    }
 	}
 
 	a {
@@ -46,17 +48,40 @@ const GlobalStyle = createGlobalStyle`
 			text-decoration: underline;
 			text-decoration-style: solid;
 			text-underline-offset: ${({ theme }) => theme.space.xs};
-			text-decoration-color: ${({ theme }) => theme.colors.secondary};
+			text-decoration-color: ${({ theme }) => lighten(0.2, theme.colors.secondary)};
+			text-decoration-thickness: ${rem(2)};
 		}
 
 		&:hover,
 		&:focus {
-			color: ${({ theme }) => darken(0.05, theme.colors.secondary)};
+			color: ${({ theme }) => darken(0.09, theme.colors.secondary)};
+			text-decoration-color: ${({ theme }) =>
+        darken(0.09, lighten(0.2, theme.colors.secondary))};
 		}
 	}
 
 	h1, h2, h3 {
 		font-weight: 700;
+	}
+
+	h1 {
+		font-size: ${({ theme }) => theme.fontSizes[6]};
+	}
+
+	h2 {
+		font-size: ${({ theme }) => theme.fontSizes[5]};
+	}
+
+	h3 {
+		font-size: ${({ theme }) => theme.fontSizes[4]};
+	}
+
+	h4 {
+		font-size: ${({ theme }) => theme.fontSizes[3]};
+	}
+
+	h5 {
+		font-size: ${({ theme }) => theme.fontSizes[2]};
 	}
 `
 export default GlobalStyle
