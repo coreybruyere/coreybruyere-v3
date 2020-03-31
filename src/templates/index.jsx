@@ -103,7 +103,7 @@ export const postsQuery = graphql`
   query($skip: Int!, $limit: Int!) {
     allContentfulWork(
       sort: { fields: [publishDate], order: DESC }
-      limit: $limit
+      limit: 18
       skip: $skip
     ) {
       edges {
