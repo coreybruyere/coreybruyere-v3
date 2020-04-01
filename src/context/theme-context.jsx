@@ -10,6 +10,7 @@ const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {
   const storedThemeValue = localStorage?.getItem('theme')
+  typeof window !== 'undefined' ? localStorage.getItem('theme') : null
 
   const [themeString, setThemeString] = useState(storedThemeValue || 'light')
   const lightTheme = { ...theme, colors: { ...lightColors } }
