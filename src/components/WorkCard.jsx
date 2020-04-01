@@ -27,6 +27,7 @@ const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
     <Post featured={props.featured}>
       <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
       <Title>{title}</Title>
+      {console.log(body.childMarkdownRemark.html)}
       <Excerpt
         dangerouslySetInnerHTML={{
           __html: body.childMarkdownRemark.html,

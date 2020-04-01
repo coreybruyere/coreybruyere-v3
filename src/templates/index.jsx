@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import { Flex, Box } from 'rebass/styled-components'
 import { rem } from 'polished'
@@ -34,8 +34,6 @@ const Index = ({ data, pageContext }) => {
     workSectionCtaText,
     aboutBody,
   } = data.contentfulHomePage
-
-  console.log(preHeading)
 
   // const featuredPost = posts[0].node
   // const { currentPage } = pageContext
@@ -90,7 +88,10 @@ const Index = ({ data, pageContext }) => {
             }}
           >
             {works.map(({ node: post }) => (
-              <WorkCard key={post.id} {...post} />
+              <Fragment key={post.id}>
+                hello
+                <WorkCard {...post} />
+              </Fragment>
             ))}
           </Flex>
         </Grid>
