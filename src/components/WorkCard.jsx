@@ -29,7 +29,7 @@ const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
       <Title>{title}</Title>
       <Excerpt
         dangerouslySetInnerHTML={{
-          __html: body.childMarkdownRemark.excerpt,
+          __html: body.childMarkdownRemark.html,
         }}
       />
     </Post>
