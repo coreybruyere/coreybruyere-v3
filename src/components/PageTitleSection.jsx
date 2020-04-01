@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext } from 'react'
-import styled, { ThemeConsumer } from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 import { Box, Text as BaseText } from 'rebass/styled-components'
 
 import Section from './Section'
@@ -28,7 +28,7 @@ const Text = styled(Grid)`
 
 const PageTitleSection = forwardRef(
   ({ children, preTitle, title, id, isArticle, aside, ...props }, ref) => {
-    const theme = useContext(ThemeConsumer)
+    const theme = useContext(ThemeContext)
     return (
       <Section id={id} ref={ref} {...props}>
         <Text
