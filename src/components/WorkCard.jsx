@@ -7,7 +7,7 @@ import Card from '../components/Card'
 
 const Post = styled(Card)`
   position: relative;
-  min-width: ${rem(280)};
+  min-width: calc(50vw - ${rem(192)});
   list-style-type: none;
 `
 
@@ -25,7 +25,7 @@ const Excerpt = styled.p`
 
 const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
   return (
-    <Post as="li" featured={props.featured}>
+    <Post as="li" p={0} featured={props.featured}>
       <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
       <Title>{title}</Title>
       <Excerpt
