@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { rem } from 'polished'
 
-const Post = styled.li`
+import Card from '../components/Card'
+
+const Post = styled(Card)`
   position: relative;
-  border-radius: 2px;
-  margin: 0 0 1em 0;
-  width: 100%;
-  transition: background 0.2s;
+  min-width: ${rem(280)};
+  list-style-type: none;
 `
 
 const Title = styled.h2`
@@ -24,7 +25,7 @@ const Excerpt = styled.p`
 
 const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
   return (
-    <Post featured={props.featured}>
+    <Post as="li" featured={props.featured}>
       <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
       <Title>{title}</Title>
       {console.log(body.childMarkdownRemark.html)}
