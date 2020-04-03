@@ -45,7 +45,9 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-emotion`,
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-transformer-remark`,

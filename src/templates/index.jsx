@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
-import { Flex, Box } from 'rebass/styled-components'
+import { Flex, Box } from 'rebass'
 import { rem } from 'polished'
 // import Helmet from 'react-helmet'
 
@@ -83,13 +83,14 @@ const Index = ({ data, pageContext }) => {
         <Grid gridColumn={'1 / span 8'}>
           <Flex
             as="ul"
+            m={0}
+            p={0}
             sx={{
               overflowX: 'auto',
             }}
           >
             {works.map(({ node: post }) => (
               <Fragment key={post.id}>
-                hello
                 <WorkCard {...post} />
               </Fragment>
             ))}

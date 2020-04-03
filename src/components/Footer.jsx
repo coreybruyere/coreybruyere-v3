@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { rem } from 'polished'
-import { Flex, Text } from 'rebass/styled-components'
+import { Flex, Text } from 'rebass'
 
 import Grid from '../components/Grid'
 import config from '../utils/siteConfig'

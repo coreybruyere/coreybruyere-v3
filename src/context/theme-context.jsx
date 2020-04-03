@@ -1,8 +1,6 @@
 import React, { useState, useContext, useCallback, createContext } from 'react'
-import {
-  ThemeProvider as BaseThemeProvider,
-  ThemeContext as BaseThemeContext,
-} from 'styled-components'
+import { ThemeContext as BaseThemeContext } from '@emotion/core'
+import { ThemeProvider as BaseThemeProvider } from 'emotion-theming'
 
 import { theme, lightColors, darkColors } from '../styles/theme'
 

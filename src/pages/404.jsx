@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Helmet from 'react-helmet'
 import PageTitle from '../components/PageTitle'
 import Container from '../components/Container'
