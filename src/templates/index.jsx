@@ -83,6 +83,8 @@ const Index = ({ data, pageContext }) => {
         <Grid gridColumn={'1 / span 8'}>
           <Flex
             as="ul"
+            m={0}
+            p={0}
             sx={{
               overflowX: 'auto',
             }}
