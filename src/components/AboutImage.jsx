@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
-import { Box as Base } from 'rebass/styled-components'
-import styled from 'styled-components'
+import { Box as Base } from 'rebass'
+import styled from '@emotion/styled'
 import { rgba } from 'polished'
 
 const Wrap = styled(Base)`

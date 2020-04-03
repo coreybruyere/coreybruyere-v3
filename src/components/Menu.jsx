@@ -1,9 +1,9 @@
 import React from 'react'
 import { Match } from '@reach/router'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
-import { Flex, Box, Text } from 'rebass/styled-components'
-import { rem, rgba } from 'polished'
+import styled from '@emotion/styled'
+import { Flex, Box, Text } from 'rebass'
+import { rem } from 'polished'
 
 import { useTheme } from '../context/theme-context'
 import { darkColors, lightColors } from '../styles/theme'
@@ -40,9 +40,7 @@ const Column = styled(Flex)`
   height: 100%;
 `
 
-const ThemeToggle = styled(Button).attrs(() => ({
-  isSmall: true,
-}))`
+const ThemeToggle = styled(Button)`
   ${bareButtonStyle}
   display: flex;
   justify-content: center;
@@ -123,6 +121,7 @@ const Menu = () => {
           aria-pressed={mode === 'dark'}
           isDefaultTheme={mode === 'light'}
           onClick={toggleTheme}
+          isSmall
         >
           {mode === 'light' ? <Moon /> : <Sun />}
         </ThemeToggle>

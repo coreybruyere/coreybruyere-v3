@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box } from 'rebass/styled-components'
-import styled, { css } from 'styled-components'
+import { Box } from 'rebass'
+import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import { rem } from 'polished'
 
 const isHoverableStyle = css`
@@ -20,8 +21,6 @@ const isHoverableStyle = css`
 
 const Card = styled(({ isHoverable, ...props }) => <Box {...props} />)`
   position: relative;
-  padding: ${({ theme }) => theme.space.med};
-  margin-bottom: ${({ theme }) => theme.space.med};
 
   &:after {
     content: '';
@@ -41,5 +40,10 @@ const Card = styled(({ isHoverable, ...props }) => <Box {...props} />)`
 
   ${({ isHoverable }) => (isHoverable ? isHoverableStyle : null)}
 `
+
+Card.defaultProps = {
+  mb: 3,
+  p: 3,
+}
 
 export default Card

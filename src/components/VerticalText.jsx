@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box } from 'rebass/styled-components'
-import styled from 'styled-components'
+import { Box } from 'rebass'
+import styled from '@emotion/styled'
 
 const VerticalText = styled(({ ...props }) => <Box {...props} />)`
   text-transform: uppercase;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { Flex, Box } from 'rebass/styled-components'
+import { Flex, Box } from 'rebass'
 
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
