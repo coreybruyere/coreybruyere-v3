@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Box } from 'rebass/styled-components'
-import { rem } from 'polished'
+import styled from '@emotion/styled'
+import { Box } from 'rebass'
 import { Link as BaseLink } from 'gatsby'
 import dayjs from 'dayjs'
 
@@ -27,8 +26,6 @@ const Title = styled(({ ...props }) => <Box as="h2" {...props} />)`
 
 const Link = styled(BaseLink)`
   text-decoration: none;
-  /* position: relative;
-  z-index: 1; */
 
   &:before {
     display: block;

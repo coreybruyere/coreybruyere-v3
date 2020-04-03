@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { rem } from 'polished'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'

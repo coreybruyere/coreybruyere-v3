@@ -1,6 +1,7 @@
 import React, { forwardRef, useContext } from 'react'
-import styled, { ThemeContext } from 'styled-components'
-import { Box, Text as BaseText } from 'rebass/styled-components'
+import styled from '@emotion/styled'
+import { useTheme } from 'emotion-theming'
+import { Box, Text as BaseText } from 'rebass'
 
 import Section from './Section'
 import Grid from './Grid'
@@ -11,11 +12,15 @@ const PreTitle = forwardRef(({ children, ...props }, ref) => (
   </BaseText>
 ))
 
+PreTitle.displayName = 'PreTitle'
+
 const Title = forwardRef(({ children, ...props }, ref) => (
   <Box ref={ref} {...props}>
     {children}
   </Box>
 ))
+
+Title.displayName = 'Title'
 
 const Text = styled(Grid)`
   @supports not (grid-template-columns: subgrid) {
@@ -28,7 +33,7 @@ const Text = styled(Grid)`
 
 const PageTitleSection = forwardRef(
   ({ children, preTitle, title, id, isArticle, aside, ...props }, ref) => {
-    const theme = useContext(ThemeContext)
+    const theme = useTheme()
     return (
       <Section id={id} ref={ref} {...props}>
         <Text

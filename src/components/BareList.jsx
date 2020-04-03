@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Box, Flex } from 'rebass/styled-components'
+import styled from '@emotion/styled'
+import { Box, Flex } from 'rebass'
 
 const BareList = styled(({ isFlex, ...props }) =>
   isFlex ? <Flex as="ul" {...props} /> : <Box as="ul" {...props} />
