@@ -84,9 +84,10 @@ const Index = ({ data, pageContext }) => {
           <Flex
             as="ul"
             m={0}
-            p={0}
             sx={{
               overflowX: 'auto',
+              paddingLeft: rem(2),
+              paddingTop: rem(2),
             }}
           >
             {works.map(({ node: post }) => (

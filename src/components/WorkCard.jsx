@@ -7,8 +7,17 @@ import Card from '../components/Card'
 
 const Post = styled(Card)`
   position: relative;
-  min-width: calc(50vw - ${rem(192)});
+  min-width: ${rem(320)};
   list-style-type: none;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    min-width: 30vw;
+  }
+
+  .gatsby-image-wrapper {
+    border-top-right-radius: ${rem(2)};
+    border-top-left-radius: ${rem(2)};
+  }
 `
 
 const Title = styled.h2`
@@ -25,7 +34,7 @@ const Excerpt = styled.p`
 
 const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
   return (
-    <Post as="li" p={0} featured={props.featured}>
+    <Post as="li" my={0} mr={3} p={0} featured={props.featured}>
       <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
       <Title>{title}</Title>
       <Excerpt
