@@ -10,6 +10,7 @@ import CardList from '../components/CardList'
 // import WorkList from '../components/CardList'
 import PostCard from '../components/PostCard'
 import WorkCard from '../components/WorkCard'
+import WorkCardList from '../components/WorkCardList'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
 import Section from '../components/Section'
@@ -81,21 +82,13 @@ const Index = ({ data, pageContext }) => {
 
       <Section id="work">
         <Grid gridColumn={'1 / span 8'}>
-          <Flex
-            as="ul"
-            m={0}
-            sx={{
-              overflowX: 'auto',
-              paddingLeft: rem(2),
-              paddingTop: rem(2),
-            }}
-          >
+          <WorkCardList>
             {works.map(({ node: post }) => (
               <Fragment key={post.id}>
                 <WorkCard {...post} />
               </Fragment>
             ))}
-          </Flex>
+          </WorkCardList>
         </Grid>
       </Section>
     </Layout>

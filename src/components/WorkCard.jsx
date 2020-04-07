@@ -9,6 +9,11 @@ const Post = styled(Card)`
   position: relative;
   min-width: ${rem(320)};
   list-style-type: none;
+  z-index: 1;
+
+  &:not(:first-of-type) {
+    margin-left: ${rem(-120)};
+  }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     min-width: 30vw;
