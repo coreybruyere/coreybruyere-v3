@@ -10,9 +10,12 @@ const isHoverableStyle = css`
   }
 
   &:hover,
-  &:focus {
-    &:after {
+  &:focus-within {
+    &:after,
+    img {
       transform: scale(1.025);
+    }
+    &:after {
       box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
         0 ${rem(1)} ${rem(7)} 0 rgba(63, 63, 68, 0.15);
     }
