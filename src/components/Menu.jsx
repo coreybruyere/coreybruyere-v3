@@ -40,11 +40,8 @@ const Column = styled(Flex)`
   height: 100%;
 `
 
-const ThemeToggle = styled(Button)`
+const ThemeToggle = styled(Flex)`
   ${bareButtonStyle}
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: ${rem(40)};
   width: ${rem(40)};
   border-radius: 50%;
@@ -118,9 +115,13 @@ const Menu = () => {
         </Nav>
 
         <ThemeToggle
+          as={Button}
           aria-pressed={mode === 'dark'}
           isDefaultTheme={mode === 'light'}
           onClick={toggleTheme}
+          justifyContent="center"
+          alignItems="center"
+          alignSelf="flex-start"
           isSmall
         >
           {mode === 'light' ? <Moon /> : <Sun />}

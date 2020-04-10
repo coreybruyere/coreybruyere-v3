@@ -1,17 +1,21 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Flex } from 'rebass'
+import { Flex, Box } from 'rebass'
 import { rem } from 'polished'
 
-const List = styled(Flex)`
+import ShowMore from '../components/ShowMore'
+
+const Scroll = styled(Box)`
   overflow-x: auto;
 `
 
+const List = styled(Flex)``
+
 const WorkCardList = ({ children, ...other }) => {
   return (
-    <List as="ul" id="HELLO" {...other}>
-      {children}
-    </List>
+    <Scroll {...other}>
+      <List as="ul">{children}</List>
+    </Scroll>
   )
 }
 
