@@ -18,7 +18,8 @@ const GradientStart = styled(ScrollGradient)`
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 2;
+  transform: rotate(180deg);
 `
 
 const GradientEnd = styled(ScrollGradient)`
@@ -42,10 +43,10 @@ const WorkCardList = ({ children, ...other }) => {
         <GradientStart
           width={'32px'}
           height={'100%'}
-          rotate={180}
-          gradientFill={'red'}
+          rotate={0}
+          gradientFill={theme.colors.background}
         />
-        <List as="ul">
+        <List as="ul" pl={[0, rem(192)]}>
           {children}
           <BlankItem as="li" ml={4} aria-hidden="true">
             &nbsp;
@@ -66,7 +67,6 @@ const WorkCardList = ({ children, ...other }) => {
 WorkCardList.defaultProps = {
   py: rem(2),
   ml: [0, rem(-192)],
-  pl: [0, rem(192)],
 }
 
 export default WorkCardList
