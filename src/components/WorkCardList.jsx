@@ -47,7 +47,7 @@ const WorkCardList = ({ children, ...other }) => {
           rotate={0}
           gradientFill={theme.colors.background}
         />
-        <List as="ul" alignItems="flex-start" pl={[0, rem(192)]}>
+        <List as="ul" alignItems="flex-start" pl={[0, rem(152)]}>
           {children}
           <BlankItem as="li" ml={4} aria-hidden="true">
             &nbsp;
@@ -67,7 +67,7 @@ const WorkCardList = ({ children, ...other }) => {
 
 WorkCardList.defaultProps = {
   py: rem(2),
-  ml: [0, rem(-192)],
+  ml: [0, rem(-152)],
 }
 
 export default WorkCardList
