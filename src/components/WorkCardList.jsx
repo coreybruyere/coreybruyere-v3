@@ -8,6 +8,7 @@ import ScrollGradient from '../components/ScrollGradient'
 
 const Wrap = styled(Box)`
   position: relative;
+  z-index: 101;
 `
 
 const Scroll = styled(Box)`
@@ -39,14 +40,14 @@ const WorkCardList = ({ children, ...other }) => {
   const theme = useTheme()
   return (
     <Wrap {...other}>
-      <Scroll>
+      <Scroll pt={4}>
         <GradientStart
           width={'32px'}
           height={'100%'}
           rotate={0}
           gradientFill={theme.colors.background}
         />
-        <List as="ul" pl={[0, rem(192)]}>
+        <List as="ul" alignItems="flex-start" pl={[0, rem(192)]}>
           {children}
           <BlankItem as="li" ml={4} aria-hidden="true">
             &nbsp;
