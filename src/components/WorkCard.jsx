@@ -16,7 +16,7 @@ const Post = styled(Card)`
   transform: ${({ isExpanded, theme }) =>
     isExpanded ? `translateY(-${theme.space[3]})` : null};
 
-  & + * {
+  & + *:not(:last-of-type) {
     margin-left: ${({ isExpanded }) => (isExpanded ? rem(1) : rem(-120))};
   }
 
