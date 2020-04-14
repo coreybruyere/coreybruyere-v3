@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { rem } from 'polished'
@@ -13,8 +13,12 @@ const Post = styled(Card)`
   list-style-type: none;
   z-index: 1;
 
-  &:not(:first-of-type) {
-    margin-left: ${rem(-120)};
+  + * {
+    margin-left: ${({ isExpanded }) => (isExpanded ? rem(1) : rem(-120))};
+  }
+
+  &:first-of-type {
+    margin-left: 0;
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
@@ -36,13 +40,27 @@ const Title = styled.h2`
 `
 
 const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
+  // Bring this higher up to WorkCard list to manage state there so that I'm able to manage closing of all items.
+  const [isExpanded, setIsExpanded] = useState(false)
+  const handleExpand = () => {
+    console.log('expando')
+    setIsExpanded(!isExpanded)
+  }
   // Place handler here to expand card. Pass handler down to ShowMore component
   return (
-    <Post as="li" my={0} mr={3} p={0} pb={3} featured={props.featured}>
+    <Post
+      as="li"
+      my={0}
+      mr={3}
+      p={0}
+      pb={3}
+      isExpanded={isExpanded}
+      featured={props.featured}
+    >
       <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
       <Title>{title}</Title>
 
-      <ShowMore px={3}>
+      <ShowMore px={3} handleClick={handleExpand}>
         <Box
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.html,

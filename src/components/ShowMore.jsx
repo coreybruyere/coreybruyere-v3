@@ -23,6 +23,7 @@ const Clamp = styled(Box)`
 const ShowMore = ({
   children,
   gradientFill,
+  handleClick,
   clampSize = 2,
   isOpen = false,
   ...rest
@@ -33,10 +34,11 @@ const ShowMore = ({
 
   const handleToggle = () => {
     setIsClampOpen(!isClampOpen)
+    handleClick()
     // TODO: Bring in use effect
     //stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks
 
-    https: console.log(
+    console.log(
       `scroll from top ${window.pageYOffset ||
         document.documentElement.scrollTop}`
     )
