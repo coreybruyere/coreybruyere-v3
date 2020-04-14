@@ -9,11 +9,14 @@ import ShowMore from '../components/ShowMore'
 
 const Post = styled(Card)`
   position: relative;
-  min-width: ${rem(320)};
+  min-width: ${({ isExpanded, theme }) =>
+    isExpanded ? theme.sizes.maxWidthCentered : rem(320)};
   list-style-type: none;
   z-index: 1;
+  transform: ${({ isExpanded, theme }) =>
+    isExpanded ? `translateY(-${theme.space[3]})` : null};
 
-  + * {
+  & + * {
     margin-left: ${({ isExpanded }) => (isExpanded ? rem(1) : rem(-120))};
   }
 
@@ -22,8 +25,9 @@ const Post = styled(Card)`
   }
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    min-width: 30vw;
-    max-width: ${rem(480)};
+    min-width: ${({ isExpanded, theme }) =>
+      isExpanded ? theme.sizes.maxWidthCentered : `30vw`};
+    /* max-width: ${rem(480)}; */
   }
 
   .gatsby-image-wrapper {
