@@ -9,20 +9,24 @@ import ShowMore from '../components/ShowMore'
 
 const Post = styled(Card)`
   position: relative;
-  min-width: ${({ isExpanded, theme }) =>
-    isExpanded ? theme.sizes.maxWidthCentered : rem(320)};
+  min-width: ${({ isExpanded, theme }) => (isExpanded ? '100vw' : '80vw')};
   list-style-type: none;
   z-index: 1;
   transform: ${({ isExpanded, theme }) =>
     isExpanded ? `translateY(-${theme.space[3]})` : null};
 
-  & + *:not(:last-of-type) {
-    margin-left: ${({ isExpanded }) => (isExpanded ? rem(1) : rem(-120))};
-  }
+    ${({ isExpanded }) =>
+      isExpanded &&
+      `
+        &:after {
+          box-shadow: 0px 6px 15px 0px rgba(63, 63, 68, 0.25);
+        }
+    `}
 
-  &:first-of-type {
-    margin-left: 0;
-  }
+  /* & + *:not(:last-of-type) {
+    margin-left: ${({ isExpanded }) => (isExpanded ? rem(1) : rem(0))};
+  } */
+
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     min-width: ${({ isExpanded, theme }) =>
@@ -50,6 +54,7 @@ const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
     console.log('expando')
     setIsExpanded(!isExpanded)
   }
+
   // Place handler here to expand card. Pass handler down to ShowMore component
   return (
     <Post

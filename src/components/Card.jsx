@@ -16,8 +16,9 @@ const isHoverableStyle = css`
       transform: scale(1.025);
     }
     &:after {
-      box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
-        0 ${rem(1)} ${rem(7)} 0 rgba(63, 63, 68, 0.15);
+      box-shadow: 0px 6px 15px 0px rgba(63, 63, 68, 0.25);
+      ${'' /* box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
+        0 ${rem(1)} ${rem(7)} 0 rgba(63, 63, 68, 0.15); */}
     }
   }
 `
@@ -37,15 +38,16 @@ const Card = styled(({ isHoverable, ...props }) => <Box {...props} />)`
     height: 100%;
     background-color: ${({ theme }) => theme.colors.card};
     border-radius: ${rem(2)};
-    box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
-      0 ${rem(1)} ${rem(3)} 0 rgba(63, 63, 68, 0.15);
+    box-shadow: 0px 3px 12px 0px rgba(63, 63, 68, 0.35);
+    ${'' /* box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
+      0 ${rem(1)} ${rem(3)} 0 rgba(63, 63, 68, 0.15); */}
   }
 
   ${({ isHoverable }) => (isHoverable ? isHoverableStyle : null)}
 `
 
 Card.defaultProps = {
-  mb: 3,
+  mb: 4,
   p: 3,
 }
 

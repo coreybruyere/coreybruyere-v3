@@ -39,7 +39,7 @@ export const lightColors = {
   text: '#515554', // Dark Gray
   background: '#f6fffe', // Offwhite
   card: '#ffffff', // White
-  primary: '#883F58', // Maroon
+  primary: '#da7b00', // Orange
   secondary: '#006157', // Teal
   tertiary: '#F93140', // Red
   muted: '#bcbcbc', // Light Gray
@@ -49,7 +49,7 @@ export const darkColors = {
   text: '#f9f9f9', // Dark Gray
   background: '#1f1f1f', // Offwhite
   card: '#151515', // Light Black
-  primary: lighten('.35', lightColors.primary), // Maroon
+  primary: lighten('.35', lightColors.primary), // Orange
   secondary: '#00c7b3', // Teal
   tertiary: '#F93140', // Red
   muted: '#bcbcbc', // Light Gray
