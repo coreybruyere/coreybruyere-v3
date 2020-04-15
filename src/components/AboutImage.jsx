@@ -12,6 +12,7 @@ const Wrap = styled(Base)`
   overflow: hidden;
   border-top-left-radius: ${({ theme }) => theme.space.xs};
   border-bottom-left-radius: ${({ theme }) => theme.space.xs};
+  box-shadow: 0px 34px 21px -26px rgba(161, 161, 161, 0.35);
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoints[3]}) {
     border-radius: ${({ theme }) => theme.space.xs};

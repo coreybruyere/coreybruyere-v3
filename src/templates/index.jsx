@@ -59,7 +59,7 @@ const Index = ({ data, pageContext }) => {
       </PageTitleSection>
 
       <Section id="posts" pl={[2, 3]}>
-        <Grid gridColumn={'1 / span 1'} pb={3} as="aside">
+        <Grid gridColumn={'1 / span 1'} pb={3} pt={4} as="aside">
           <Position position="sticky" top={rem(72)}>
             <Flex justifyContent="center" fontSize={5}>
               <VerticalText as="a" href={workSectionCtaHref}>
@@ -71,7 +71,7 @@ const Index = ({ data, pageContext }) => {
             </Flex>
           </Position>
         </Grid>
-        <Grid gridColumn={'2 / span 7'} as="section">
+        <Grid gridColumn={'2 / span 7'} pt={4} as="section">
           <CardList>
             {posts.map(({ node: post }) => (
               <PostCard key={post.id} {...post} />
