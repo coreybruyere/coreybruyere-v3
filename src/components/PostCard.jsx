@@ -87,9 +87,9 @@ const PostCard = ({
       <article role="article">
         <header>
           <Time dateTime={dateTime}>{publishDate}</Time>
-          <Link to={`/${slug}/`}>
-            <Title>{title}</Title>
-          </Link>
+          <Title>
+            <Link to={`/${slug}/`}>{title}</Link>
+          </Title>
 
           {/* <ReadingTime>{timeToRead} min read</ReadingTime> */}
         </header>

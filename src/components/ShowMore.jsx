@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
-import { Button, Box } from 'rebass'
-import { rem } from 'polished'
+import { Box } from 'rebass'
 
 import ScrollGradient from './ScrollGradient'
+import Button from './Button'
 
 const Gradient = styled(ScrollGradient)`
   position: absolute;
@@ -70,7 +70,7 @@ const ShowMore = ({
     <Box className="clamp-box" {...rest}>
       <Clamp
         ref={showMoreRef}
-        mb={0}
+        mb={2}
         clampSize={clampSize}
         isClamped={isClampOpen}
       >
@@ -88,9 +88,13 @@ const ShowMore = ({
       </Clamp>
 
       {isClampOpen ? (
-        <Button onClick={handleToggle}>Collapse</Button>
+        <Button onClick={handleToggle} isSmall>
+          Collapse
+        </Button>
       ) : (
-        <Button onClick={handleToggle}>Show More</Button>
+        <Button onClick={handleToggle} isSmall>
+          Show More
+        </Button>
       )}
     </Box>
   )
