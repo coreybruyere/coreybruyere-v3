@@ -63,6 +63,15 @@ theme.colors.secondary} 75%, ${theme.colors.tertiary} 0);
 
       h1,
       h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: ${theme.colors.primary};
+      }
+
+      h1,
+      h2,
       h3 {
         font-weight: 700;
       }

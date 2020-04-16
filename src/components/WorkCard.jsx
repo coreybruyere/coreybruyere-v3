@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
+import { useTheme } from 'emotion-theming'
 import Img from 'gatsby-image'
 import { rem } from 'polished'
-import { Box } from 'rebass'
+import { Box, Text } from 'rebass'
 
 import Card from '../components/Card'
 import ShowMore from '../components/ShowMore'
@@ -40,14 +41,12 @@ const Post = styled(Card)`
   }
 `
 
-const Title = styled.h2`
-  font-size: 1.5em;
-  font-weight: 600;
+const Title = styled(Text)`
   text-transform: capitalize;
-  margin: 1rem 1rem 0.5rem 1rem;
 `
 
 const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
+  const theme = useTheme()
   // Bring this higher up to WorkCard list to manage state there so that I'm able to manage closing of all items.
   const [isExpanded, setIsExpanded] = useState(false)
   const handleExpand = () => {
@@ -66,8 +65,11 @@ const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
       isExpanded={isExpanded}
       featured={props.featured}
     >
-      <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
-      <Title>{title}</Title>
+      <Img fluid={heroImage.fluid} backgroundColor={theme.colors.muted} />
+
+      <Title as="h2" fontSize={4} mb={0} mt={1} px={3}>
+        {title}
+      </Title>
 
       <ShowMore px={3} handleClick={handleExpand}>
         <Box

@@ -49,13 +49,7 @@ const PageTitleSection = forwardRef(
           >
             <header>
               {preTitle && (
-                <PreTitle
-                  color={theme.colors.primary}
-                  fontSize={4}
-                  mt={[2, 2, 4]}
-                  mb={-3}
-                  aria-hidden
-                >
+                <PreTitle fontSize={4} mt={[2, 2, 4]} mb={-3} aria-hidden>
                   {preTitle}
                 </PreTitle>
               )}
