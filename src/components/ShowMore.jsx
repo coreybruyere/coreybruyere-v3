@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
 import { Box } from 'rebass'
@@ -32,22 +32,25 @@ const ShowMore = ({
   const theme = useTheme()
   const showMoreRef = useRef(null)
 
-  const handleToggle = () => {
-    setIsClampOpen(!isClampOpen)
-    handleClick()
-    // TODO: Bring in use effect
-    //stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks
-
+  // CHANGE USE EFFECT TO LOOK FOR STATE UPDATE ON isClampOpen so that whenever state is modified it jumps to the bottom of the UL instead of looking for the individual list items height (that is unknown until rerender).
+  useEffect(() => {
+    // The amount scrolled from the top
     console.log(
-      `scroll from top ${window.pageYOffset ||
+      `SCROLL FROM TOP OF BODY: ${window.pageYOffset ||
         document.documentElement.scrollTop}`
     )
 
-    console.log(showMoreRef.current.closest('.clamp-box'))
+    // Log parent surrounding box
+    // console.log(showMoreRef.current.closest('.clamp-box'))
 
+    // Parent surrounding box height
     console.log(
-      `ref height: ${showMoreRef.current.closest('.clamp-box').offsetHeight}`
+      `CLAMP BOX HEIGHT: ${
+        showMoreRef.current.closest('.clamp-box').offsetHeight
+      }`
     )
+
+    console.log('↓↓↓ SCROLLTOP + CLAMP BOX HEIGHT ↓↓↓')
 
     console.log(
       (window.pageYOffset || document.documentElement.scrollTop) +
@@ -64,6 +67,13 @@ const ShowMore = ({
             showMoreRef.current.closest('.clamp-box').offsetHeight
         )
       : null
+  }, [isClampOpen])
+
+  const handleToggle = () => {
+    setIsClampOpen(!isClampOpen)
+    handleClick()
+    // TODO: Bring in use effect
+    //stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks
   }
 
   return (
