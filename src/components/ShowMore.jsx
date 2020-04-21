@@ -32,39 +32,19 @@ const ShowMore = ({
   const theme = useTheme()
   const showMoreRef = useRef(null)
 
-  // CHANGE USE EFFECT TO LOOK FOR STATE UPDATE ON isClampOpen so that whenever state is modified it jumps to the bottom of the UL instead of looking for the individual list items height (that is unknown until rerender).
+  /**
+   * Check for state update on isClampOpen so that whenever state is modified it jumps to the bottom of the UL.
+   */
   useEffect(() => {
-    // The amount scrolled from the top
-    console.log(
-      `SCROLL FROM TOP OF BODY: ${window.pageYOffset ||
-        document.documentElement.scrollTop}`
-    )
-
-    // Log parent surrounding box
-    // console.log(showMoreRef.current.closest('.clamp-box'))
-
-    // Parent surrounding box height
-    console.log(
-      `CLAMP BOX HEIGHT: ${
-        showMoreRef.current.closest('.clamp-box').offsetHeight
-      }`
-    )
-
-    console.log('↓↓↓ SCROLLTOP + CLAMP BOX HEIGHT ↓↓↓')
-
-    console.log(
-      (window.pageYOffset || document.documentElement.scrollTop) +
-        showMoreRef.current.closest('.clamp-box').offsetHeight
-    )
-
     /**
-     * Important to keep a parent div or Box surround Clamp and Button to grab parent height
+     * Important to keep a parent item (scroll container) to calculate the height of said parent container to know how far to scroll
      */
+    // eslint-disable-next-line no-unused-expressions
     typeof window !== 'undefined'
       ? window.scrollTo(
           0,
           (window.pageYOffset || document.documentElement.scrollTop) +
-            showMoreRef.current.closest('.clamp-box').offsetHeight
+            showMoreRef.current.closest('#js-work-scroll').offsetHeight
         )
       : null
   }, [isClampOpen])
@@ -72,12 +52,10 @@ const ShowMore = ({
   const handleToggle = () => {
     setIsClampOpen(!isClampOpen)
     handleClick()
-    // TODO: Bring in use effect
-    //stackoverflow.com/questions/55565444/how-to-register-event-with-useeffect-hooks
   }
 
   return (
-    <Box className="clamp-box" {...rest}>
+    <Box {...rest}>
       <Clamp
         ref={showMoreRef}
         mb={2}
@@ -91,7 +69,7 @@ const ShowMore = ({
               width={'100%'}
               height={32}
               rotate={90}
-              gradientFill={gradientFill ? gradientFill : theme.colors.card}
+              gradientFill={gradientFill || theme.colors.card}
             />
           )}
         </>

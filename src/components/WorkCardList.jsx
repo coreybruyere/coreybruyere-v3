@@ -40,7 +40,7 @@ const WorkCardList = ({ children, ...other }) => {
   const theme = useTheme()
   return (
     <Wrap {...other}>
-      <Scroll pt={4}>
+      <Scroll pt={4} id="js-work-scroll">
         <GradientStart
           width={'32px'}
           height={'100%'}
