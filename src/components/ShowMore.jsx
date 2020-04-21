@@ -23,6 +23,7 @@ const Clamp = styled(Box)`
 const ShowMore = ({
   children,
   gradientFill,
+  parentId,
   handleClick,
   clampSize = 2,
   isOpen = false,
@@ -37,14 +38,14 @@ const ShowMore = ({
    */
   useEffect(() => {
     /**
-     * Important to keep a parent item (scroll container) to calculate the height of said parent container to know how far to scroll
+     * Important to keep a parent item to calculate the height of said parent container to know how far to scroll
      */
     // eslint-disable-next-line no-unused-expressions
     typeof window !== 'undefined'
       ? window.scrollTo(
           0,
           (window.pageYOffset || document.documentElement.scrollTop) +
-            showMoreRef.current.closest('#js-work-scroll').offsetHeight
+            showMoreRef.current.closest(`#${parentId}`).offsetHeight
         )
       : null
   }, [isClampOpen])
@@ -61,6 +62,7 @@ const ShowMore = ({
         mb={2}
         clampSize={clampSize}
         isClamped={isClampOpen}
+        id={parentId}
       >
         <>
           {children}

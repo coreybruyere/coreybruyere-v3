@@ -71,7 +71,7 @@ const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
         {title}
       </Title>
 
-      <ShowMore px={3} handleClick={handleExpand}>
+      <ShowMore px={3} parentId="js-work-scroll" handleClick={handleExpand}>
         <Box
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.html,
