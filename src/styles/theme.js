@@ -18,6 +18,7 @@ export const space = [
   rem(4),
   rem(8),
   rem(16),
+  rem(24),
   rem(32),
   rem(64),
   rem(128),

@@ -24,7 +24,7 @@ const Header = styled(Position)`
 
 const Nav = styled(Box)`
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.5;
 
   a {
     text-transform: uppercase;
@@ -102,7 +102,7 @@ const Menu = () => {
         alignItems={['flex-start', 'flex-start', 'flex-end']}
         p={3}
       >
-        <Nav as="nav" mt={[0, 0, 3]} py={[0, 0, 4]} role="navigation">
+        <Nav as="nav" py={[0, 0, 5]} role="navigation">
           <BareList>
             {primaryNavigation.map(({ link, text }) => {
               return (

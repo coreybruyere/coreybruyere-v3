@@ -9,6 +9,7 @@ const GlobalStyle = () => (
       /** Root fonts added to inline fonts.css file to prevent excessive FOUT  know to be an issue wit styled-components */
       :root {
         color: ${theme.colors.text};
+        line-height: 1.5;
       }
 
       * {
@@ -24,21 +25,6 @@ const GlobalStyle = () => (
         background-color: ${theme.colors.background};
         -moz-osx-font-smoothing: initial;
         font-size: 115%;
-
-        ${'' /* &:before {
-		content: '';
-		display: block;
-		width: 100%;
-		height: ${rem(4)};
-		margin-bottom: ${rem(-4)};
-		background: linear-gradient(60deg, ${theme.colors.text} 25%, ${({
-theme,
-}) => theme.colors.primary} 3, ${theme.colors.primary} 50%, ${({
-theme,
-}) => theme.colors.secondary} 0, ${({ theme }) =>
-theme.colors.secondary} 75%, ${theme.colors.tertiary} 0);
-	} */}
-      }
 
       a {
         color: ${theme.colors.secondary};
@@ -61,13 +47,9 @@ theme.colors.secondary} 75%, ${theme.colors.tertiary} 0);
         }
       }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: ${theme.colors.primary};
+      p {
+        margin-top: 0;
+        margin-bottom: ${({ theme }) => theme.space.lg}
       }
 
       h1,
