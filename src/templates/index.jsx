@@ -50,6 +50,7 @@ const Index = ({ data, pageContext }) => {
         title={heading}
         aside={<AboutImage />}
         isArticle
+        isEmphasized
       >
         <div
           dangerouslySetInnerHTML={{
