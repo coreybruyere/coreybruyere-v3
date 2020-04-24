@@ -20,6 +20,11 @@ const GlobalStyle = () => (
         }
       }
 
+      h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote, p, address, hr, table, fieldset, figure, pre, details {
+        margin-top: 0;
+        margin-bottom: ${theme.space.lg};
+      }
+
       body {
         box-sizing: border-box !important;
         background-color: ${theme.colors.background};
@@ -47,16 +52,13 @@ const GlobalStyle = () => (
         }
       }
 
-      p {
-        margin-top: 0;
-        margin-bottom: ${({ theme }) => theme.space.lg}
-      }
-
       h1,
       h2,
       h3 {
         font-weight: 700;
       }
+
+
 
       h1 {
         font-size: ${theme.fontSizes[6]};
