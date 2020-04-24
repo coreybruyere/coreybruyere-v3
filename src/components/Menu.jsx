@@ -100,7 +100,8 @@ const Menu = () => {
         justifyContent="space-between"
         alignContent="flex-start"
         alignItems={['flex-start', 'flex-start', 'flex-end']}
-        p={3}
+        py={3}
+        px={[4, 4, 3]}
       >
         <Nav as="nav" py={[0, 0, 5]} role="navigation">
           <BareList>

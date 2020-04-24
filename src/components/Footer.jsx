@@ -22,7 +22,14 @@ const Logo = styled.a`
 const Item = styled.li``
 
 const Footer = ({ ...props }) => (
-  <Wrapper p={3} display="grid" as="footer" role="contentinfo" {...props}>
+  <Wrapper
+    py={3}
+    px={[4, 4, 3]}
+    display="grid"
+    as="footer"
+    role="contentinfo"
+    {...props}
+  >
     <Flex justifyContent="flex-end" alignItems="center">
       <Text as="small" pr={3}>
         © Copyright {new Date().getFullYear()} {config.siteTitle}
