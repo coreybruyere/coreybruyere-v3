@@ -36,7 +36,7 @@ const PageTitleSection = forwardRef(
     { children, preTitle, title, id, isArticle, isEmphasized, aside, ...props },
     ref
   ) => {
-    const theme = useTheme()
+    const { fontSizes } = useTheme()
     return (
       <Section id={id} ref={ref} {...props}>
         <Text
@@ -47,20 +47,20 @@ const PageTitleSection = forwardRef(
           role={isArticle ? 'article' : null}
         >
           <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
-            <Box as="header" pt={[0, 0, !preTitle && 4]}>
+            <header>
               {preTitle && (
-                <PreTitle fontSize={5} pt={[2, 2, 4]} mb={-3} aria-hidden>
+                <PreTitle fontSize={5} mt={[2, 2, 4]} mb={-3} aria-hidden>
                   {preTitle}
                 </PreTitle>
               )}
               <Title
-                pt={[!preTitle && 2, !preTitle && 2, !preTitle && 5]}
-                fontSize={`clamp(${theme.fontSizes[5]}, ${theme.fontSizes[3]} + 3vw, ${theme.fontSizes[7]});`}
+                mt={[!preTitle && 2, !preTitle && 2, !preTitle && 5]}
+                fontSize={`max(${fontSizes[5]}, min(${fontSizes[3]} + 3vw, ${fontSizes[7]}));`}
                 as="h1"
               >
                 {title}
               </Title>
-            </Box>
+            </header>
 
             {children && <Box fontSize={isEmphasized && 4}>{children}</Box>}
           </Grid>
