@@ -30,7 +30,7 @@ const ShowMore = ({
   ...rest
 }) => {
   const [isClampOpen, setIsClampOpen] = useState(false)
-  const theme = useTheme()
+  const { colors } = useTheme()
   const showMoreRef = useRef(null)
 
   /**
@@ -38,16 +38,18 @@ const ShowMore = ({
    */
   useEffect(() => {
     /**
-     * Important to keep a parent item to calculate the height of said parent container to know how far to scroll
+     * Find a parent container with parentId to dictate how far window should scroll to come back down to bottom bounding box of parent container.
+     * NOTE** Create a shouldScrollDown prop to disable/enable this functionality
      */
-    // eslint-disable-next-line no-unused-expressions
-    typeof window !== 'undefined'
-      ? window.scrollTo(
-          0,
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top:
           (window.pageYOffset || document.documentElement.scrollTop) +
-            showMoreRef.current.closest(`#${parentId}`).offsetHeight
-        )
-      : null
+          showMoreRef.current.closest(`#${parentId}`).offsetHeight,
+        left: 0,
+        behavior: 'smooth',
+      })
+    }
   }, [isClampOpen])
 
   const handleToggle = () => {
@@ -62,7 +64,6 @@ const ShowMore = ({
         mb={2}
         clampSize={clampSize}
         isClamped={isClampOpen}
-        id={parentId}
       >
         <>
           {children}
@@ -71,7 +72,7 @@ const ShowMore = ({
               width={'100%'}
               height={32}
               rotate={90}
-              gradientFill={gradientFill || theme.colors.card}
+              gradientFill={gradientFill || colors.card}
             />
           )}
         </>

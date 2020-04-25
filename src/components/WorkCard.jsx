@@ -50,7 +50,6 @@ const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
   // Bring this higher up to WorkCard list to manage state there so that I'm able to manage closing of all items.
   const [isExpanded, setIsExpanded] = useState(false)
   const handleExpand = () => {
-    console.log('expando')
     setIsExpanded(!isExpanded)
   }
 
