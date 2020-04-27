@@ -32,6 +32,7 @@ const ShowMore = ({
   const [isClampOpen, setIsClampOpen] = useState(false)
   const { colors } = useTheme()
   const showMoreRef = useRef(null)
+  const isInitialMountRef = useRef(false)
 
   /**
    * Check for state update on isClampOpen so that whenever state is modified it jumps to the bottom of the UL.
@@ -42,13 +43,17 @@ const ShowMore = ({
      * NOTE** Create a shouldScrollDown prop to disable/enable this functionality
      */
     if (typeof window !== 'undefined') {
-      window.scrollTo({
-        top:
-          (window.pageYOffset || document.documentElement.scrollTop) +
-          showMoreRef.current.closest(`#${parentId}`).offsetHeight,
-        left: 0,
-        behavior: 'smooth',
-      })
+      if (isInitialMountRef.current) {
+        window.scrollTo({
+          top:
+            (window.pageYOffset || document.documentElement.scrollTop) +
+            showMoreRef.current.closest(`#${parentId}`).offsetHeight,
+          left: 0,
+          behavior: 'smooth',
+        })
+      } else {
+        isInitialMountRef.current = true
+      }
     }
   }, [isClampOpen])
 
