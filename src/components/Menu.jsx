@@ -7,7 +7,7 @@ import { rem } from 'polished'
 
 import { useTheme } from '../context/theme-context'
 import { darkColors, lightColors } from '../styles/theme'
-import { bareButtonStyle } from '../styles/styledHelpers'
+import { bareButtonSxStyle } from '../styles/styledHelpers'
 import BareList from './BareList'
 import Button from './Button'
 import Position from './Position'
@@ -41,7 +41,6 @@ const Column = styled(Flex)`
 `
 
 const ThemeToggle = styled(Flex)`
-  ${bareButtonStyle}
   height: ${rem(40)};
   width: ${rem(40)};
   border-radius: 50%;
@@ -54,6 +53,8 @@ const ThemeToggle = styled(Flex)`
     fill: currentColor;
   }
 `
+
+ThemeToggle.defaultProps = { sx: bareButtonSxStyle }
 
 const Menu = () => {
   const { theme, mode, toggleTheme } = useTheme()
