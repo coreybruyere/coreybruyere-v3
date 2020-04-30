@@ -1,14 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { Flex, Box } from 'rebass'
-import { useTheme } from 'emotion-theming'
 
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
-import Container from '../components/Container'
 import PageBody from '../components/PageBody'
-import Grid from '../components/Grid'
 import PageTitleSection from '../components/PageTitleSection'
 import SEO from '../components/SEO'
 
