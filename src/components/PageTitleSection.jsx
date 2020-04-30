@@ -47,20 +47,20 @@ const PageTitleSection = forwardRef(
           role={isArticle ? 'article' : null}
         >
           <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
-            <header>
+            <Box as="header" pt={[0, 0, !preTitle && 4]}>
               {preTitle && (
-                <PreTitle fontSize={5} mt={[2, 2, 4]} mb={-3} aria-hidden>
+                <PreTitle fontSize={5} pt={[2, 2, 4]} mb={-3} aria-hidden>
                   {preTitle}
                 </PreTitle>
               )}
               <Title
-                mt={[!preTitle && 2, !preTitle && 2, !preTitle && 5]}
+                pt={[!preTitle && 5, !preTitle && 5, !preTitle && 5]}
                 fontSize={`max(${fontSizes[5]}, min(${fontSizes[3]} + 3vw, ${fontSizes[7]}));`}
                 as="h1"
               >
                 {title}
               </Title>
-            </header>
+            </Box>
 
             {children && <Box fontSize={isEmphasized && 4}>{children}</Box>}
           </Grid>
