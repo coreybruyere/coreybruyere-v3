@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
 import { Box, Text as BaseText } from 'rebass'
+import { rem } from 'polished'
 
 import Section from './Section'
 import Grid from './Grid'
@@ -47,14 +48,18 @@ const PageTitleSection = forwardRef(
           role={isArticle ? 'article' : null}
         >
           <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
-            <Box as="header" pt={[0, 0, !preTitle && 4]}>
+            <Box
+              as="header"
+              pt={[0, 0, preTitle ? 5 : 4]}
+              mr={[0, 0, !aside && -7]}
+              sx={{ lineHeight: '1.35' }}
+            >
               {preTitle && (
-                <PreTitle fontSize={5} pt={[2, 2, 4]} mb={-3} aria-hidden>
+                <PreTitle fontSize={5} mb={-3} aria-hidden>
                   {preTitle}
                 </PreTitle>
               )}
               <Title
-                pt={[!preTitle && 5, !preTitle && 5, !preTitle && 5]}
                 fontSize={`max(${fontSizes[5]}, min(${fontSizes[3]} + 3vw, ${fontSizes[7]}));`}
                 as="h1"
               >

@@ -55,7 +55,7 @@ const Template = ({ children }) => {
         <>
           <Document
             display={['block', 'block', 'grid']}
-            gridTemplateColumns={`${rem(192)} 1fr`}
+            gridTemplateColumns={`${rem(200)} 1fr`}
             role="document"
           >
             <Menu />

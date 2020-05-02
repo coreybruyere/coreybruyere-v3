@@ -11,6 +11,7 @@ import PostDetails from '../components/PostDetails'
 import SEO from '../components/SEO'
 import Section from '../components/Section'
 import Grid from '../components/Grid'
+import PageTitleSection from '../components/PageTitleSection'
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
@@ -33,8 +34,19 @@ const PostTemplate = ({ data, pageContext }) => {
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} postSEO />
 
-      <Hero title={title} image={heroImage} height={'50vh'} />
+      <PageTitleSection id={`${title}`} title={`${title}`} isArticle>
+        <PostDetails
+          date={publishDate}
+          timeToRead={body.childMarkdownRemark.timeToRead}
+        />
+        <PageBody body={body} />
+        {tags && <TagList tags={tags} />}
+      </PageTitleSection>
 
+      <PostLinks previous={previous} next={next} />
+
+      {/* <Hero title={title} image={heroImage} height={'50vh'} /> */}
+      {/* 
       <Section>
         <Grid as="article" gridColumn={'1 / span 8'}>
           {tags && <TagList tags={tags} />}
@@ -44,8 +56,8 @@ const PostTemplate = ({ data, pageContext }) => {
           />
           <PageBody body={body} />
         </Grid>
-      </Section>
-      <PostLinks previous={previous} next={next} />
+      </Section> */}
+      {/* <PostLinks previous={previous} next={next} /> */}
     </Layout>
   )
 }
