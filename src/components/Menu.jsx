@@ -58,7 +58,7 @@ ThemeToggle.defaultProps = { sx: bareButtonSxStyle }
 
 const Menu = () => {
   const { theme, mode, toggleTheme } = useTheme()
-  const activeStyle = { marginRight: theme.space.base }
+  const activeStyle = { marginLeft: rem(-20), marginRight: theme.space.xs }
 
   const primaryNavigation = [
     { link: '/', text: 'Home' },
@@ -72,10 +72,7 @@ const Menu = () => {
         {({ match }) => (
           <Text as="li" pr={[3, 3, 0]}>
             <Link to={to}>
-              <Flex
-                alignItems="center"
-                justifyContent={['flex-start', 'flex-start', 'flex-end']}
-              >
+              <Flex alignItems="center" justifyContent={['flex-start']}>
                 {match && <ArrowRight style={activeStyle} />}
                 {children}
               </Flex>
@@ -104,7 +101,7 @@ const Menu = () => {
         py={3}
         px={[4, 4, 3]}
       >
-        <Nav as="nav" py={[0, 0, 5]} role="navigation">
+        <Nav as="nav" py={[0, 0, 5]} width={1} role="navigation">
           <BareList>
             {primaryNavigation.map(({ link, text }) => {
               return (
