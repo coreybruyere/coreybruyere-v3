@@ -47,7 +47,7 @@ const WorkCardList = ({ children, ...other }) => {
           rotate={0}
           gradientFill={theme.colors.background}
         />
-        <List as="ul" alignItems="flex-start" pl={[0, rem(152)]}>
+        <List as="ul" alignItems="flex-start" pl={[3, rem(152)]}>
           {children}
           <BlankItem as="li" ml={4} aria-hidden="true">
             &nbsp;
