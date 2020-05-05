@@ -12,8 +12,6 @@ const GlobalStyle = () => (
         line-height: 1.5;
       }
 
-      
-
       * {
         &,
         &:before,
@@ -22,7 +20,24 @@ const GlobalStyle = () => (
         }
       }
 
-      h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote, p, address, hr, table, fieldset, figure, pre, details {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol,
+      dl,
+      blockquote,
+      p,
+      address,
+      hr,
+      table,
+      fieldset,
+      figure,
+      pre,
+      details {
         margin-top: 0;
         margin-bottom: ${theme.space.lg};
       }
@@ -32,6 +47,7 @@ const GlobalStyle = () => (
         background-color: ${theme.colors.background};
         -moz-osx-font-smoothing: initial;
         font-size: 115%;
+      }
 
       a {
         color: ${theme.colors.secondary};
@@ -60,8 +76,6 @@ const GlobalStyle = () => (
         font-weight: 700;
       }
 
-
-
       h1 {
         font-size: ${theme.fontSizes[6]};
       }
@@ -80,6 +94,11 @@ const GlobalStyle = () => (
 
       h5 {
         font-size: ${theme.fontSizes[2]};
+      }
+
+      code,
+      code[class*='language-'] {
+        font-size: ${theme.fontSizes[1]};
       }
     `}
   />
