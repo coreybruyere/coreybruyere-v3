@@ -81,7 +81,7 @@ const Index = ({ data, pageContext }) => {
       </Section>
 
       <Section id="work">
-        <Grid gridColumn={'1 / span 8'}>
+        <Grid gridColumn={'1 / span 8'} mx={[-5, 0]}>
           <WorkCardList>
             {works.map(({ node: post }) => (
               <Fragment key={post.id}>
