@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Container from '../components/Container'
 import PageTitleSection from '../components/PageTitleSection'
 import ContactForm from '../components/ContactForm'
+
 import SEO from '../components/SEO'
 
 const Contact = ({ data }) => {
@@ -20,8 +21,9 @@ const Contact = ({ data }) => {
       <SEO postNode={postNode} pagePath="contact" customTitle />
 
       <Container>
-        <PageTitleSection id="contact" title="Contact" />
-        <ContactForm />
+        <PageTitleSection id={`contact`} title={`Contact`}>
+          <ContactForm />
+        </PageTitleSection>
       </Container>
     </Layout>
   )

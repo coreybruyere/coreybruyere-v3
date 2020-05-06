@@ -8,139 +8,7 @@ import styled from '@emotion/styled'
   https://www.netlify.com/docs/form-handling/
 */
 
-const Form = styled.form`
-  max-width: ${props => props.theme.sizes.maxWidthCentered};
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  input,
-  textarea {
-    font-family: inherit;
-    font-size: inherit;
-    border: none;
-    outline: none;
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
-    border-radius: 2px;
-    padding: 1em;
-    &::-webkit-input-placeholder {
-      color: gray;
-    }
-    &::-moz-placeholder {
-      color: gray;
-    }
-    &:-ms-input-placeholder {
-      color: gray;
-    }
-    &:-moz-placeholder {
-      color: gray;
-    }
-    &:required {
-      box-shadow: none;
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-  &::before {
-    content: '';
-    background: black;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: 0.2s all;
-    opacity: ${props => (props.overlay ? '.8' : '0')};
-    visibility: ${props => (props.overlay ? 'visible' : 'hidden')};
-  }
-`
-
-const Name = styled.input`
-  margin: 0 0 1em 0;
-  width: 100%;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-    width: 49%;
-  }
-`
-
-const Email = styled.input`
-  margin: 0 0 1em 0;
-  width: 100%;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-    width: 49%;
-  }
-`
-
-const Message = styled.textarea`
-  width: 100%;
-  margin: 0 0 1em 0;
-  line-height: 1.6;
-  min-height: 250px;
-  resize: vertical;
-`
-
-const Submit = styled.input`
-  background: ${props => props.theme.colors.text} !important;
-  color: white !important;
-  cursor: pointer;
-  transition: 0.2s;
-  &:hover {
-    background: ${props => props.theme.colors.secondary} !important;
-  }
-`
-
-const Modal = styled.div`
-  background: white;
-  padding: 2em;
-  border-radius: 2px;
-  position: fixed;
-  min-width: 75%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
-  z-index: 99;
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-  transition: 0.2s all;
-  opacity: ${props => (props.visible ? '1' : '0')};
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-  @media screen and (min-width: ${props => props.theme.responsive.small}) {
-    min-width: inherit;
-    max-width: 400px;
-  }
-  p {
-    line-height: 1.6;
-    margin: 0 0 2em 0;
-  }
-`
-
-const Button = styled.div`
-  background: ${props => props.theme.colors.text};
-  font-size: 1em;
-  display: inline-block;
-  margin: 0 auto;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: white;
-  padding: 1em;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: 0.2s;
-  z-index: 99;
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    background: ${props => props.theme.colors.secondary};
-  }
-`
+// @todo: CONVERT TO FUNCTIONAL COMPONENT AND ADD MODAL
 
 const encode = data => {
   return Object.keys(data)
@@ -194,7 +62,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <Form
+      <form
         name="contact"
         onSubmit={this.handleSubmit}
         data-netlify="true"
@@ -210,7 +78,7 @@ class ContactForm extends React.Component {
           </label>
         </p>
 
-        <Name
+        <input
           name="name"
           type="text"
           placeholder="Full Name"
@@ -218,7 +86,7 @@ class ContactForm extends React.Component {
           onChange={this.handleInputChange}
           required
         />
-        <Email
+        <input
           name="email"
           type="email"
           placeholder="Email"
@@ -226,7 +94,7 @@ class ContactForm extends React.Component {
           onChange={this.handleInputChange}
           required
         />
-        <Message
+        <textarea
           name="message"
           type="text"
           placeholder="Message"
@@ -234,16 +102,18 @@ class ContactForm extends React.Component {
           onChange={this.handleInputChange}
           required
         />
-        <Submit name="submit" type="submit" value="Send" />
+        <button name="submit" type="submit">
+          Send
+        </button>
 
-        <Modal visible={this.state.showModal}>
+        {/* <Modal visible={this.state.showModal}>
           <p>
             Thank you for reaching out. I will get back to you as soon as
             possible.
           </p>
           <Button onClick={this.closeModal}>Okay</Button>
-        </Modal>
-      </Form>
+        </Modal> */}
+      </form>
     )
   }
 }
