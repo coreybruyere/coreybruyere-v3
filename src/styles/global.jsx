@@ -100,6 +100,11 @@ const GlobalStyle = () => (
       code[class*='language-'] {
         font-size: ${theme.fontSizes[1]};
       }
+
+      pre[class*='language-'] > code {
+        border-left: ${theme.space.base} solid ${theme.colors.primary};
+        box-shadow: -1px 0 0 0 ${theme.colors.primary}, 0 0 0 1px #dfdfdf;
+      }
     `}
   />
 )
