@@ -105,6 +105,13 @@ const GlobalStyle = () => (
         border-left: ${theme.space.base} solid ${theme.colors.primary};
         box-shadow: -1px 0 0 0 ${theme.colors.primary}, 0 0 0 1px #dfdfdf;
       }
+
+      .gatsby-highlight {
+        color: red;
+        @media only screen and (min-width: ${theme.breakpoints[1]}) {
+          margin-right: -${theme.space[7]};
+        }
+      }
     `}
   />
 )
