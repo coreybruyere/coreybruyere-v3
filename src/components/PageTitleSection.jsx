@@ -37,9 +37,10 @@ const PageTitleSection = forwardRef(
     { children, preTitle, title, id, isArticle, isEmphasized, aside, ...props },
     ref
   ) => {
+    const sectionId = id.replace(/ /g, '-')
     const { fontSizes } = useTheme()
     return (
-      <Section id={id} ref={ref} {...props}>
+      <Section id={sectionId} ref={ref} {...props}>
         <Text
           display="grid"
           gridColumn={'1/span 8'}

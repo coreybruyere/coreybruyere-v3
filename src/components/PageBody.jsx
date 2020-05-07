@@ -8,10 +8,11 @@ const Body = styled(Grid)`
   max-width: ${props => props.theme.sizes.maxWidthCentered};
 `
 
-const PageBody = props => {
+const PageBody = (props, ...rest) => {
   return (
     <Body
       gridColumn={'1 / span 8'}
+      className="s-page-body"
       dangerouslySetInnerHTML={{
         __html: props.body.childMarkdownRemark.html,
       }}
