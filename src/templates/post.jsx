@@ -3,14 +3,11 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
-import Hero from '../components/Hero'
 import PageBody from '../components/PageBody'
 import TagList from '../components/TagList'
-import PostLinks from '../components/PostLinks'
+import PostPagination from '../components/PostPagination'
 import PostDetails from '../components/PostDetails'
 import SEO from '../components/SEO'
-import Section from '../components/Section'
-import Grid from '../components/Grid'
 import PageTitleSection from '../components/PageTitleSection'
 
 const PostTemplate = ({ data, pageContext }) => {
@@ -40,10 +37,11 @@ const PostTemplate = ({ data, pageContext }) => {
           timeToRead={body.childMarkdownRemark.timeToRead}
         />
         <PageBody body={body} />
-        {tags && <TagList tags={tags} />}
-      </PageTitleSection>
 
-      <PostLinks previous={previous} next={next} />
+        {tags && <TagList tags={tags} />}
+
+        <PostPagination previous={previous} next={next} />
+      </PageTitleSection>
 
       {/* <Hero title={title} image={heroImage} height={'50vh'} /> */}
       {/* 

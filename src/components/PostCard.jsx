@@ -59,6 +59,7 @@ const Link = styled(BaseLink)`
 const Time = styled(({ ...props }) => <Box as="time" {...props} />)`
   font-style: oblique;
   font-size: smaller;
+  color: ${({ theme }) => theme.colors.primary};
 `
 
 // const ReadingTime = styled.h4`
@@ -87,9 +88,10 @@ const PostCard = ({
       <article role="article">
         <header>
           <Time dateTime={dateTime}>{publishDate}</Time>
-          <Title>
-            <Link to={`/${slug}/`}>{title}</Link>
-          </Title>
+
+          <Link to={`/${slug}/`}>
+            <Title>{title}</Title>
+          </Link>
 
           {/* <ReadingTime>{timeToRead} min read</ReadingTime> */}
         </header>

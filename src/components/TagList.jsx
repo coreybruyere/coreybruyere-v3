@@ -1,41 +1,25 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import { Box, Flex, Text } from 'rebass'
 import { Link } from 'gatsby'
 
-const List = styled.ul`
-  width: 100%;
-  margin: 0 auto 1em auto;
-  max-width: ${props => props.theme.sizes.maxWidthCentered};
-`
+import BareList from './BareList'
 
-const Tag = styled.li`
-  display: inline-block;
-  margin: 0 0.25em 0.25em 0;
-  a {
-    float: left;
-    transition: 0.2s;
-    background: ${props => props.theme.colors.secondary};
-    padding: 0.5em;
-    border-radius: 2px;
-    text-transform: capitalize;
-    text-decoration: none;
-    color: ${props => props.theme.colors.text};
-    border: 1px solid ${props => props.theme.colors.secondary};
-    &:hover {
-      background: ${props => props.theme.colors.secondary};
-    }
-  }
-`
-
-const TagList = props => {
+const TagList = ({ tags }) => {
   return (
-    <List>
-      {props.tags.map(tag => (
-        <Tag key={tag.id}>
-          <Link to={`/tag/${tag.slug}/`}>{tag.title}</Link>
-        </Tag>
-      ))}
-    </List>
+    <Flex alignItems="center" mb={4}>
+      <Text mr={3} id={`tag-list-heading`} as={`b`}>
+        Tags:
+      </Text>
+      <BareList aria-labelledby={`tag-list-heading`} isFlex>
+        {tags.map(tag => (
+          <Box as="li" mr={2} key={tag.id}>
+            <Box as={Link} to={`/tag/${tag.slug}/`}>
+              {tag.title}
+            </Box>
+          </Box>
+        ))}
+      </BareList>
+    </Flex>
   )
 }
 
