@@ -9,7 +9,9 @@ const Wrap = styled(Base)`
   /* Create as a global style eventually and import here */
   background-color: transparent;
   color: ${({ theme }) => theme.colors.secondary};
-  border: ${rem(2)} solid ${({ theme }) => lighten(0.2, theme.colors.secondary)};
+  border: ${rem(2)} solid ${({ theme }) =>
+  lighten(0.2, theme.colors.secondary)};
+  border-radius: ${({ theme }) => theme.space[1]}
   cursor: pointer;
 `
 

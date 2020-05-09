@@ -13,6 +13,8 @@ const PageBody = (props, ...rest) => {
     <Body
       gridColumn={'1 / span 8'}
       className="s-page-body"
+      mb={4}
+      pb={4}
       dangerouslySetInnerHTML={{
         __html: props.body.childMarkdownRemark.html,
       }}
