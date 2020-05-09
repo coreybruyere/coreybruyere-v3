@@ -58,7 +58,7 @@ const WorkCard = ({ heroImage, title, publishDate, body, ...props }) => {
     <Post
       as="li"
       my={0}
-      mr={3}
+      mr={4}
       p={0}
       pb={3}
       isExpanded={isExpanded}
