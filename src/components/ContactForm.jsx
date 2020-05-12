@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 
+import Input from './Input'
+
 /*
   ⚠️ This is an example of a contact form powered with Netlify form handling.
   Be sure to review the Netlify documentation for more information:
@@ -78,7 +80,7 @@ class ContactForm extends React.Component {
           </label>
         </p>
 
-        <input
+        <Input
           name="name"
           type="text"
           placeholder="Full Name"
@@ -86,7 +88,7 @@ class ContactForm extends React.Component {
           onChange={this.handleInputChange}
           required
         />
-        <input
+        <Input
           name="email"
           type="email"
           placeholder="Email"
