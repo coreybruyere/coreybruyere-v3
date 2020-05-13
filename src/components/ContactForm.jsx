@@ -41,13 +41,14 @@ const ContactForm = () => {
   }
 
   const handleSubmit = event => {
+    const form = event.target
     console.log({ ...state })
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...state }),
+      body: encode({ 'form-name': form.getAttribute('name'), ...state }),
     })
-      .then(console.log('success'))
+      .then(handleSuccess)
       .catch(error => alert(error))
     event.preventDefault()
   }
@@ -64,16 +65,17 @@ const ContactForm = () => {
 
   return (
     <form
-      name="contact"
+      name="contact-me"
+      method="post"
       data-netlify="true"
-      data-netlify-honeypot="bot"
+      data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
-      onClick={handleModalClose}
     >
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="contact-me" />
       <p hidden>
         <label>
-          Don’t fill this out: <input name="bot" onChange={handleInputChange} />
+          Don’t fill this out:{' '}
+          <input name="bot-field" onChange={handleInputChange} />
         </label>
       </p>
 
