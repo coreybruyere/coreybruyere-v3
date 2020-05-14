@@ -1,5 +1,9 @@
 import React, { useReducer, useState } from 'react'
 import { useDialogState, Dialog, DialogDisclosure } from 'reakit/Dialog'
+
+import Input from './Input'
+import TextArea from './TextArea'
+import Button from './Button'
 /*
   ⚠️ This is an example of a contact form powered with Netlify form handling.
   Be sure to review the Netlify documentation for more information:
@@ -71,15 +75,15 @@ const ContactForm = () => {
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
-      <input type="hidden" name="form-name" value="contact-me" />
+      <Input type="hidden" name="form-name" value="contact-me" />
       <p hidden>
         <label>
           Don’t fill this out:{' '}
-          <input name="bot-field" onChange={handleInputChange} />
+          <Input name="bot-field" onChange={handleInputChange} />
         </label>
       </p>
 
-      <input
+      <Input
         name="name"
         type="text"
         placeholder="Full Name"
@@ -87,7 +91,7 @@ const ContactForm = () => {
         onChange={handleInputChange}
         required
       />
-      <input
+      <Input
         name="email"
         type="email"
         placeholder="Email"
@@ -95,7 +99,7 @@ const ContactForm = () => {
         onChange={handleInputChange}
         required
       />
-      <textarea
+      <TextArea
         name="message"
         type="text"
         placeholder="Message"
@@ -103,9 +107,9 @@ const ContactForm = () => {
         onChange={handleInputChange}
         required
       />
-      <button name="submit" type="submit">
+      <Button name="submit" type="submit">
         Send
-      </button>
+      </Button>
 
       {/* <Modal visible={this.state.showModal}>
           <p>
