@@ -111,7 +111,13 @@ const GlobalStyle = () => (
         border-top: ${rem(2)} solid ${theme.colors.muted};
       }
 
+      figure {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
       .gatsby-highlight {
+        margin-bottom: ${theme.space[4]};
         @media only screen and (min-width: ${theme.breakpoints[1]}) {
           margin-right: -${theme.space[7]};
         }
