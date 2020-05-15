@@ -1,31 +1,34 @@
 import { Box } from 'rebass'
 import styled from '@emotion/styled'
-import { rem, lighten } from 'polished'
+import { rem } from 'polished'
 
 const Input = styled(Box)`
   width: 100%;
+  margin-bottom: ${({ theme }) => theme.space[4]};
   box-shadow: rgba(0, 0, 0, 0.125) 0 0 ${rem(4)};
-
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors.card};
   color: ${({ theme }) => theme.colors.secondary};
-  border: ${rem(2)} solid ${({ theme }) =>
-  lighten(0.2, theme.colors.secondary)};
+  border: ${rem(2)} solid ${({ theme }) => theme.colors.muted};
   border-radius: ${({ theme }) => theme.space[1]};
-  cursor: pointer;
 
   &:disabled {
-    border-color: transparent;
-    background-color: ${({ theme }) => theme.colors.muted};
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 
+  &:enabled {
+    &:not([type='submit']) {
+      &:focus {
+        border-color: ${({ theme }) => theme.colors.secondary};
+      }
+    }
+  }
 
-
-
-
-  /* &[readonly] {
-    background-color: ${({ theme }) => theme.colors.base[1]};
-    border-color: ${({ theme }) => theme.colors.primaryBorder};
-  } */
+  &:readonly {
+    &:not([type='submit']) {
+      background-color: ${({ theme }) => theme.colors.muted};
+    }
+  }
 `
 
 Input.defaultProps = {
