@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react'
-import { useDialogState, Dialog, DialogDisclosure } from 'reakit/Dialog'
+import { useDialogState, Dialog } from 'reakit/Dialog'
+import { Box } from 'rebass'
 
 import Input from './Input'
 import TextArea from './TextArea'
@@ -85,39 +86,44 @@ const ContactForm = () => {
         </label>
       </p>
 
-      <Label htmlFor="contact-name">Name</Label>
-      <Input
-        name="name"
-        id="contact-name"
-        type="text"
-        placeholder="The string you usually enter into a name field"
-        value={state.name}
-        onChange={handleInputChange}
-        required
-      />
+      <Box>
+        <Label htmlFor="contact-name">Name</Label>
+        <Input
+          name="name"
+          id="contact-name"
+          type="text"
+          placeholder="The string you usually enter into a name field"
+          value={state.name}
+          onChange={handleInputChange}
+          required
+        />
+      </Box>
 
-      <Label htmlFor="contact-name">Email</Label>
-      <Input
-        name="email"
-        id="contact-email"
-        type="email"
-        placeholder="Your email address"
-        value={state.email}
-        onChange={handleInputChange}
-        required
-      />
+      <Box>
+        <Label htmlFor="contact-name">Email</Label>
+        <Input
+          name="email"
+          id="contact-email"
+          type="email"
+          placeholder="Your email address"
+          value={state.email}
+          onChange={handleInputChange}
+          required
+        />
+      </Box>
 
-      <Label htmlFor="contact-message">Message</Label>
-      <TextArea
-        name="message"
-        id="contact-message"
-        type="text"
-        placeholder="Your message"
-        value={state.message}
-        onChange={handleInputChange}
-        required
-      />
-
+      <Box>
+        <Label htmlFor="contact-message">Message</Label>
+        <TextArea
+          name="message"
+          id="contact-message"
+          type="text"
+          placeholder="Your message"
+          value={state.message}
+          onChange={handleInputChange}
+          required
+        />
+      </Box>
       <Button name="submit" type="submit">
         Send
       </Button>
