@@ -6,6 +6,7 @@ const Label = styled(Box)``
 Label.defaultProps = {
   as: 'label',
   mb: 2,
+  display: 'block',
 }
 
 export default Label
