@@ -20,6 +20,7 @@ export default function HTML(props) {
             __html: `
         (function() {
           var theme = localStorage.getItem('theme');
+          console.log(theme);
           var systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           document.documentElement.setAttribute('data-theme', theme || systemTheme);
         }());
