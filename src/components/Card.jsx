@@ -23,7 +23,7 @@ const isHoverableStyle = css`
   }
 `
 
-const Card = styled(({ isHoverable, ...props }) => <Box {...props} />)`
+const Card = styled(Box)`
   position: relative;
 
   &:after {
