@@ -6,7 +6,7 @@ import { Flex, Box, Text } from 'rebass'
 import { rem } from 'polished'
 
 import { useTheme } from '../context/theme-context'
-import { darkColors, lightColors } from '../styles/theme'
+// import { darkColors, lightColors } from '../styles/theme'
 import { bareButtonSxStyle } from '../styles/styledHelpers'
 import BareList from './BareList'
 import Button from './Button'
@@ -44,10 +44,8 @@ const ThemeToggle = styled(Flex)`
   height: ${rem(40)};
   width: ${rem(40)};
   border-radius: 50%;
-  ${({ isDefaultTheme }) =>
-    `background-color: ${
-      isDefaultTheme ? darkColors.background : lightColors.background
-    }; color: ${isDefaultTheme ? darkColors.text : lightColors.text};`}
+  background-color: ${({ theme }) => theme.colors.backgroundOpposite};
+  color: ${({ theme }) => theme.colors.textOpposite};
 
   > svg {
     fill: currentColor;
@@ -123,6 +121,7 @@ const Menu = () => {
           alignSelf="flex-start"
           isSmall
         >
+          {console.log(mode)}
           {mode === 'light' ? <Moon /> : <Sun />}
         </ThemeToggle>
       </Column>
