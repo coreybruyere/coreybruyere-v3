@@ -29,11 +29,12 @@ const Post = styled(Card)`
   } */
 
 
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  /* @media only screen and (min-width: ${({ theme }) =>
+    theme.breakpoints[1]}) {
     min-width: ${({ isExpanded, theme }) =>
       isExpanded ? theme.sizes.maxWidthCentered : `30vw`};
     /* max-width: ${rem(480)}; */
-  }
+  } */
 
   .gatsby-image-wrapper {
     border-top-right-radius: ${rem(2)};

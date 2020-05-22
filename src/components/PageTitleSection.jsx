@@ -27,9 +27,10 @@ const Text = styled(Grid)`
   @supports not (grid-template-columns: subgrid) {
     /* Display something here */
   }
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+  /* @media only screen and (min-width: ${({ theme }) =>
+    theme.breakpoints[2]}) {
     max-width: 62%;
-  }
+  } */
 `
 
 const PageTitleSection = forwardRef(

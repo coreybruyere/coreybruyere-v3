@@ -118,9 +118,9 @@ const GlobalStyle = () => (
 
       .gatsby-highlight {
         margin-bottom: ${theme.space[4]};
-        @media only screen and (min-width: ${theme.breakpoints[1]}) {
+        ${'' /* @media only screen and (min-width: ${theme.breakpoints[1]}) {
           margin-right: -${theme.space[7]};
-        }
+        } */}
       }
     `}
   />

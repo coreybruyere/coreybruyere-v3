@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { Flex, Box, Text } from 'rebass'
 import { rem } from 'polished'
 
-import { useTheme } from '../context/theme-context'
+// import { useTheme } from '../context/theme-context'
 // import { darkColors, lightColors } from '../styles/theme'
 import { bareButtonSxStyle } from '../styles/styledHelpers'
 import BareList from './BareList'
@@ -17,9 +17,10 @@ import Sun from '../../assets/sun.svg'
 import ArrowRight from '../../assets/arrowRight.svg'
 
 const Header = styled(Position)`
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+  /* @media only screen and (min-width: ${({ theme }) =>
+    theme.breakpoints[1]}) {
     height: 100vh;
-  }
+  } */
 `
 
 const Nav = styled(Box)`
@@ -44,8 +45,8 @@ const ThemeToggle = styled(Flex)`
   height: ${rem(40)};
   width: ${rem(40)};
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.backgroundOpposite};
-  color: ${({ theme }) => theme.colors.textOpposite};
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.text};
 
   > svg {
     fill: currentColor;
@@ -55,8 +56,8 @@ const ThemeToggle = styled(Flex)`
 ThemeToggle.defaultProps = { sx: bareButtonSxStyle }
 
 const Menu = () => {
-  const { theme, mode, toggleTheme } = useTheme()
-  const activeStyle = { marginLeft: rem(-20), marginRight: theme.space.xs }
+  // const { theme, mode, toggleTheme } = useTheme()
+  // const activeStyle = { marginLeft: rem(-20), marginRight: theme.space.xs }
 
   const primaryNavigation = [
     { link: '/', text: 'Home' },
@@ -111,7 +112,7 @@ const Menu = () => {
           </BareList>
         </Nav>
 
-        <ThemeToggle
+        {/* <ThemeToggle
           as={Button}
           aria-pressed={mode === 'dark'}
           isDefaultTheme={mode === 'light'}
@@ -123,7 +124,7 @@ const Menu = () => {
         >
           {console.log(mode)}
           {mode === 'light' ? <Moon /> : <Sun />}
-        </ThemeToggle>
+        </ThemeToggle> */}
       </Column>
     </Header>
   )
