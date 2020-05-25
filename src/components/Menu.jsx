@@ -111,7 +111,7 @@ const Menu = () => {
           </BareList>
         </Nav>
 
-        <ThemeToggle
+        {/* <ThemeToggle
           as={Button}
           aria-pressed={mode === 'dark'}
           isDefaultTheme={mode === 'light'}
@@ -123,7 +123,7 @@ const Menu = () => {
         >
           {console.log(mode)}
           {mode === 'light' ? <Moon /> : <Sun />}
-        </ThemeToggle>
+        </ThemeToggle> */}
       </Column>
     </Header>
   )
