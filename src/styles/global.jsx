@@ -116,10 +116,35 @@ const GlobalStyle = () => (
         margin-right: 0;
       }
 
+      blockquote {
+        position: relative;
+        font-style: italic;
+        &:before {
+          position: absolute;
+          top: -${theme.space.med};
+          left: -${theme.space.lg};
+          content: open-quote;
+          font-size: ${theme.fontSizes[7]};
+        }
+        &:after {
+          position: absolute;
+          visibility: hidden;
+          content: close-quote;
+          font-size: ${theme.fontSizes[7]};
+        }
+      }
+
       .gatsby-highlight {
         margin-bottom: ${theme.space[4]};
         @media only screen and (min-width: ${theme.breakpoints[1]}) {
           margin-right: -${theme.space[7]};
+        }
+      }
+
+      .s-page-body {
+        img {
+          max-width: 100%;
+          margin-bottom: ${theme.space.lg};
         }
       }
     `}
