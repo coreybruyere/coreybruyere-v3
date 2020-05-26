@@ -65,7 +65,7 @@ const Index = ({ data, pageContext }) => {
           WIP note: Dark mode toggle disabled until I have more time to
           implement a{' '}
           <a href="https://joshwcomeau.com/gatsby/dark-mode/">proper</a> theme
-          toggle that adhere's to user's preferences and is properly stored in
+          toggle that adheres to user's preferences and is properly stored in
           local storage.
         </Box>
       </PageTitleSection>
