@@ -4,8 +4,9 @@ import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { Flex, Box, Text } from 'rebass'
 import { rem } from 'polished'
+import { useTheme } from 'emotion-theming'
 
-import { useTheme } from '../context/theme-context'
+// import { useTheme } from '../context/theme-context'
 // import { darkColors, lightColors } from '../styles/theme'
 import { bareButtonSxStyle } from '../styles/styledHelpers'
 import BareList from './BareList'
@@ -55,7 +56,8 @@ const ThemeToggle = styled(Flex)`
 ThemeToggle.defaultProps = { sx: bareButtonSxStyle }
 
 const Menu = () => {
-  const { theme, mode, toggleTheme } = useTheme()
+  // const { theme, mode, toggleTheme } = useTheme()
+  const theme = useTheme()
   const activeStyle = { marginLeft: rem(-20), marginRight: theme.space.xs }
 
   const primaryNavigation = [
