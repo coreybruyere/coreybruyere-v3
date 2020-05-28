@@ -93,7 +93,7 @@ const ContactForm = () => {
           name="name"
           id="contact-name"
           type="text"
-          placeholder="The string you usually enter into a name field"
+          placeholder="Your name"
           value={state.name}
           onChange={handleInputChange}
           required
