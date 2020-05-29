@@ -101,7 +101,7 @@ const ContactForm = () => {
       </Box>
 
       <Box>
-        <Label htmlFor="contact-name">Email</Label>
+        <Label htmlFor="contact-email">Email</Label>
         <Input
           name="email"
           id="contact-email"
