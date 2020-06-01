@@ -42,7 +42,7 @@ export const lightColors = {
   background: '#f6fffe', // Offwhite
   backgroundOpposite: '#1f1f1f',
   card: '#ffffff', // White
-  primary: '#da7b00', // Orange
+  primary: '#ae6300', // Orange
   secondary: '#006157', // Teal
   tertiary: '#F93140', // Red
   muted: '#bcbcbc', // Light Gray
