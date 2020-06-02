@@ -1,4 +1,5 @@
-const config = require('./src/utils/siteConfig')
+const configure = require('./src/utils/siteConfig')
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -11,6 +12,9 @@ const contentfulConfig = {
 
 const { spaceId, accessToken } = contentfulConfig
 
+console.log(contentfulConfig)
+console.log(`.env.${process.env.NODE_ENV}`)
+
 if (!spaceId || !accessToken) {
   throw new Error(
     'Contentful spaceId and the access token need to be provided.'
@@ -19,22 +23,22 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    siteUrl: config.siteUrl,
+    siteUrl: configure.siteUrl,
     rssMetadata: {
-      site_url: config.siteUrl,
-      feed_url: `${config.siteUrl}/rss.xml`,
-      title: config.siteTitle,
-      description: config.siteDescription,
-      image_url: `${config.siteUrl}${config.siteLogo}`,
-      author: config.author,
-      copyright: config.copyright,
+      site_url: configure.siteUrl,
+      feed_url: `${configure.siteUrl}/rss.xml`,
+      title: configure.siteTitle,
+      description: configure.siteDescription,
+      image_url: `${configure.siteUrl}${configure.siteLogo}`,
+      author: configure.author,
+      copyright: configure.copyright,
     },
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: config.siteUrl,
+        siteUrl: configure.siteUrl,
       },
     },
     {
@@ -72,14 +76,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: config.siteTitle,
-        short_name: config.shortTitle,
-        description: config.siteDescription,
+        name: configure.siteTitle,
+        short_name: configure.shortTitle,
+        description: configure.siteDescription,
         start_url: '/',
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
+        background_color: configure.backgroundColor,
+        theme_color: configure.themeColor,
         display: 'minimal-ui',
-        icon: `static${config.siteLogo}`,
+        icon: `static${configure.siteLogo}`,
       },
     },
     'gatsby-plugin-offline',
@@ -154,7 +158,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: config.themeColor,
+        color: configure.themeColor,
       },
     },
     'gatsby-plugin-netlify',
