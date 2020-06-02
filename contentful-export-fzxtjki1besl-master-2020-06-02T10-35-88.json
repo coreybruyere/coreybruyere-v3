@@ -138,7 +138,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -148,7 +149,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -158,7 +160,8 @@
           "type": "Date",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -168,7 +171,8 @@
           "type": "Link",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
@@ -179,7 +183,8 @@
           "type": "Text",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -189,14 +194,17 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Link",
             "validations": [
               {
-                "linkContentType": ["tag"]
+                "linkContentType": [
+                  "tag"
+                ]
               }
             ],
             "linkType": "Entry"
@@ -278,7 +286,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -288,7 +297,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -298,7 +308,8 @@
           "type": "Text",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -378,7 +389,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -388,7 +400,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -398,7 +411,8 @@
           "type": "Date",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -408,7 +422,8 @@
           "type": "Link",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
@@ -419,7 +434,8 @@
           "type": "Text",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -429,14 +445,17 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": true,
           "items": {
             "type": "Link",
             "validations": [
               {
-                "linkContentType": ["tag"]
+                "linkContentType": [
+                  "tag"
+                ]
               }
             ],
             "linkType": "Entry"
@@ -518,7 +537,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -528,7 +548,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -538,7 +559,8 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -548,7 +570,8 @@
           "type": "Text",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -558,7 +581,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -568,7 +592,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -578,7 +603,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -588,7 +614,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -598,7 +625,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -608,7 +636,8 @@
           "type": "Link",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
@@ -672,7 +701,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -682,7 +712,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -692,7 +723,8 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -702,7 +734,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         },
@@ -712,7 +745,8 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false
         }
@@ -765,42 +799,50 @@
       },
       "sidebar": [
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "pvP2i15hkiCyW8eDi7SAN",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "5eEJapmsV8Wx6Q5ZrmvcJV",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "publication-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "content-preview-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "incoming-links-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "translation-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "versions-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "users-widget",
           "widgetNamespace": "sidebar-builtin"
         }
@@ -861,42 +903,50 @@
       },
       "sidebar": [
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "pvP2i15hkiCyW8eDi7SAN",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "5eEJapmsV8Wx6Q5ZrmvcJV",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "publication-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "content-preview-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "incoming-links-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "translation-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "versions-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "users-widget",
           "widgetNamespace": "sidebar-builtin"
         }
@@ -987,42 +1037,50 @@
       },
       "sidebar": [
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "pvP2i15hkiCyW8eDi7SAN",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "5eEJapmsV8Wx6Q5ZrmvcJV",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "publication-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "content-preview-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "incoming-links-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "translation-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "versions-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "users-widget",
           "widgetNamespace": "sidebar-builtin"
         }
@@ -1094,42 +1152,50 @@
       },
       "sidebar": [
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "pvP2i15hkiCyW8eDi7SAN",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "5eEJapmsV8Wx6Q5ZrmvcJV",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "publication-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "content-preview-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "incoming-links-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "translation-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "versions-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "users-widget",
           "widgetNamespace": "sidebar-builtin"
         }
@@ -1210,37 +1276,44 @@
       },
       "sidebar": [
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "pvP2i15hkiCyW8eDi7SAN",
           "widgetNamespace": "extension"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "publication-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "content-preview-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "incoming-links-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "translation-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "versions-widget",
           "widgetNamespace": "sidebar-builtin"
         },
         {
-          "settings": {},
+          "settings": {
+          },
           "widgetId": "users-widget",
           "widgetNamespace": "sidebar-builtin"
         }
@@ -6421,7 +6494,11 @@
       "name": "Netlify - Deploy a site",
       "url": "https://api.netlify.com/build_hooks/5bad9663e39e7c2f93d5979d",
       "httpBasicUsername": null,
-      "topics": ["*.publish", "*.unpublish", "*.delete"],
+      "topics": [
+        "*.publish",
+        "*.unpublish",
+        "*.delete"
+      ],
       "filters": [
         {
           "equals": [
@@ -6463,13 +6540,18 @@
         },
         "updatedAt": "2018-09-28T02:49:19Z"
       },
-      "headers": []
+      "headers": [
+      ]
     },
     {
       "name": "Gatsby Builds",
       "url": "https://webhook.gatsbyjs.com/hooks/data_source/publish/97ce4345-45f9-49b8-b59d-a28ddc79319a",
       "httpBasicUsername": null,
-      "topics": ["ContentType.publish", "Entry.publish", "Asset.publish"],
+      "topics": [
+        "ContentType.publish",
+        "Entry.publish",
+        "Asset.publish"
+      ],
       "filters": null,
       "transformation": null,
       "sys": {
@@ -6500,13 +6582,16 @@
         },
         "updatedAt": "2019-11-15T17:14:08Z"
       },
-      "headers": []
+      "headers": [
+      ]
     },
     {
       "name": "Gatsby Preview",
       "url": "https://webhook.gatsbyjs.com/hooks/data_source/97ce4345-45f9-49b8-b59d-a28ddc79319a",
       "httpBasicUsername": null,
-      "topics": ["*.*"],
+      "topics": [
+        "*.*"
+      ],
       "filters": null,
       "transformation": null,
       "sys": {
@@ -6537,7 +6622,8 @@
         },
         "updatedAt": "2019-11-22T17:48:56Z"
       },
-      "headers": []
+      "headers": [
+      ]
     }
   ],
   "roles": [
@@ -6547,7 +6633,9 @@
       "policies": [
         {
           "effect": "allow",
-          "actions": ["read"],
+          "actions": [
+            "read"
+          ],
           "constraint": {
             "and": [
               {
@@ -6563,7 +6651,9 @@
         },
         {
           "effect": "allow",
-          "actions": ["read"],
+          "actions": [
+            "read"
+          ],
           "constraint": {
             "and": [
               {
@@ -6579,11 +6669,16 @@
         }
       ],
       "permissions": {
-        "ContentModel": ["read"],
-        "Settings": [],
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
         "ContentDelivery": "all",
-        "Environments": [],
-        "EnvironmentAliases": []
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ]
       },
       "sys": {
         "type": "Role",
@@ -6652,11 +6747,17 @@
         }
       ],
       "permissions": {
-        "ContentModel": ["read"],
-        "Settings": [],
-        "ContentDelivery": [],
-        "Environments": [],
-        "EnvironmentAliases": []
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ]
       },
       "sys": {
         "type": "Role",
