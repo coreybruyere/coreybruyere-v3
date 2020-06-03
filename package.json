@@ -12,6 +12,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "chalk": "^3.0.0",
     "contentful-import": "^7.6.1",
+    "cross-env": "^7.0.2",
     "dayjs": "^1.8.19",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
@@ -61,7 +62,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "serve": "npm run build && gatsby serve",
+    "serve": "npm run build && cross-env NODE_ENV=production gatsby serve",
     "test": "npm run lint:css && npm run lint:js && npm run check-pretty",
     "setup": "node ./bin/setup.js",
     "lint:js": "eslint --ext .js,.jsx .",

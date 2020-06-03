@@ -12,9 +12,6 @@ const contentfulConfig = {
 
 const { spaceId, accessToken } = contentfulConfig
 
-console.log(contentfulConfig)
-console.log(`.env.${process.env.NODE_ENV}`)
-
 if (!spaceId || !accessToken) {
   throw new Error(
     'Contentful spaceId and the access token need to be provided.'
