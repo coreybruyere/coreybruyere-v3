@@ -6,8 +6,7 @@ import { Flex, Box, Text } from 'rebass'
 import { rem } from 'polished'
 // import { useTheme } from 'emotion-theming'
 
-import { useTheme } from '../context/theme-context'
-import { darkColors, lightColors } from '../styles/theme'
+import { useThemeMode } from '../hooks/useThemeMode'
 import { bareButtonSxStyle } from '../styles/styledHelpers'
 import BareList from './BareList'
 import Button from './Button'
@@ -56,8 +55,7 @@ const ThemeToggle = styled(Flex)`
 ThemeToggle.defaultProps = { sx: bareButtonSxStyle }
 
 const Menu = () => {
-  const { theme, mode, toggleTheme } = useTheme()
-  // const theme = useTheme()
+  const { theme, darkMode } = useThemeMode()
   const activeStyle = { marginLeft: rem(-20), marginRight: theme.space.xs }
 
   const primaryNavigation = [
@@ -115,16 +113,14 @@ const Menu = () => {
 
         <ThemeToggle
           as={Button}
-          aria-pressed={mode === 'dark'}
-          isDefaultTheme={mode === 'light'}
-          onClick={toggleTheme}
+          aria-pressed={darkMode.value}
+          onClick={darkMode.toggle}
           justifyContent="center"
           alignItems="center"
           alignSelf="flex-start"
           isSmall
         >
-          {console.log(mode)}
-          {mode === 'light' ? <Moon /> : <Sun />}
+          {darkMode.value ? <Sun /> : <Moon />}
         </ThemeToggle>
       </Column>
     </Header>

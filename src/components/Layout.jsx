@@ -2,11 +2,13 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { rem } from 'polished'
 import styled from '@emotion/styled'
+import { ThemeProvider } from 'emotion-theming'
 
 import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'
-import { ThemeProvider } from '../context/theme-context'
 import config from '../utils/siteConfig'
+import { useIsClient } from '../hooks/useIsClient'
+import { useThemeMode } from '../hooks/useThemeMode'
 
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
@@ -18,6 +20,9 @@ const Document = styled(Grid)`
 `
 
 const Template = ({ children }) => {
+  const { key } = useIsClient()
+  const { theme } = useThemeMode()
+
   return (
     <>
       <Helmet>
@@ -51,7 +56,7 @@ const Template = ({ children }) => {
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
 
-      <ThemeProvider>
+      <ThemeProvider theme={theme} key={key}>
         <>
           <Document
             display={['block', 'block', 'grid']}
