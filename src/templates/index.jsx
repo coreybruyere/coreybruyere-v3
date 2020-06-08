@@ -1,13 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import { Flex, Box } from 'rebass'
 import { rem } from 'polished'
-// import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
 import CardList from '../components/CardList'
-// import Card from '../components/Card'
-// import WorkList from '../components/CardList'
 import PostCard from '../components/PostCard'
 import WorkCard from '../components/WorkCard'
 import WorkCardList from '../components/WorkCardList'
@@ -21,9 +18,6 @@ import SEO from '../components/SEO'
 
 import ChevronDown from '../../assets/chevronDown.svg'
 
-// import Pagination from '../components/Pagination'
-// import config from '../utils/siteConfig'
-
 const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
   const works = data.allContentfulWork.edges
@@ -34,10 +28,6 @@ const Index = ({ data, pageContext }) => {
     workSectionCtaText,
     aboutBody,
   } = data.contentfulHomePage
-
-  // const featuredPost = posts[0].node
-  // const { currentPage } = pageContext
-  // const isFirstPage = currentPage === 1
 
   return (
     <Layout>
