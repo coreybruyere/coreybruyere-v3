@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import { Flex, Box } from 'rebass'
 import { rem } from 'polished'
