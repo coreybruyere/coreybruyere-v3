@@ -43,6 +43,7 @@ const Column = styled(Flex)`
 const ThemeToggle = styled(Flex)`
   height: ${rem(40)};
   width: ${rem(40)};
+  min-width: ${rem(40)};
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.backgroundOpposite};
   color: ${({ theme }) => theme.colors.textOpposite};
@@ -99,7 +100,12 @@ const Menu = () => {
         py={3}
         px={[4, 4, 3]}
       >
-        <Nav as="nav" py={[0, 0, 5]} width={1} role="navigation">
+        <Nav
+          as="nav"
+          py={[0, 0, 5]}
+          width={['auto', 'auto', 1]}
+          role="navigation"
+        >
           <BareList>
             {primaryNavigation.map(({ link, text }) => {
               return (
