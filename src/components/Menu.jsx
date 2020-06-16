@@ -55,6 +55,15 @@ const ThemeToggle = styled(Flex)`
 
 ThemeToggle.defaultProps = { sx: bareButtonSxStyle }
 
+const VisuallyHidden = styled(Box)`
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+`
+
 const Menu = () => {
   const { theme, darkMode } = useThemeMode()
   const activeStyle = { marginLeft: rem(-20), marginRight: theme.space.xs }
@@ -126,6 +135,9 @@ const Menu = () => {
           alignSelf="flex-start"
           isSmall
         >
+          <VisuallyHidden>
+            {darkMode.value ? 'switch to light mode' : 'switch to dark mode'}
+          </VisuallyHidden>
           {darkMode.value ? <Sun /> : <Moon />}
         </ThemeToggle>
       </Column>
