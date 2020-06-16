@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"><!-- Better to specify this within HTTP headers -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Corey Bruyere - Resume</title>
+
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <style>
+  .💻 {
+    hire: me;
+  }
+
+  html {
+    /* height: 100%; */
+  }
+
+  body {
+    /* height: 100%;
+    min-height: 100%; */
+    height: auto;
+    font-size: 80%;
+    background-image: linear-gradient(rgba(0, 150, 136, 1), #cfd2d2);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  @media screen and (min-width: 965px) {
+    body {
+      background-image: linear-gradient(rgba(0, 150, 136, .65), #cfd2d2);
+      
+    }
+  }
+  
+  dt, dd {
+    margin: 0 0 .75rem 0;
+  }
+
+  dl {
+    margin-bottom: 1.5rem;
+  }
+
+  strong {
+    text-decoration: none;
+  }
+
+  .l-container {
+    width: 100%;
+  }
+
+  .l-stack-justify {
+    display: block;
+  }
+
+  @media screen and (min-width: 550px) {
+    .l-stack-justify {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+    }
+  }
+
+  .l-stack-justify__item {
+    flex: 1;
+  }
+
+  .l-container--wide .l-container {
+    padding: 0 1rem;
+  }
+
+  .cv {
+    padding-bottom: 5rem;
+  }
+
+  .cv__card {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1rem 1rem;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+  }
+
+  .cv__header {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: .75rem 0 0 0;
+    color: #fff;
+  }
+
+  .cv__brand-title {
+    line-height: 1;
+    color: #fff;
+  }
+
+  .cv__tabs {
+    background-color: #fff;
+  }
+
+  .cv__tabs li {
+    display: block;
+    width: 100%;
+  }
+
+  .cv__nav {
+    border-top: 1px solid #cfd2d2;
+    border-bottom: 1px solid #cfd2d2;
+  }
+
+  .cv__nav a {
+    display: block;
+    padding: .5rem 0;
+  }
+
+  .cv__button-grid {
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: repeat(auto-fill, minmax(24em, 1fr));
+  }
+
+  @media screen and (min-width: 965px) {
+    .cv__button-grid {
+      grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    }
+  }
+
+  .cv__button-grid .btn:hover,
+  .cv__button-grid .btn:active {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .cv__heading {
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid #cfd2d2;
+  }
+
+  .cv__heading--sub {
+    color: #777777;
+  }
+
+  .cv__deflist {
+    list-style-type: none;
+  }
+
+  .cv__leadin {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .u-mast-bg {
+    display: none;
+    height: 60vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    fill: #009688;
+  }
+
+  @media screen and (min-width: 960px) {
+    .u-mast-bg {
+      display: block;
+    }
+  }
+
+  .u-mast-bg--secondary {
+    height: 70vh;
+    z-index: -2;
+    fill: rgba(0, 150, 136, 0.65);
+  }
+
+  .u-mast-bg--tertiary {
+    right: 0;
+    height: 80vh;
+    z-index: -3;
+    fill: rgba(0, 150, 136, 0.55);
+  }
+
+  .u-mast-bg--quaternary {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    height: 70vh;
+    fill: rgba(0, 150, 136, 0.45);
+  }
+
+
+  @media screen and (min-width: 1024px) {
+    .u-hide\>lg {
+      display: none;
+    }
+  }
+
+  .u-color-primary {
+    color: #009688;
+  }
+
+  .u-color-primary-light {
+    color: #84cbc5;
+  }
+  </style>
+
+  <script>
+    console.assert('Feel free to contact me through any of these links:');
+    console.assert('mailto:hello@coreybruyere.com');
+    console.assert('https://www.linkedin.com/in/corey-bruyere-b2650044');
+    console.assert('https://twitter.com/coreybruyere');
+  </script>
+</head>
+  <!--
+ ____  ____  ____  ____  _________  ____  ____  ____ 
+||H ||||I ||||R ||||E ||||       ||||M ||||E ||||! ||
+||__||||__||||__||||__||||_______||||__||||__||||__||
+|/__\||/__\||/__\||/__\||/_______\||/__\||/__\||/__\|
+  -->
+<body class="💻 👍">
+<div id="svg" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="icon-codepen" viewBox="0 0 32 32"><path d="M29.555 11.5l-14-9.332c-.336-.224-.774-.224-1.11 0l-14 9.333c-.277.186-.444.5-.444.833v9.333c0 .334.168.647.446.832l14 9.333c.168.113.36.17.555.17s.388-.057.556-.17l14-9.332c.278-.185.445-.498.445-.832v-9.333c0-.334-.166-.647-.444-.832zM15 20.466L9.803 17 15 13.535 20.197 17 15 20.465zm1-8.667v-6.93l11.197 7.465L22 15.798l-6-4zm-2 0l-6 4-5.197-3.465L14 4.868v6.93zM6.197 17L2 19.798v-5.596L6.197 17zM8 18.202l6 4v6.93L2.803 21.667 8 18.202zm8 4l6-4 5.197 3.465L16 29.132v-6.93zM23.803 17L28 14.202v5.596L23.803 17z"></path></symbol><symbol id="icon-display" viewBox="0 0 32 32"><path d="M0 2v20h32V2H0zm30 18H2V4h28v16zm-9 4H11l-1 4-2 2h16l-2-2z"></path></symbol><symbol id="icon-envelope" viewBox="0 0 14 14"><path d="M14 5.547v6.203q0 .516-.367.883T12.75 13H1.25q-.516 0-.883-.367T0 11.75V5.547q.344.383.79.68Q3.616 8.15 4.67 8.922q.445.328.723.512t.738.375.86.19h.015q.398 0 .86-.19t.737-.376.723-.512q1.328-.96 3.89-2.695.446-.305.782-.68zm0-2.297q0 .617-.383 1.18t-.953.96L9.008 7.93q-.078.055-.332.238t-.422.297-.406.254-.45.21-.39.07h-.016q-.18 0-.39-.07t-.45-.21-.406-.255-.422-.297-.332-.238q-.71-.5-2.047-1.426T1.343 5.39Q.86 5.064.43 4.49T0 3.422q0-.61.323-1.016T1.25 2h11.5q.507 0 .878.368t.37.883z"></path></symbol><symbol id="icon-github" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm9.502 25.502c-1.235 1.235-2.672 2.204-4.272 2.88-.406.173-.82.324-1.238.454v-2.398c0-1.26-.432-2.188-1.297-2.78.542-.053 1.04-.126 1.492-.22s.932-.23 1.438-.406.958-.388 1.36-.633.785-.564 1.155-.954.68-.833.93-1.328.448-1.09.594-1.78.22-1.457.22-2.29c0-1.615-.527-2.99-1.58-4.125.48-1.25.428-2.61-.155-4.078l-.392-.047c-.27-.03-.758.083-1.46.344s-1.493.688-2.368 1.28c-1.24-.343-2.526-.515-3.86-.515-1.343 0-2.624.172-3.843.516-.552-.375-1.075-.685-1.57-.93s-.89-.41-1.188-.5-.574-.143-.83-.164-.418-.027-.49-.017-.126.02-.157.03c-.583 1.48-.635 2.84-.156 4.08-1.052 1.134-1.578 2.51-1.578 4.124 0 .833.072 1.596.218 2.29s.344 1.285.594 1.78.56.938.93 1.328.755.708 1.156.953.854.456 1.36.633.983.314 1.437.407.95.167 1.492.22c-.854.582-1.28 1.51-1.28 2.78v2.445c-.473-.14-.938-.306-1.395-.5-1.6-.677-3.037-1.646-4.272-2.88s-2.204-2.673-2.88-4.273c-.7-1.656-1.056-3.415-1.056-5.23s.355-3.576 1.055-5.23c.676-1.6 1.645-3.038 2.88-4.273s2.672-2.204 4.272-2.88c1.655-.7 3.415-1.056 5.23-1.056s3.575.356 5.23 1.056c1.6.677 3.037 1.646 4.272 2.88s2.204 2.673 2.88 4.273c.7 1.654 1.056 3.414 1.056 5.23s-.355 3.574-1.055 5.23c-.677 1.6-1.646 3.036-2.88 4.27z"></path></symbol><symbol id="icon-instagram" viewBox="0 0 32 32"><path d="M26.688 0H5.313C2.39 0 0 2.39 0 5.313v21.375C0 29.61 2.39 32 5.313 32h21.375C29.61 32 32 29.61 32 26.69V5.313C32 2.39 29.61 0 26.69 0zM10.244 14h11.513c.218.627.337 1.3.337 2 0 3.36-2.734 6.094-6.094 6.094S9.906 19.36 9.906 16c0-.7.12-1.373.338-2zM28 14.002V26c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V14h3.128c-.145.644-.222 1.313-.222 2 0 5.014 4.08 9.094 9.094 9.094s9.094-4.08 9.094-9.094c0-.687-.077-1.356-.222-2l3.128.002zM28 7c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h2c.55 0 1 .45 1 1v2z"></path></symbol><symbol id="icon-link" viewBox="0 0 32 32"><path d="M13.757 19.868c-.416 0-.832-.16-1.15-.476-2.972-2.973-2.972-7.81 0-10.783l6-6C20.048 1.17 21.964.375 24 .375s3.95.793 5.392 2.233c2.973 2.972 2.973 7.81 0 10.782l-2.743 2.743c-.636.635-1.664.635-2.3 0s-.634-1.663 0-2.298l2.744-2.743c1.706-1.706 1.706-4.48 0-6.187-.826-.826-1.925-1.28-3.094-1.28s-2.267.454-3.094 1.28l-6 6c-1.706 1.706-1.706 4.48 0 6.187.635.635.635 1.663 0 2.298-.317.317-.733.476-1.15.476z"></path><path d="M8 31.625c-2.037 0-3.952-.793-5.392-2.233-2.973-2.973-2.973-7.81 0-10.783l2.743-2.744c.636-.635 1.665-.635 2.3 0s.634 1.663 0 2.298l-2.744 2.743c-1.706 1.706-1.706 4.48 0 6.187.826.826 1.925 1.28 3.094 1.28s2.267-.454 3.094-1.28l6-6c1.706-1.706 1.706-4.48 0-6.187-.635-.635-.635-1.663 0-2.298s1.663-.636 2.298 0c2.973 2.972 2.973 7.81 0 10.782l-6 6c-1.44 1.44-3.355 2.233-5.392 2.233z"></path></symbol><symbol id="icon-linkedin" viewBox="0 0 32 32"><path d="M26.625 0H5.375C2.42 0 0 2.42 0 5.375v21.25C0 29.58 2.42 32 5.375 32h21.25C29.58 32 32 29.58 32 26.625V5.375C32 2.42 29.58 0 26.625 0zM12 26H8V12h4v14zm-2-16c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm16 16h-4v-8c0-1.105-.895-2-2-2s-2 .895-2 2v8h-4V12h4v2.483C18.825 13.35 20.086 12 21.5 12c2.485 0 4.5 2.24 4.5 5v9z"></path></symbol><symbol id="icon-logo-small" viewBox="0 0 25 25"><path d="M22.624 0H2.377C1.047 0 0 1.046 0 2.376v20.152c0 1.33 1.047 2.376 2.377 2.376H22.53c1.33 0 2.375-1.046 2.375-2.376V2.376C25 1.046 23.86 0 22.625 0zM2.186 13.498v-1.616l9.886-4.278-.665 2.376-6.37 2.662 5.134 1.9-.474 1.807-7.51-2.853zm20.628.76l-10.836 4.754H9.792L13.31 5.894h2.185l-2.852 10.74 7.224-3.04-5.133-1.902.475-1.806 7.508 2.947v1.426z"></path></symbol><symbol id="icon-logo" viewBox="0 0 11.6 7.8"><path d="M4.4 6.2L0 4.4v-.9L5.8 1l-.3 1.4-3.8 1.5 3 1.2-.3 1.1z"></path><path d="M4.4 6.2L0 4.4v-.9l1.7.5 3 1.2-.3 1z"></path><path d="M7.2 2.5l4.4 1.8v.9L5.5 7.7l.4-1.4 4-1.6-3-1.2.3-1z"></path><path d="M7.7 0L5.5 7.7H4.1L6.3 0h1.4z"></path><path d="M7.2 2.5l4.4 1.8v.9l-1.7-.5-3-1.2.3-1z"></path><path d="M9.9 4.7l-.2.1 1.9.3M1.7 3.9h.1L0 3.5M6 6.3h-.1l-.4 1.4"></path></symbol><symbol id="icon-map-marker" viewBox="0 0 8 14"><path d="M6 5q0-.828-.586-1.414T4 3t-1.414.586T2 5t.586 1.414T4 7t1.414-.586T6 5zm2 0q0 .852-.258 1.398l-2.844 6.047q-.125.258-.37.406T4 13t-.527-.15-.363-.405L.258 6.398Q0 5.85 0 5q0-1.656 1.172-2.828T4 1t2.828 1.172T8 5z"></path></symbol><symbol id="icon-mobile" viewBox="0 0 32 32"><path d="M23 0H9C7.35 0 6 1.35 6 3v26c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM12 1.5h8v1h-8v-1zM16 30c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm8-6H8V4h16v20z"></path></symbol><symbol id="icon-mobile2" viewBox="0 0 32 32"><path d="M24 0H6C4.9 0 4 .9 4 2v28c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm-9 30.556c-.86 0-1.556-.697-1.556-1.556s.697-1.556 1.556-1.556 1.556.697 1.556 1.556-.697 1.556-1.556 1.556zM24 26H6V4h18v22z"></path></symbol><symbol id="icon-notification" viewBox="0 0 32 32"><path d="M16 3c-3.472 0-6.737 1.352-9.192 3.808S3 12.528 3 16c0 3.472 1.352 6.737 3.808 9.192S12.528 29 16 29c3.472 0 6.737-1.352 9.192-3.808S29 19.472 29 16c0-3.472-1.352-6.737-3.808-9.192S19.472 3 16 3zm0-3c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm-2 22h4v4h-4zm0-16h4v12h-4z"></path></symbol><symbol id="icon-pencil" viewBox="0 0 32 32"><path d="M27 0c2.76 0 5 2.24 5 5 0 1.126-.372 2.164-1 3l-2 2-7-7 2-2c.836-.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7L2 23zm20.362-11.638l-14 14-1.724-1.724 14-14 1.724 1.724z"></path></symbol><symbol id="icon-price-tags" viewBox="0 0 40 32"><path d="M38.5 0h-12c-.825 0-1.977.477-2.56 1.06L9.06 15.94c-.583.583-.583 1.538 0 2.12l12.88 12.88c.582.583 1.537.583 2.12 0l14.88-14.88C39.52 15.48 40 14.326 40 13.5v-12c0-.825-.675-1.5-1.5-1.5zM31 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path><path d="M4 17L21 0h-2.5c-.825 0-1.977.477-2.56 1.06L1.06 15.94c-.583.583-.583 1.538 0 2.12l12.88 12.88c.582.583 1.537.583 2.12 0L17 30 4 17z"></path></symbol><symbol id="icon-stackoverflow" viewBox="0 0 32 32"><path d="M32 20v12H0V20h4v8h24v-8zM6 22h20v4H6zm.473-4.33l.866-3.904 19.525 4.328L26 22zM8.74 9.643l1.69-3.625 18.125 8.452-1.69 3.624zm22.25 1.654l-2.434 3.173L12.69 2.293 14.45 0h1.82z"></path></symbol><symbol id="icon-svg" viewBox="0 0 32 32"><path d="M29 13c-.888 0-1.686.386-2.236 1h-5.936l4.197-4.197c.822.046 1.66-.245 2.288-.874 1.172-1.173 1.172-3.072 0-4.244s-3.07-1.172-4.243 0c-.628.628-.92 1.466-.874 2.288L18 11.17V5.236c.613-.55 1-1.347 1-2.236 0-1.658-1.344-3-3-3s-3 1.342-3 3c0 .887.385 1.685 1 2.235v5.936L9.8 6.975c.045-.822-.245-1.66-.874-2.288-1.172-1.172-3.07-1.172-4.243 0s-1.172 3.07 0 4.243c.628.627 1.466.918 2.288.873L11.17 14H5.234c-.55-.614-1.347-1-2.236-1-1.657 0-3 1.343-3 3s1.343 3 3 3c.888 0 1.686-.386 2.236-1h5.936l-4.197 4.197c-.822-.046-1.66.245-2.288.874-1.172 1.173-1.172 3.072 0 4.244s3.07 1.172 4.243 0c.628-.628.92-1.466.874-2.288L14 20.83v5.935c-.615.55-1 1.347-1 2.235 0 1.657 1.342 3 3 3s3-1.343 3-3c0-.888-.387-1.686-1-2.236v-5.936l4.196 4.197c-.046.822.245 1.66.874 2.288 1.172 1.172 3.07 1.172 4.243 0s1.172-3.07 0-4.243c-.628-.628-1.466-.92-2.288-.874L20.828 18h5.936c.55.613 1.347 1 2.235 1 1.656 0 3-1.344 3-3s-1.344-3-3-3z"></path></symbol><symbol id="icon-terminal" viewBox="0 0 32 32"><path d="M0 2v28h32V2H0zm30 26H2V4h28v24zM28 6H4v20h24V6zM14 16h-2v2h-2v2H8v-2h2v-2h2v-2h-2v-2H8v-2h2v2h2v2h2v2zm8 4h-6v-2h6v2z"></path></symbol><symbol id="icon-twitter" viewBox="0 0 32 32"><path d="M32 6.076c-1.177.522-2.443.875-3.77 1.034 1.354-.813 2.395-2.1 2.886-3.632-1.27.752-2.674 1.3-4.17 1.593C25.75 3.796 24.044 3 22.157 3c-3.627 0-6.566 2.94-6.566 6.565 0 .515.058 1.016.17 1.496-5.456-.275-10.294-2.89-13.532-6.86-.565.97-.89 2.096-.89 3.3 0 2.278 1.16 4.287 2.922 5.465-1.076-.034-2.088-.33-2.974-.82v.082c0 3.18 2.262 5.834 5.265 6.437-.55.15-1.13.23-1.73.23-.422 0-.833-.04-1.234-.118.835 2.608 3.26 4.506 6.133 4.56-2.248 1.76-5.08 2.81-8.155 2.81-.53 0-1.052-.032-1.566-.093 2.904 1.863 6.355 2.95 10.063 2.95 12.076 0 18.68-10.004 18.68-18.68 0-.285-.007-.568-.02-.85C30.006 8.55 31.12 7.394 32 6.077z"></path></symbol></svg>    
+</div>
+
+<svg class="u-mast-bg" viewBox="0 0 100 100">
+  <polygon id="e1_polygon" points="0 0, 0 100, 100 0"/>
+</svg>
+
+<svg class="u-mast-bg u-mast-bg--secondary" viewBox="0 0 100 100">
+  <polygon id="e2_polygon" points="0 0, 0 100, 100 0"/>
+</svg>
+
+<svg class="u-mast-bg u-mast-bg--tertiary" viewBox="0 0 100 100">
+  <polygon id="e3_polygon" points="0 0, 100 100, 100 0"/>
+</svg>
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<div class="cv" id="top-page">
+  <nav class="l-container l-container--wide u-shim-t-lg u-shim-b-lg">
+    <ul class="cv__button-grid l-blank-list">
+      <li class="l-stack-justify__item">
+        <a class="btn btn--ghost btn--block" href="https://en.wikipedia.org/wiki/Southern_California#/media/File:Southern_California_counties_in_red.png">
+          <svg class="icon icon--md u-margin-r-sm" role="img" aria-labelledby="map-marker-icon">
+            <title id="map-marker-icon">Map Icon</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-map-marker"></use>
+          </svg>
+          Southern California
+        </a>
+      </li>
+      <li class="l-stack-justify__item">
+        <a class="btn btn--ghost btn--block"  href="mailto:hello@coreybruyere.com">
+          <svg class="icon icon--md u-margin-r-sm" role="img" aria-labelledby="mail-icon">
+            <title id="mail-icon">Mail Icon</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-envelope"></use>
+          </svg>
+          hello@coreybruyere.com
+        </a>
+      </li>
+      <li class="l-stack-justify__item">
+        <a class="btn btn--ghost btn--block" href="tel://1-562-922-5145">
+          <svg class="icon icon--md u-margin-r-sm" role="img" aria-labelledby="phone-icon">
+            <title id="phone-icon">Phone Icon</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-mobile"></use>
+          </svg>
+          +1 (562) 922-5145
+        </a>
+      </li>
+      <li class="l-stack-justify__item">
+        <a class="btn btn--ghost btn--block" href="http://coreybruyere.com">
+          <svg class="icon icon--md u-margin-r-sm" role="img" aria-labelledby="website-icon">
+            <title id="website-icon">Website Icon</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-display"></use>
+          </svg>
+          coreybruyere.com
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <header class="site-header cv__header" role="banner">
+    <div class="l-container l-container--wide">
+      <div class="l-flag">
+        <div class="l-flag__img">
+          <a class="branding" href="http://coreybruyere.com/">
+            <svg class="branding__logo icon" role="img" aria-labelledby="branding">
+              <title id="branding">Corey Bruyere Logo</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo-small"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="l-flag__body">
+          <div class="l-stack-justify">
+            <div>
+              <h1 class="cv__brand-title u-margin-b-none">Corey Bruyere</h1>
+              <div class="u-h4 u-margin-b-none u-color-primary-light">Front End Web Developer</div>
+            </div>
+            <nav class="u-shim-t-sm">
+              <ul class="l-inline-list l-blank-list">
+                <li class="u-shim-l-lg">
+                  <a class="alt-link" href="https://www.linkedin.com/in/corey-bruyere-b2650044">
+                    <svg class="icon icon--md" role="img" aria-labelledby="github-icon">
+                      <title id="github-icon">Linkedin Icon</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="u-shim-l-lg">
+                  <a class="alt-link" href="http://github.com/coreybruyere">
+                    <svg class="icon icon--md" role="img" aria-labelledby="github-icon">
+                      <title id="github-icon">Github Icon</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="u-shim-l-lg">
+                  <a class="alt-link" href="http://stackoverflow.com/users/2794048/corey-bruyere">
+                    <svg class="icon icon--md" role="img" aria-labelledby="stackoverflow-icon">
+                      <title id="stackoverflow-icon">StackOverflow Icon</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-stackoverflow"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="u-shim-l-lg">
+                  <a class="alt-link" href="https://twitter.com/coreybruyere">
+                    <svg class="icon icon--md" role="img" aria-labelledby="twitter-icon">
+                      <title id="twitter-icon">Twitter Icon</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="u-shim-l-lg">
+                  <a class="alt-link" href="http://codepen.io/coreybruyere/">
+                    <svg class="icon icon--md" role="img" aria-labelledby="codepen-icon">
+                      <title id="codepen-icon">Codepen Icon</title>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-codepen"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="l-container l-container--wide" role="main" id="main">
+    <section class="cv__card" id="about">
+      <div class="l-container">
+        <h2 class="cv__heading">About</h2>
+        <p class="cv__leadin">I am a Front-End Developer with over 7 years of varied technical experience. I enjoy nerding out on design systems, front-end architecture, performance, accessibility, maintainability, and user experience. My specialty lies in building user-friendly front-end experiences for mid- to large-scale websites and web apps using modern web standard technologies. </p>
+      </div>
+    </section>
+    <section class="cv__card" id="expertise">
+      <div class="l-container">
+        <h2 class="cv__heading">Expertise</h2>
+        <div class="l-grid l-two-up@md">
+          <div class="l-grid__item">
+            <h3 class="cv__heading cv__heading--sub">Professional Capabilities</h3>
+            <ul>
+              <li>Responsive Front-end Development</li>
+              <li>Design Systems</li>
+              <li>Maintainable CSS</li>
+              <li>Front-end Architecture</li>
+              <li>Front-end Performance</li>
+              <li>Accessibility</li>
+              <li>User Experience</li>
+              <li>Project Leadership</li>
+              <li>Agile</li>
+              <li>Code Reviews</li>
+              <li>Workflows/Tooling</li>
+              <li>Testing</li>
+              <li>Prototyping</li>
+              <li>SEO</li>
+            </ul>
+          </div>
+          <div class="l-grid__item">
+            <h3 class="cv__heading cv__heading--sub">Technical Skills</h3>
+            <ul>
+              <li>HTML5</li>
+              <li>CSS (SASS, PostCSS)</li>
+              <li>JavaScript (ECMAScript 2019)</li>
+              <li>React</li>
+              <li>CSS-in-JS (Emotion, styled-components)</li>
+              <li>SVG</li>
+              <li>Jamstack</li>
+              <li>Gatsby / Next</li>
+              <li>WAI-ARIA</li>
+              <li>Git</li>
+              <li>jQuery</li>
+              <li>OOCSS/BEM/ITCSS</li>
+              <li>PHP</li>
+              <li>Ruby on Rails</li>
+              <li>Wordpress</li>
+              <li>Shopify</li>
+              <li>Woocommerce</li>
+              <!--<li>Other tools/libraries/APIs I’ve used on projects: Google Maps API, Twitter API, Facebook API, Instagram API, Foundation, Compass, Bootstrap, Handlebars, JSX, PhantomCSS, Gulp, Grunt, npm, yarn, Bower, Ansible, SemaphoreCI, Fractal, + More</li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cv__card" id="experience">
+      <div class="l-container">
+        <h2 class="cv__heading">Experience</h2>
+        <h3 class="cv__heading cv__heading--sub">Hart</h3>
+        <ul>
+          <li class="cv__deflist">
+            <dl>
+              <dt>
+                <span class="u-h4">Front-End Developer</span> <em> / May 2018 - Present</em>
+              </dt>
+              <dd>
+                <ul>
+                  <li>Developed front-end of marketing site using React and Gatsby with other engineers by making queries to the Prismic CMS API.</li>
+                  <li>Contributed to an existing React component library in the form of documentation, bug fixes, and new components.</li>
+                  <li>Helped to migrate to Typescript inside of component library.</li>
+                  <li>Led initiative to move component library to monorepo using Lerna for easier dependency management.</li>
+                  <li>Converted CSS styles inside of component library to styled-components to handle theming in an easier fashion.</li>
+                  <li>Converted component library to functional React components to simplify state via hooks.</li>
+                  <li>Built UI for historical data viewer utilizing component library along with app specific components (combobox, autocomplete, date picker, draggable panes)</li>
+                  <li>Built UI for user management dashboard utilizing component library along with app specific components (file uploader, dropdowns, JSON viewer)</li>
+                  <li>Worked with other engineers and designers to ensure we were adhering to <abbr title="accessibility">a11y</abbr> best practices.</li>
+                  <li>Debugged broken features and code on soon-to-be deprecated products.</li>
+                  <li>Contributed features to an internal admin tool for scooping data.</li>
+                  <li>Performed code reviews.</li>
+                  <li>Cross-browser tested front-end across target browsers.</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <h3 class="cv__heading cv__heading--sub">Love With Food / EdgiLife Insights</h3>
+        <ul>
+          <li class="cv__deflist">
+            <dl>
+              <dt>
+                <span class="u-h4">Front-End Developer</span> <em> / September 2016 - May 2018</em>
+              </dt>
+              <dd>
+                <ul>
+                  <li>Designed and developed the front-end of an insights dashboard for brand managers to gather analytical results from products recently tested and reviewed from target consumers.</li>
+                  <li>Created a new internal styleguide to document insights dashboard code, site colors, and typography.</li>
+                  <li>Implemented stricter CSS coding conventions through linting, organizing file structure, and documenting guidelines and best practices.</li>
+                  <li>Contributed to existing styleguide that is consumed directly through a Rails application.</li>
+                  <li>Monitored website performance.</li>
+                  <li>Performed code reviews.</li>
+                  <li>Prototyped new features before moving into code.</li>
+                  <li>Participated in team learning in the form of book and video tutorial discussions.</li>
+                  <li>Cross-browser tested front-end across target browsers.</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <h3 class="cv__heading cv__heading--sub">Freelance</h3>
+        <ul>
+          <li class="cv__deflist">
+            <dl>
+              <dt>
+                <span class="u-h4">Web Developer</span> <em> / March 2014 – Present</em>
+              </dt>
+              <dd>
+                <ul>
+                  <li>Developed, tested, and deployed small Wordpress sites.</li>
+                  <li>Collaborated closely with designer to ensure design requirements were met during development.</li>
+                  <li>Debugged broken features and code on existing client sites.</li>
+                  <li>Designed, developed, tested, and deployed small Woocommerce and Shopify ecommerce stores.</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <h3 class="cv__heading cv__heading--sub">Revolve Clothing</h3>
+        <ul>
+          <li class="cv__deflist">
+            <dl>
+              <dt>
+                <span class="u-h4">Front-End Developer</span> <em> / March 2015 – September 2016</em>
+              </dt>
+              <dd>
+                <ul>
+                  <li>Directed the planning and execution of an internal style guide that held and documented all website components and design properties.</li>
+                  <li>Coordinated with designers, developers, and stakeholders during beginning phases of styleguide planning.</li>
+                  <li>Implemented stricter CSS coding conventions and guidelines.</li>
+                  <li>Collaborated with designers to ensure the technical feasibility of UI/UX designs.</li>
+                  <li>Helped open up communication between developers and designers.</li>
+                  <li>Implemented front-end tooling to ensure quicker workflow and minification of assets and code.</li>
+                  <li>Oversaw performance monitoring for new features.</li>
+                  <li>Led workshops introducing and discussing front-end best practices.</li>
+                  <li>Compiled a list of existing accessibility warnings and errors that needed to be addressed.</li>
+                  <li>Worked with stakeholders and developers on ensuring that old and new code conforms with the WCAG 2.0 guidelines at Level AA.</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <h3 class="cv__heading cv__heading--sub">530medialab</h3>
+        <ul>
+          <li class="cv__deflist">
+            <dl>
+              <dt>
+                <span class="u-h4">Front-End Developer</span> <em> / October 2012 – March 2015</em>
+              </dt>
+              <dd>
+                <ul>
+                  <li>Created a responsive front-end pattern library of common UI used throughout client sites.</li>
+                  <li>Implemented front-end pattern library into a Wordpress theme that went on to be the team’s boilerplate for any new project.</li>
+                  <li>Built and tested responsive front-end code for high traffic ecommerce websites.</li>
+                  <li>Maintained codebases of existing sites while looking for opportunities to refactor whenever possible.</li>
+                  <li>Worked collaboratively in a cross-functional team to meet client needs.</li>
+                </ul>
+              </dd>
+              <dt>
+                <span class="u-h4">Jr. Front-End Developer</span> <em> / May 2011 – October 2012</em>
+              </dt>
+              <dd>
+                <ul>
+                  <li>Developed multilingual HTML emails.</li>
+                  <li>Worked with QA and developers through completion of client projects.</li>
+                  <li>Developed front-end of smaller client projects under supervision of senior developers and designers.</li>
+                  <li>Cross-browser tested sites during development.</li>
+                  <li>Set up the first collaborative, office-friendly music playlist through Spotify.</li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="cv__card" id="work">
+      <div class="l-container">
+        <h2 class="cv__heading">Work</h2>
+        <ul>
+          <li>Historical health data viewer</li>
+          <li>User management dashboard</li>
+          <li>Hart component library</li>
+          <li>Hart marketing site</li>
+          <li><a href="http://www.coreybruyere.com/">coreybruyere.com V3</a></li>
+          <li><a href="http://www.lovewithfood.com/">Love With Food</a></li>
+          <li>Love With Food style guide</li>
+          <li><a href="https://insights.edgilife.com/">EdgiLife Insights</a></li>
+          <li>Revolve Clothing style guide</li>
+          <li><a href="http://www.revolveclothing.com/">Revolve Clothing</a></li>
+          <li><a href="https://shaydesigns.com/">Shay Designs V3</a></li>
+          <li><a href="http://www.cobbtuning.com/">Cobb Tuning</a></li>
+          <li><a href="http://halloffameltd.com">Hall of Fame</a></li>
+          <li><a href="http://edgeproducts.com">Edge Products</a></li>
+          <li>Nike Winner Stays LA</li>
+          <li><a href="http://arborcollective.com">Arbor Collective</a></li>
+          <li>Fung Consulting</li>
+          <li><a href="http://www.globe.tv/StrangeRumblings">Globe Strange Rumblings</a></li>
+          <li><a href="http://teachingkidsprogramming.org">Teaching Kids Programming</a></li>
+          <li><a href="http://groupynetwork.com">GroupY Network</a></li>
+          <li>AllPosters.com HTML emails</li>
+        </ul>
+      </div>
+    </section>
+    <section class="cv__card" id="community-extras">
+      <div class="l-container">
+        <h2 class="cv__heading">Community/Extras</h2>
+        <ul>
+          <li>I co-hosted the Long Beach <a href="http://blog.codepen.io/meetups/">CodePen Meetup</a>.</li>
+          <li>I gave an in-house talk about <a href="https://speakerdeck.com/coreybruyere/performance-accessibility-and-maintainability-an-intro-to-front-end-architecture">front end architecture</a>.</li>
+          <li>I have lots of work and non-work related projects on my <a href="http://codepen.io/coreybruyere/">Codepen</a></li>
+          <li>I have private and public repos on <a href="https://github.com/coreybruyere">GitHub</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="cv__card" id="professional-goals">
+      <div class="l-container">
+        <h2 class="cv__heading">Professional Goals</h2>
+        <ul>
+          <li>I’m eager to continue learning more 'full-stack' development and immersing myself deeper into the entire Javascript ecosystem and I hope to find myself in an environment that encourages me to do so.</li>
+          <li>I aim to find a culture (ideally remote) where I can continue to grow individually and professionally.</li>
+          <li>I want my skill-set to be used and valued by a team that values building and maintaining inclusive, accessible, and clean experiences for users.</li>
+          <li>I plan on earning a title similar to the role of a <a href="https://medium.com/google-design/why-full-stack-developers-make-the-best-ux-engineers-1ddbff6c1739">UX Engineer</a> at some point in my professional career.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="u-text-center u-shim-t-xxl">
+      <a class="btn btn--small" href="#top-page">Back To Top</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+/****
+
+  MAIN STYLESHEET for the portfolio of Corey Bruyere
+
+---------------------------------------------------------
+
+  A SMACSS/ITCSS like approach to CSS using the BEM methodology
+
+---------------------------------------------------------
+
+  TABLE OF CONTENTS
+  @toc
+
+  - Settings ........ fonts, vars
+  - Tools ........... public functions and mixins
+  - Bits ............ single elements and small, single element class names that usually associate with named elements
+  - Layout .......... layout objects like grids, containers, lists
+  - Modules ......... objects created by combining elements
+  - Trumps .......... helper classes that trump everything else
+
+---------------------------------------------------------  */
+
+
+
+/***
+
+  @config
+---------------------------------------------------------
+
+  Config for main stylesheet. Declares variable to compile
+  regular browser stylesheet
+
+-----------------------------------------------------  */
+
+$old-ie: false;
+$px-only: false;
+$dev-mode: false;
+
+
+
+/***
+
+  @tools
+---------------------------------------------------------
+
+  Default mixins and functions
+
+-----------------------------------------------------  */
+
+// Functions
+//
+@import 'tools/function-rem';
+
+@import 'tools/function-u';
+
+@import 'tools/function-em';
+
+// Mixins
+//
+@import 'tools/mixin-breakpoints';
+
+@import 'tools/mixin-arrows';
+
+@import 'tools/mixin-burger';
+
+@import 'tools/mixin-box-shadow';
+
+@import 'tools/mixin-flexbox';
+
+@import 'tools/mixin-retina';
+
+@import 'tools/mixin-old-ie';
+
+@import 'tools/mixin-clearfix';
+
+@import 'tools/mixin-font-face-importer';
+
+@import 'tools/mixin-font-line';
+
+@import 'tools/mixin-font-family';
+
+@import 'tools/mixin-gradual-media-queries';
+
+// Animate CSS Mixins
+//
+@import 'tools/_mixin-animations/animate';
+
+
+/***
+
+  @settings
+---------------------------------------------------------
+
+  Global variables and fonts to use and extend
+
+-----------------------------------------------------  */
+
+// Vars
+//
+@import 'settings/vars';
+
+// Fonts
+//
+@import 'settings/fonts';
+
+
+
+/***
+
+  @bits
+---------------------------------------------------------
+
+  Global styling of bits.
+
+---------------------------------------------------------  */
+
+@import 'bits/body';
+
+@import 'bits/buttons';
+
+@import 'bits/code';
+
+@import 'bits/forms';
+
+@import 'bits/headings';
+
+@import 'bits/hr';
+
+@import 'bits/html';
+
+@import 'bits/images';
+
+@import 'bits/icons';
+
+@import 'bits/links';
+
+@import 'bits/lists';
+
+@import 'bits/quotes';
+
+@import 'bits/text';
+
+
+
+  /***
+
+  @layout
+---------------------------------------------------------
+
+  A large portion of CSS is structural layout. You will use
+  these helpers to create the scaffolding that will support
+  the elements that make up your site.
+
+---------------------------------------------------------  */
+
+@import 'layout/blocks';
+
+@import 'layout/container';
+
+@import 'layout/flag';
+
+@import 'layout/grids';
+
+@import 'layout/grid-ups';
+
+@import 'layout/island';
+
+@import 'layout/media';
+
+@import 'layout/list-blank';
+
+@import 'layout/this-or-this';
+
+@import 'layout/widths';
+
+
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Reusable objects that are combinations
+  of elements and other modules.
+
+  When you create a new module, make sure the partial is
+  in the modules directory, and you import it below
+
+  Comment out any partial you don't need for this app.
+
+---------------------------------------------------------  */
+
+// Site Modules
+//
+@import 'modules/site';
+
+@import 'modules/site-header';
+
+@import 'modules/site-main';
+
+@import 'modules/site-footer';
+
+// Page Template Module
+//
+@import 'modules/pages';
+
+// Component Modules
+//
+@import 'modules/alerts';
+
+@import 'modules/branding';
+
+@import 'modules/callouts';
+
+@import 'modules/cat-tag';
+
+@import 'modules/dropdown';
+
+@import 'modules/feature';
+
+@import 'modules/heroes';
+
+@import 'modules/modals';
+
+@import 'modules/nav';
+
+@import 'modules/tabs';
+
+@import 'modules/tooltips';
+
+@import 'modules/post';
+
+@import 'modules/sidebar';
+
+@import 'modules/section';
+
+@import 'modules/slant';
+
+@import 'modules/thumbnails';
+
+@import 'modules/video-embeds';
+
+
+
+  /***
+
+  @trumps
+---------------------------------------------------------
+
+  Helpers and overrides.
+
+---------------------------------------------------------  */
+
+@import 'trumps/helpers';
+
+

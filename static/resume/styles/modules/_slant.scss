@@ -1,0 +1,52 @@
+/**
+
+  @slant
+--------------------------------------------------------
+  modules/_slant.scss
+--------------------------------------------------------
+
+  Slant borders used to border white and gray sections.
+  Dependent on relative parent
+
+  Example: Callout
+  <div class="hero">
+    <article class="callout">
+      <img class="callout__media" src="images/fpo-icon.png">
+      <h3 class="callout__title">Feature</h3>
+      <p>This callout is very impressive, and should command your attention</p>
+    </article>
+  </div>
+
+-----------------------------------------------------  */
+
+.slant { 
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  width: 100%; 
+  transform: translateY(-50%);
+  z-index: 99;
+}
+
+.slant--bottom {
+  top: auto;
+  bottom: 0;
+  transform: none;
+  vertical-align: bottom;
+}
+
+.slant__upper {
+  position: absolute;
+  bottom: u(rem(6));   
+  max-height: u(rem(35));
+  vertical-align: bottom;
+  z-index: -1;
+}
+
+.slant__lower {
+  position: absolute;
+  bottom: 0;
+  max-height: u(rem(35));
+  vertical-align: bottom;
+}

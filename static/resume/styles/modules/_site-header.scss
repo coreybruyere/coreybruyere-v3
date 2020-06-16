@@ -1,0 +1,30 @@
+/**
+
+  @site-header
+--------------------------------------------------------
+  modules/_site-header.scss
+--------------------------------------------------------
+
+  Site-wide header
+
+------------------------------------------------------ */
+
+.site-header { 
+  @include flexbox;
+  @include justify-content(space-between);   
+  @include align-items(center); 
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 u(rem($base-unit));
+  z-index: 9999;
+  // backface-visibility: hidden;
+}
+
+
+
+
+
+

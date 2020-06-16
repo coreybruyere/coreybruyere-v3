@@ -1,0 +1,21 @@
+/**
+
+  @body
+--------------------------------------------------------
+  bits/_body.scss
+--------------------------------------------------------
+
+  Body should contain the document's default font and
+  background color for the content, if that background
+  color is different than the html.
+
+------------------------------------------------------ */
+
+
+body {
+  @include font-family($sans, normal);
+  height: 100%;
+  background: $color__white;
+  color: $color__black--light;
+  line-height: $base-line-height;
+} 

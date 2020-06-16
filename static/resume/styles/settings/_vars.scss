@@ -1,0 +1,176 @@
+/**
+
+  @variables
+---------------------------------------------------------
+  settings/_vars.scss
+--------------------------------------------------------
+
+  Global variables are defined here.  Define your colors,
+  spacing, media-queries, type, font, and grid settings.
+
+-----------------------------------------------------  */
+
+
+
+
+/* @font-vars
+--------------------------------------------------------
+
+  Font variables are defined here once they are imported
+  in ./_fonts.scss
+
+------------------------------------------------------ */
+
+$sans: 'Quando', serif;
+$serif: 'Lato', sans-serif;
+
+
+
+
+/* @type
+--------------------------------------------------------
+
+  All type sizing variables are defined here.
+  Don't change body font size with pixel value.
+  Use /tools/_mixin-gradual-media-queries.scss do gradually
+  change font size with percentages. 
+
+  Heading font-sizes and line height are calculated using the
+  mixin found in /tools/_mixin-font-line.scss in the 
+  /bits/headings.scss file.
+
+------------------------------------------------------ */
+
+// Base body type
+$base-line-height: 1.5; // unitless
+
+$base-heading: 24; // used for line height and margin
+
+$h1-font-size: 36;
+
+$h2-font-size: 30;  
+
+$h3-font-size: 24;
+
+$h4-font-size: 20;
+
+$h5-font-size: 18;
+
+$h6-font-size: 16;
+
+
+
+
+
+/* @colors
+--------------------------------------------------------
+
+  All color variables are defined here.
+
+  We use real color names here.  Although naming something
+  like 'brand' is in fact more generic and reusable, we've
+  found that you end up creating variables like $brand-2,
+  $brand-alt, $brand-complimentary etc.  While coding,
+  it's too easy to forget what those mean.
+
+  If the design changes drastically and the brand changes
+  from, let's say, blue to green, just do a global
+  find/replace - that's what text editors are for.
+
+------------------------------------------------------ */
+
+// Colors
+//
+$color__black: #000;
+$color__black--light: #515554;
+$color__grey: #acacac;
+$color__grey--light: #cfd2d2;
+$color__offwhite: #f1f1f1;
+$color__white: #fff;
+$color__error: #e74c3c;
+$color__warning: #f1c40f;
+$color__info: #2980b9;
+$color__success: #27ae60;
+
+// Brand Colors
+$color__turqoise: #009688;
+$color__turqoise--light: #84cbc5;
+$color__orange: #FF9800;
+
+// Transparent Colors
+$color__grey--trans: rgba($color__grey, .15);
+$color__turqoise--trans: rgba($color__turqoise, .45); 
+$color__orange--trans: rgba($color__orange, .75);
+
+
+
+
+
+/* @breakpoints
+---------------------------------------------------------
+
+  Define global breakpoints as xs, sm, md, lg, xl, xxl
+
+--------------------------------------------------------- */
+
+// Define breakpoints map to help with some other functions
+// and mixins.  Very fancy :)
+//
+$breakpoints: (
+ n:  0,
+ xs: 320,
+ sm: 550,
+ md: 768,
+ lg: 1024,
+ xl: 1256,
+ xxl: 1600
+);
+
+
+// Define individual variables
+//
+// Extra Small: Small mobile
+$small-mobile: map-get($breakpoints, xs);
+
+// Small: Larger mobile
+$mobile: map-get($breakpoints, sm);
+
+// Medium: Tablet
+$tablet: map-get($breakpoints, md);
+
+// Large: Landscape tablet, beginning desk size
+$small-desktop: map-get($breakpoints, lg);
+
+// Extra Large: Large Desk size
+$desktop: map-get($breakpoints, xl);
+
+// Double Extra Large: Huge Desk size
+$large-desktop: map-get($breakpoints, xxl);
+
+// Orientation Media Queries
+//
+// Landscape Orientation
+$landscape: "only screen and (orientation: landscape)" !default;
+
+// Portrait Orientation
+$portrait: "only screen and (orientation: portrait)" !default;
+
+
+ 
+
+/* @global spacing units
+---------------------------------------------------------
+
+  Define an em value for $base-unit.  $base-unit is a helpful little
+  variable that serves to keep your spacing consistent.
+
+  Most often, 1 $base-unit is equal to your baseline height.  So
+  if your baseline height is 16px, that's
+  the value of 1 $base-unit.
+
+--------------------------------------------------------- */
+
+$base-unit:   24 !global; // used in rem function 
+$base-margin: 15 !global; // used in rem function
+
+

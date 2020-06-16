@@ -1,0 +1,21 @@
+/**
+
+  @island
+---------------------------------------------------------
+  layout/_island.scss
+--------------------------------------------------------
+
+  Simple layout object that basically is a single class
+  used to box off content, leaving it closed on all sides
+  like, well, an island.
+
+------------------------------------------------------ */
+
+.island {
+  padding: u(rem($base-unit));
+}
+
+// the smaller version of the island object
+.islet {
+  padding: u(rem($base-unit / 2));
+}

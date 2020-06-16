@@ -1,0 +1,89 @@
+/**
+
+  @feature
+--------------------------------------------------------
+  modules/_feature.scss
+--------------------------------------------------------
+
+  Feature Items on figure elements found on home page
+
+------------------------------------------------------ */
+
+
+.feature {
+  border-top: 1px solid rgba($color__black, .085);
+}
+
+// Feature sides
+.feature--left {
+  border-right: 1px solid rgba($color__white, .085); 
+} 
+
+.feature--right {
+  border-left: 1px solid rgba($color__black, .085); 
+}
+
+.feature__item {
+  position: relative;
+  max-width: u(rem($container__max-width));
+
+  // Left Feature parent 
+  .feature--left > & {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  // Left Feature parent 
+  .feature--right > & {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+.feature__text {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 0 u(rem($base-unit));
+  color: $color__white;
+  text-align: right; 
+  z-index: 99;
+  // -- Min Width @ $small-mobile
+  @include bp-at-least($small-mobile) {
+    bottom: u(rem(70)); 
+  }
+  // -- Min Width @ $tablet
+  @include bp-at-least($tablet) {
+    right: u(rem($base-unit));
+    bottom: u(rem($base-unit * 2));
+  }
+
+  // // Left Feature parent 
+  // .feature--left & {
+  //   right: 0;
+  // }
+
+  // // Left Feature parent 
+  // .feature--right & {
+  //   left: 0;
+  // }
+}
+
+// Element that receives background color
+.feature__after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color__turqoise--trans;
+}
+
+
+
+
+
+

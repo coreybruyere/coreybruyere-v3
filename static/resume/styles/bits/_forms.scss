@@ -1,0 +1,558 @@
+/**
+
+  @forms
+---------------------------------------------------------
+  bits/_forms.scss
+--------------------------------------------------------
+
+  Base styles for all forms and form related elements
+
+  Below you'll set styles for all forms, and if you have
+  any specific kinds of forms, like a search form that you
+  create a classname of form--search, put that at the
+  bottom of this partial.
+
+  This scss partial is pretty big.  Here's how it is
+  organized.
+
+  * Base styling on form elements
+
+  * Styles for form & form modules
+
+
+--------------------------------------------------------- */
+
+
+
+
+
+/* @text inputs
+--------------------------------------------------------
+
+  Base styles for inputs
+
+  Example: Text Input
+  <input type="text" name="schramburger" placeholder="Your Name">
+
+  Inputs can use sizing classes, .input--s .input--l
+
+  Example: Text Small Input
+  <input class="input--s" type="text" name="schramburger" placeholder="Your Name">
+
+  Example: Text Input
+  <input class="input--l" type="text" name="schramburger" placeholder="Your Name">
+
+------------------------------------------------------ */
+
+// Input elements
+input {
+  @include font-family($serif);
+  width: 100%;
+  padding: u(rem(10));
+  border: u(rem(1)) solid $color__black;
+  border-radius: 0;
+  color: $color__black;
+  text-rendering: optimizeLegibility;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+// Define the input placeholder color to be reused in the
+// following code
+$input-placeholder: $color__black;
+
+// Placeholders
+// scss-lint:disable MergeableSelector, VendorPrefix
+input {
+  &::-webkit-input-placeholder {
+    @include font-family($serif);
+    color: $input-placeholder;
+  }
+  &:-moz-placeholder {
+    @include font-family($serif);
+    color: $input-placeholder;
+  }
+  &::-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &:-ms-input-placeholder {
+    color: $input-placeholder;
+  }
+}
+// Placeholders on focus
+input:focus {
+  &::-webkit-input-placeholder {
+    opacity: .3;
+  }
+  &:-moz-placeholder {
+    opacity: .3;
+  }
+  &::-moz-placeholder {
+    opacity: .3;
+  }
+  &:-ms-input-placeholder {
+    opacity: .3;
+  }
+}
+// scss-lint:enable MergeableSelector, VendorPrefixes
+
+
+
+
+/* @select inputs
+--------------------------------------------------------
+
+  Base styling for all selects
+
+  Example: Select Input
+  <select name="schramburger">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+  Selects can have added sizing classes, .select--s and .select--l
+
+  Example: Small select
+  <select name="schramburger" class="select--s">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+  Example: Large select
+  <select name="schramburger" class="select--l">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+------------------------------------------------------ */
+
+select {
+  width: 100%;
+  font-size: u(rem(16));
+  text-rendering: optimizeLegibility;
+}
+
+
+
+
+
+/* @textareas
+--------------------------------------------------------
+
+  Base styling for textareas
+
+  Textareas can have .textarea--s or .textarea--l classes
+  for different sizes
+
+  Example: Textarea
+  <textarea name="schramburger">Hello, there.</textarea>
+
+  Example: Small Textarea
+  <textarea class="textarea--s" name="schramburger">Hello, there.</textarea>
+
+  Example: Large Textarea
+  <textarea class="textarea--l" name="schramburger">Hello, there.</textarea>
+
+------------------------------------------------------ */
+
+textarea {
+  @include font-family($serif);
+  width: 100%;
+  min-height: u(rem(96));
+  padding: u(rem(10));
+  border: solid u(rem(1)) $color__black;
+  text-rendering: optimizeLegibility;
+  &:focus {
+    outline: none;
+  }
+}
+
+
+
+
+
+/* @radio inputs
+--------------------------------------------------------
+
+  Base styling for radio inputs.  Radios are surrounded
+  by a label for better click targets.
+
+  Example: Radio
+  <label class="label--radio" for="radio-1"><input id="radio-1" type="radio" value="yes"> Radio label</label>
+
+  Example: Radio with super-long label
+  <label class="label--radio" for="radio-3"><input id="radio-3" type="radio" value="yes"> Radio label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+
+------------------------------------------------------ */
+
+// extend to radio and checkbox
+%input-custom {
+  width: u(rem(14));
+  height: u(rem(14));
+  padding: 0;
+  border: u(rem(1)) solid $color__grey;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  &:checked {
+    border-color: $color__black;
+    background: $color__black;
+  }
+}
+
+
+// extend to label--radio and label--checkbox
+%label-custom {
+  display: inline-block;
+  position: relative;
+  padding-left: u(rem(20));
+  cursor: pointer;
+  input {
+    position: absolute;
+    top: u(rem(4));
+    left: 0;
+  }
+}
+
+
+// scss-lint:disable QualifyingElement, PropertyUnits
+input[type=radio] {
+  @extend %input-custom;
+  border-radius: 50%;
+}
+
+
+.label--radio {
+  @extend %label-custom;
+}
+
+
+
+
+
+
+
+/* @checkbox inputs
+--------------------------------------------------------
+
+  Base styling for checkbox inputs.  Checkboxes are surrounded
+  by a label for better click targets.
+
+  Example: Checkbox
+  <label class="label--checkbox" for="checkbox-1"><input id="checkbox-1" type="checkbox" value="yes"> Checkbox label</label>
+
+  Example: Checkbox with super-long label
+  <label class="label--checkbox" for="checkbox-3"><input id="checkbox-3" type="checkbox" value="yes"> Checkbox label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+
+------------------------------------------------------ */
+
+input[type=checkbox] {
+  @extend %input-custom;
+  // Custom check mark icon
+  &:after {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: u(rem(11));
+    color: $color__white;
+    font-size: u(rem(8));
+    text-align: center;
+    content: '✔';
+  }
+}
+// scss-lint:enable QualifyingElement
+
+
+.label--checkbox {
+  @extend %label-custom;
+}
+
+
+
+
+
+
+
+/* @labels
+--------------------------------------------------------
+
+  Base styling for labels
+
+  Example: label
+  <label>Don't label me, I'm a free spirit</labe>
+
+------------------------------------------------------ */
+
+label {
+  font-size: u(rem(16));
+  font-weight: bold;
+}
+
+
+
+
+
+/* @form
+--------------------------------------------------------
+
+  Like the bootstrap convention, apply standard styling
+  on any form with the classname .form
+
+  This allows us to create modifier classnames like
+  .form--inline and .form--horizontal, which will be
+  laid out further below.
+
+------------------------------------------------------ */
+
+.form {
+  display: block;
+  padding: u(rem(10));
+  border: u(rem(1)) solid $color__grey;
+  background: $color__grey;
+}
+
+
+
+
+/* @form-header
+--------------------------------------------------------
+
+  A form header usually consists of a title and some
+  copy.
+
+  Example: Form header
+  <header class="form__header">
+    <h2>Contact Us</h2>
+    <p>Use this form to contact us.  We love talking to
+    our customers.</p>
+  </header>
+
+-------------------------------------------------------- */
+
+.form__header {
+  margin-bottom: u(rem(15));
+  padding-bottom: u(rem(10));
+  border-bottom: u(rem(1)) solid $color__grey;
+}
+
+
+
+
+
+/* @fieldsets
+--------------------------------------------------------
+
+  Fieldsets group together related fields.
+
+  Example: Fieldset
+  <fieldset>
+    <legend>Personal Information</legend>
+    <article class="field">
+      <label class="field__label" for="exampleInput1">Your Name</label>
+      <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </article>
+    <article class="field">
+      <label class="field__label" for="exampleInput2">Your Email</label>
+      <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </article>
+  </fieldset>
+
+  Fieldsets are also nested inside other fieldsets.
+
+  Example: Nested Fieldsets
+  <fieldset>
+    <legend>Personal Information</legend>
+    <article class="field">
+      <label class="field__label" for="exampleInput31">Your Name</label>
+      <input class="field__input="exampleInput31" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </article>
+    <article class="field">
+      <label class="field__label" for="exampleInput32">Your Email</label>
+      <input class="field__input="exampleInput32" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </article>
+    <fieldset>
+      <legend>Address</legend>
+        <article class="field">
+          <label class="field__label" for="exampleInput33">Address 1</label>
+          <input class="field__input="exampleInput33" type="text" required="required" placeholder="Address 1">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </article>
+        <article class="field">
+          <label class="field__label" for="exampleInput34">Address 2</label>
+          <input class="field__input="exampleInput34" type="text" required="required" placeholder="Address 2">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </article>
+    </fieldset>
+  </fieldset>
+
+-------------------------------------------------------- */
+
+fieldset {
+  border: 0;
+}
+
+
+
+/* @fields
+--------------------------------------------------------
+
+  A field is an article that contains the input and anything
+  related to the input.
+
+  Example: Field for a text input
+  <article class="field">
+    <label class="field__label" for="exampleInput1">Your Name</label>
+    <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with hint
+  <article class="field">
+    <label class="field__label" for="exampleInput2">Your Email</label>
+    <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
+    <span class="field__feedback"></span>
+    <span class="field__hint">Must be a valid email address</span>
+  </article>
+
+  Example: Field with Error
+  <article class="field is-error">
+    <label class="field__label" for="exampleInput3">Your Email</label>
+    <input class="field__input="exampleInput3" type="email" required="required" placeholder="Your email">
+    <span class="field__feedback">Sorry, that email is in use.</span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field for a select input
+  <article class="field">
+    <label class="field__label" for="exampleInput4" >Select your favorite</label>
+    <select class="field__input input--select" id="exampleInput4"  name="favorite-food">
+      <option>Pizza</option>
+      <option>Tacos</option>
+      <option>Burgers</option>
+    </select>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field for a textarea input
+  <article class="field">
+    <label class="field__label">Your Name</label>
+    <textarea class="field__input">Hello, there</textarea>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+-------------------------------------------------------- */
+
+.field {
+  position: relative;
+  margin-bottom: u(rem(15));
+
+  // field error states
+  &.is-error {
+
+  }
+
+}
+
+
+
+
+
+
+
+/* @input group
+--------------------------------------------------------
+
+  Group containing multiple inputs, helpful for lists
+  of radios or checkboxes.  Shown below in a field...
+
+  Example: Field with input group of radios
+  <article class="field">
+    <label class="field__label">Choose your favorite</label>
+    <div class="field__input-group">
+      <label class="label--radio" for="favorite-food-1"><input id="favorite-food-1" name="favorite-food" type="radio" value="pizza"> Pizza</label>
+      <label class="label--radio" for="favorite-food-2"><input id="favorite-food-2" name="favorite-food" type="radio" value="tacos"> Tacos</label>
+      <label class="label--radio" for="favorite-food-3"><input id="favorite-food-3" name="favorite-food" type="radio" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with input group of checkboxes
+  <article class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group">
+      <label class="label--checkbox" for="favorite-food-4"><input id="favorite-food-4" name="favorite-food-alt" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-5"><input id="favorite-food-5" name="favorite-food-alt" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-6"><input id="favorite-food-6" name="favorite-food-alt" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with input group list modifier
+  <article class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group--list">
+      <label class="label--checkbox" for="favorite-food-7"><input id="favorite-food-7" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-8"><input id="favorite-food-8" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-9"><input id="favorite-food-9" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+------------------------------------------------------ */
+
+.field__input-group {
+  @extend %clearfix;
+  display: block;
+  > * {
+    display: inline-block;
+    width: auto;
+    margin-right: u(rem(8));
+    float: left;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.field__input-group--list {
+  display: block;
+  > * {
+    display: block;
+    margin: u(rem(8)) 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+
+
+
