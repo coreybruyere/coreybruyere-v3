@@ -33,7 +33,7 @@ const ScrollGradient = ({ gradientFill, width, height, rotate, ...rest }) => {
           <stop offset="100%" stopColor={gradientFill} stopOpacity="1.0" />
         </linearGradient>
       </defs>
-      <Rect id={uid} width={width} height={height} />
+      <Rect id={`rect-${uid}`} width={width} height={height} />
     </Svg>
   )
 }
