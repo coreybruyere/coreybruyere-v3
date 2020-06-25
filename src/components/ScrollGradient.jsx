@@ -6,7 +6,7 @@ import { useUID } from 'react-uid'
 const GRADIENT_HEIGHT = 32
 
 const Rect = styled.rect`
-  fill: url(#${({ id }) => id});
+  fill: url(#${({ gradientId }) => gradientId});
   width: ${({ width }) => width};
   height: ${({ height }) => height};
 `
@@ -33,7 +33,7 @@ const ScrollGradient = ({ gradientFill, width, height, rotate, ...rest }) => {
           <stop offset="100%" stopColor={gradientFill} stopOpacity="1.0" />
         </linearGradient>
       </defs>
-      <Rect id={`rect-${uid}`} width={width} height={height} />
+      <Rect gradientId={uid} width={width} height={height} />
     </Svg>
   )
 }
