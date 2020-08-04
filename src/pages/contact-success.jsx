@@ -26,6 +26,9 @@ const ContactSuccess = () => {
             Thanks for connecting! Your message was sent my way and I'll be in
             touch <abbr title="as soon as possible">ASAP</abbr>.
           </Text>
+          <Text>
+            <a href="/">Back to my homepage</a>
+          </Text>
         </PageTitleSection>
       </Container>
     </Layout>

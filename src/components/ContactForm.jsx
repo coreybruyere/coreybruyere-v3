@@ -1,5 +1,5 @@
-import React, { useReducer, useState } from 'react'
-import { useDialogState, Dialog } from 'reakit/Dialog'
+import React, { useReducer, useState, useRef } from 'react'
+import { useDialogState, Dialog, DialogDisclosure } from 'reakit/Dialog'
 import { Box } from 'rebass'
 
 import Input from './Input'
@@ -39,8 +39,12 @@ const contactReducer = (state, action) => {
 
 const ContactForm = () => {
   const [state, dispatch] = useReducer(contactReducer, initialContactState)
-  const [isModalVisible, setIsModalVisible] = useState(false)
-  const dialog = useDialogState({ modal: isModalVisible })
+  const [isModalVisible, setIsModalVisible] = useState(true)
+  const refContainer = useRef('modalRef')
+  const dialog = useDialogState({
+    visible: isModalVisible,
+    unstable_finalFocusRef: refContainer,
+  })
 
   const handleInputChange = event => {
     const { name, value } = event.target
@@ -63,7 +67,9 @@ const ContactForm = () => {
   const handleSuccess = () => {
     dispatch({ type: 'reset' })
     console.log('handle success is running')
+    console.log(isModalVisible)
     setIsModalVisible(true)
+    console.log(isModalVisible)
   }
 
   const handleModalClose = () => {
@@ -129,21 +135,15 @@ const ContactForm = () => {
         Send
       </Button>
 
-      {/* <Modal visible={this.state.showModal}>
-          <p>
-            Thank you for reaching out. I will get back to you as soon as
-            possible.
-          </p>
-          <Button onClick={this.closeModal}>Okay</Button>
-        </Modal> */}
+      <DialogDisclosure style={{ display: 'none' }} {...dialog}>
+        Open dialog
+      </DialogDisclosure>
 
-      <Dialog
-        {...dialog}
-        aria-label="Welcome"
-        style={{ position: 'static', transform: 'none' }}
-      >
-        Focus is not trapped within me.
-        <button onClick={handleModalClose}>Close</button>
+      <Dialog {...dialog} aria-label="Welcome">
+        <Box ref={refContainer}>
+          Focus is not trapped within me.
+          <button onClick={handleModalClose}>Close</button>
+        </Box>
       </Dialog>
     </form>
   )
