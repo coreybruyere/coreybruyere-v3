@@ -1,11 +1,12 @@
 import React, { useReducer, useState, useRef } from 'react'
-import { useDialogState, Dialog, DialogDisclosure } from 'reakit/Dialog'
 import { Box } from 'rebass'
 
 import Input from './Input'
 import TextArea from './TextArea'
 import Button from './Button'
 import Label from './Label'
+import Modal, { useModalState } from './Modal'
+import Test from './Test'
 
 /*
   ⚠️ This is an example of a contact form powered with Netlify form handling.
@@ -40,11 +41,7 @@ const contactReducer = (state, action) => {
 const ContactForm = () => {
   const [state, dispatch] = useReducer(contactReducer, initialContactState)
   const [isModalVisible, setIsModalVisible] = useState(true)
-  const refContainer = useRef('modalRef')
-  const dialog = useDialogState({
-    visible: isModalVisible,
-    unstable_finalFocusRef: refContainer,
-  })
+  const modal = useModalState({ visible: isModalVisible })
 
   const handleInputChange = event => {
     const { name, value } = event.target
@@ -66,10 +63,7 @@ const ContactForm = () => {
 
   const handleSuccess = () => {
     dispatch({ type: 'reset' })
-    console.log('handle success is running')
-    console.log(isModalVisible)
     setIsModalVisible(true)
-    console.log(isModalVisible)
   }
 
   const handleModalClose = () => {
@@ -135,16 +129,23 @@ const ContactForm = () => {
         Send
       </Button>
 
-      <DialogDisclosure style={{ display: 'none' }} {...dialog}>
-        Open dialog
-      </DialogDisclosure>
+      <Modal.Trigger as={Button} {...modal}>
+        Open modal
+      </Modal.Trigger>
 
-      <Dialog {...dialog} aria-label="Welcome">
-        <Box ref={refContainer}>
-          Focus is not trapped within me.
-          <button onClick={handleModalClose}>Close</button>
-        </Box>
-      </Dialog>
+      <Modal {...modal} ariaLabel="example" onClose={handleModalClose}>
+        Praesent sit amet quam ac velit faucibus dapibus. Quisque sapien ligula,
+        rutrum quis aliquam nec, convallis sit amet erat. Mauris auctor blandit
+        porta. In imperdiet rutrum nunc. Integer suscipit sodales ex, ut
+        lobortis orci rutrum id. Vestibulum scelerisque, felis ut sollicitudin
+        elementum, dolor nibh faucibus orci, eu aliquet felis diam sed eros.
+        Donec eget sapien lacinia, viverra felis in, placerat urna. Vestibulum
+        sed viverra orci. Donec id tellus eget dui porta lobortis ac eu metus.
+        Praesent id ultricies odio. In hac habitasse platea dictumst. Sed lorem
+        lacus, hendrerit non sodales id, consectetur quis magna. Nullam non
+        lacinia risus, ut varius est. Nam nec pulvinar tellus, eu ultrices elit.
+        Cras tincidunt et purus eu condimentum. Nunc vitae consequat nibh.
+      </Modal>
     </form>
   )
 }
