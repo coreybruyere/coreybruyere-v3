@@ -13,7 +13,7 @@ module.exports = {
   shareImage: '/logos/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
   shareImageWidth: 900, // Change to the width of your default share image
   shareImageHeight: 600, // Change to the height of your default share image
-  siteLogo: '/logos/logo-512.png', // Logo used for SEO, RSS, and App manifest
+  siteLogo: '/favicon/logo.png', // Logo used for SEO, RSS, and App manifest
   backgroundColor: '#009688', // Used for Offline Manifest
   themeColor: '#ca5000', // Used for Offline Manifest
   copyright: `Copyright © ${new Date().getFullYear()} Corey Bruyere`, // Copyright string for the RSS feed
