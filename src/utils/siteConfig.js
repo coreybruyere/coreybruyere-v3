@@ -9,7 +9,7 @@ module.exports = {
   author: 'Corey Bruyere', // Author for RSS author segment and SEO schema
   authorUrl: 'https://www.coreybruyere.com/about/', // URL used for author and publisher schema, can be a social profile or other personal site
   userTwitter: '@coreybruyere', // Change for Twitter Cards
-  shortTitle: 'Corey Bruyere Personal Website', // Used for App manifest e.g. Mobile Home Screen
+  shortTitle: 'Corey Bruyere', // Used for App manifest e.g. Mobile Home Screen
   shareImage: '/logos/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
   shareImageWidth: 900, // Change to the width of your default share image
   shareImageHeight: 600, // Change to the height of your default share image

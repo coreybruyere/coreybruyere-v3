@@ -29,6 +29,7 @@ const Template = ({ children }) => {
         <title>{config.siteTitle}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -49,11 +50,11 @@ const Template = ({ children }) => {
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link
           rel="mask-icon"
-          href="/favicon/safari-pinned-tab.svg"
-          color="#009688"
+          href="favicon/safari-pinned-tab.svg"
+          color="#006157"
         />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#006157" />
+        <meta name="theme-color" content="#006157"></meta>
       </Helmet>
 
       <ThemeProvider theme={theme} key={key}>
