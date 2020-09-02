@@ -30,11 +30,15 @@ const Template = ({ children }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link
+        {/* <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicon/apple-touch-icon.png"
-        />
+        /> */}
+        <link
+          rel="shortcut icon"
+          href="https://cdn.glitch.com/49d34dc6-8fbd-46bb-8221-b99ffd36f1af%2Fapple-touch-icon.png?v=1566861131254"
+        ></link>
         <link
           rel="icon"
           type="image/png"
