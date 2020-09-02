@@ -29,13 +29,11 @@ const Template = ({ children }) => {
         <title>{config.siteTitle}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* <link
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/favicon/apple-touch-icon.png"
         />
-        */}
         <link
           rel="icon"
           type="image/png"
