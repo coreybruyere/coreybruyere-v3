@@ -46,6 +46,7 @@ export const lightColors = {
   secondary: '#006157', // Teal
   tertiary: '#F93140', // Red
   muted: '#bcbcbc', // Light Gray
+  shadow: '#fdfdfd', // Dark Gray
 }
 
 export const darkColors = {
@@ -58,6 +59,7 @@ export const darkColors = {
   secondary: '#00c7b3', // Teal
   tertiary: '#F93140', // Red
   muted: '#bcbcbc', // Light Gray
+  shadow: '#515554', // Dark Gray
 }
 
 // Light and dark theme colors are merged in theme-context.jsx

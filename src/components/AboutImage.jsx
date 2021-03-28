@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { Box as Base } from 'rebass'
 import styled from '@emotion/styled'
-import { rgba } from 'polished'
+import { rgba, darken } from 'polished'
 
 const Wrap = styled(Base)`
   @supports (grid-template-columns: subgrid) {
@@ -13,7 +13,7 @@ const Wrap = styled(Base)`
     overflow: hidden;
     border-top-left-radius: ${({ theme }) => theme.space.xs};
     border-bottom-left-radius: ${({ theme }) => theme.space.xs};
-    box-shadow: 0px 34px 21px -26px rgba(161, 161, 161, 0.35);
+    box-shadow: 0px 34px 21px -26px ${({ theme }) => darken(0.35, theme.colors.shadow)};
 
     @media only screen and (min-width: ${({ theme }) => theme.breakpoints[3]}) {
       border-radius: ${({ theme }) => theme.space.xs};
