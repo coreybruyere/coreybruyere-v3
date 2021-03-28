@@ -1,27 +1,22 @@
-import React from 'react'
 import { Box } from 'rebass'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { rem } from 'polished'
+import { rem, darken } from 'polished'
 
-const isHoverableStyle = css`
-  &:after {
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  &:hover,
-  &:focus-within {
-    &:after,
-    img {
-      transform: scale(1.025);
-    }
+const isHoverableStyle = props =>
+  css`
     &:after {
-      box-shadow: 0px 6px 15px 0px rgba(63, 63, 68, 0.25);
-      ${'' /* box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
-        0 ${rem(1)} ${rem(7)} 0 rgba(63, 63, 68, 0.15); */}
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
-  }
-`
+
+    &:hover {
+      &:after,
+      img {
+        transform: scale(1.025);
+        box-shadow: 0px 6px 15px 0px ${darken(0.3, props.theme.colors.shadow)};
+      }
+    }
+  `
 
 const Card = styled(Box)`
   position: relative;
@@ -38,7 +33,8 @@ const Card = styled(Box)`
     height: 100%;
     background-color: ${({ theme }) => theme.colors.card};
     border-radius: ${rem(2)};
-    box-shadow: 0px 3px 12px 0px rgba(63, 63, 68, 0.35);
+    box-shadow: 0px 3px 12px 0px
+      ${({ theme }) => darken(0.25, theme.colors.shadow)};
     ${'' /* box-shadow: 0 0 0 ${rem(1)} rgba(63, 63, 68, 0.05),
       0 ${rem(1)} ${rem(3)} 0 rgba(63, 63, 68, 0.15); */}
   }
