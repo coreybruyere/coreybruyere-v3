@@ -49,7 +49,7 @@ const TagTemplate = ({ data, pageContext }) => {
         </Helmet>
       )}
 
-      <Container>
+      <Container p={4}>
         <PageTitle small>
           {numberOfPosts} Posts Tagged: &ldquo;
           {title}
