@@ -1,23 +1,31 @@
 import React from 'react'
-import styled from '@emotion/styled'
+import { useTheme } from 'emotion-theming'
 
 import Grid from '../components/Grid'
 
-const Body = styled(Grid)`
-  margin-right: auto;
-  max-width: ${props => props.theme.sizes.maxWidthCentered};
-`
+export const PageBodyWrap = ({ ...rest }) => {
+  const theme = useTheme()
 
-const PageBody = (props, ...rest) => {
   return (
-    <Body
+    <Grid
       gridColumn={'1 / span 8'}
       className="s-page-body"
       mb={4}
       pb={4}
+      mr={'auto'}
+      maxWidth={theme.sizes.maxWidthCentered}
+      {...rest}
+    />
+  )
+}
+
+const PageBody = (props, ...rest) => {
+  return (
+    <PageBodyWrap
       dangerouslySetInnerHTML={{
         __html: props.body.childMarkdownRemark.html,
       }}
+      {...rest}
     />
   )
 }

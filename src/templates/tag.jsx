@@ -8,9 +8,10 @@ import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
 import PostCard from '../components/PostCard'
 import CardList from '../components/CardList'
-import PageTitle from '../components/PageTitle'
 import Pagination from '../components/Pagination'
 import Container from '../components/Container'
+import PageTitleSection from '../components/PageTitleSection'
+import { PageBodyWrap } from '../components/PageBody'
 
 const TagTemplate = ({ data, pageContext }) => {
   const posts = orderBy(
@@ -49,20 +50,20 @@ const TagTemplate = ({ data, pageContext }) => {
         </Helmet>
       )}
 
-      <Container p={4}>
-        <PageTitle small>
-          {numberOfPosts} Posts Tagged: &ldquo;
-          {title}
-          &rdquo;
-        </PageTitle>
-
-        <CardList>
-          {posts.slice(skip, limit * currentPage).map(post => (
-            <PostCard {...post} key={post.id} />
-          ))}
-        </CardList>
-      </Container>
-      <Pagination context={pageContext} />
+      <PageTitleSection
+        id={`${title}`}
+        title={`${numberOfPosts} Posts Tagged z: "${title}"`}
+      >
+        {/* Match styling from PageBody */}
+        <PageBodyWrap>
+          <CardList>
+            {posts.slice(skip, limit * currentPage).map(post => (
+              <PostCard {...post} key={post.id} />
+            ))}
+          </CardList>
+          <Pagination context={pageContext} />
+        </PageBodyWrap>
+      </PageTitleSection>
     </Layout>
   )
 }
