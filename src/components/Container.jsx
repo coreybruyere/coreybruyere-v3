@@ -20,7 +20,7 @@ const Container = ({ ...props }) => {
       <Grid
         display="grid"
         gridColumn={'2/span 1'}
-        gridTemplateColumns={'subgrid'}
+        // gridTemplateColumns={'subgrid'}
       >
         {props.children}
       </Grid>

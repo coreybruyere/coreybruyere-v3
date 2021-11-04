@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import { rgba, darken } from 'polished'
 
 const Wrap = styled(Base)`
-  @supports (grid-template-columns: subgrid) {
     background: url('/images/about-me.jpg') no-repeat;
     background-size: cover;
     width: 100%;
@@ -39,7 +38,6 @@ const Wrap = styled(Base)`
       background-color: ${({ theme }) => rgba(theme.colors.primary, 0.6)};
       mix-blend-mode: lighten;
     }
-  }
 `
 
 const AboutImage = forwardRef(({ children, ...props }, ref) => (
