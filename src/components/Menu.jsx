@@ -98,7 +98,7 @@ const Menu = () => {
       top={0}
       left={[0, 0, 0, 0, 0, 'auto']}
       right={['auto', 'auto', 'auto', 'auto', 'auto', 0]}
-      zIndex={100}
+      zIndex={1000}
       role="banner"
     >
       <Column
