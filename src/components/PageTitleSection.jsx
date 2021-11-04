@@ -23,7 +23,6 @@ const Title = forwardRef(({ children, ...props }, ref) => (
 
 Title.displayName = 'Title'
 
-
 const PageTitleSection = forwardRef(
   (
     { children, preTitle, title, id, isArticle, isEmphasized, aside, ...props },
@@ -39,12 +38,15 @@ const PageTitleSection = forwardRef(
           as={isArticle ? 'article' : 'div'}
           role={isArticle ? 'article' : null}
         >
-          <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}> 
-            <Grid display="grid" id="hello" gridColumn={['1/span 8', '1/span 5']}>
+          <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}>
+            <Grid
+              display="grid"
+              gridColumn={['1/span 8', aside ? '1/span 5' : '1/span 6']}
+            >
               <Box
                 as="header"
                 pt={[0, 0, preTitle ? 5 : 4]}
-                mr={[0, 0, !aside && -7]}
+                mr={[0, 0, 0]}
                 sx={{ lineHeight: '1.35' }}
               >
                 {preTitle && (
@@ -66,10 +68,10 @@ const PageTitleSection = forwardRef(
             {aside && (
               <Grid
                 gridColumn={['1/span 8', '6/span 3']}
-                pt={[0,4]}
-                pl={[0,4]}
-                pb={[0,4]}
-                mr={[0,-4]}
+                pt={[0, 4]}
+                pl={[0, 4]}
+                pb={[0, 4]}
+                mr={[0, -4, -3]}
               >
                 {aside}
               </Grid>

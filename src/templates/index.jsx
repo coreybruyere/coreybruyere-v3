@@ -48,7 +48,6 @@ const Index = ({ data, pageContext }) => {
         />
       </PageTitleSection>
 
-
       <Section id="posts" pl={[2, 3]}>
         <Grid gridColumn={'1 / span 1'} pb={3} pt={4} as="aside">
           <Position position="sticky" top={rem(72)}>
@@ -72,7 +71,7 @@ const Index = ({ data, pageContext }) => {
       </Section>
 
       <Section id="work">
-        <Grid gridColumn={'1 / span 8'} mx={[-5, 0]}>
+        <Grid gridColumn={'1 / span 8'} mx={[-4, 0]}>
           <WorkCardList>
             {works.map(({ node: post }) => (
               <Fragment key={post.id}>

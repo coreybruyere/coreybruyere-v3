@@ -44,7 +44,7 @@ const Card = styled(Box)`
 
 Card.defaultProps = {
   mb: 4,
-  p: 3,
+  p: 4,
 }
 
 export default Card
