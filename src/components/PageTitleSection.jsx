@@ -23,14 +23,6 @@ const Title = forwardRef(({ children, ...props }, ref) => (
 
 Title.displayName = 'Title'
 
-const Text = styled(Grid)`
-  @supports not (grid-template-columns: subgrid) {
-    /* Display something here */
-  }
-  @media only screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
-    max-width: 62%;
-  }
-`
 
 const PageTitleSection = forwardRef(
   (
@@ -41,48 +33,49 @@ const PageTitleSection = forwardRef(
     const { fontSizes } = useTheme()
     return (
       <Section id={sectionId} ref={ref} {...props}>
-        <Text
+        <Grid
           display="grid"
           gridColumn={'1/span 8'}
-          gridTemplateColumns="subgrid"
           as={isArticle ? 'article' : 'div'}
           role={isArticle ? 'article' : null}
         >
-          <Grid gridColumn={['1/span 8', '1/span 8', '1/span 5']}>
-            <Box
-              as="header"
-              pt={[0, 0, preTitle ? 5 : 4]}
-              mr={[0, 0, !aside && -7]}
-              sx={{ lineHeight: '1.35' }}
-            >
-              {preTitle && (
-                <PreTitle fontSize={5} mb={-3} aria-hidden>
-                  {preTitle}
-                </PreTitle>
-              )}
-              <Title
-                fontSize={`max(${fontSizes[5]}, min(${fontSizes[3]} + 3vw, ${fontSizes[7]}));`}
-                as="h1"
+          <Grid display="grid" gridTemplateColumns={'repeat(8, 1fr)'}> 
+            <Grid display="grid" id="hello" gridColumn={['1/span 8', '1/span 5']}>
+              <Box
+                as="header"
+                pt={[0, 0, preTitle ? 5 : 4]}
+                mr={[0, 0, !aside && -7]}
+                sx={{ lineHeight: '1.35' }}
               >
-                {title}
-              </Title>
-            </Box>
+                {preTitle && (
+                  <PreTitle fontSize={5} mb={-3} aria-hidden>
+                    {preTitle}
+                  </PreTitle>
+                )}
+                <Title
+                  fontSize={`max(${fontSizes[5]}, min(${fontSizes[3]} + 3vw, ${fontSizes[7]}));`}
+                  as="h1"
+                >
+                  {title}
+                </Title>
+              </Box>
 
-            {children && <Box fontSize={isEmphasized && 4}>{children}</Box>}
-          </Grid>
-
-          {aside && (
-            <Grid
-              gridColumn={['1/span 8', '1/span 8', '6/span 3']}
-              pt={[0, 0, 6]}
-              pl={[0, 0, 4]}
-              pb={[0, 0, 4]}
-              mr={[0, 0, -3, -3, 0]}
-            >
-              {aside}
+              {children && <Box fontSize={isEmphasized && 4}>{children}</Box>}
             </Grid>
-          )}
-        </Text>
+
+            {aside && (
+              <Grid
+                gridColumn={['1/span 8', '6/span 3']}
+                pt={[0,4]}
+                pl={[0,4]}
+                pb={[0,4]}
+                mr={[0,-4]}
+              >
+                {aside}
+              </Grid>
+            )}
+          </Grid>
+        </Grid>
       </Section>
     )
   }
