@@ -67,7 +67,7 @@ const WorkCardList = ({ children, ...other }) => {
 
 WorkCardList.defaultProps = {
   py: rem(2),
-  pl: [2, 0],
+  pl: [0, 2, 0],
   ml: [0, rem(-152)],
 }
 
