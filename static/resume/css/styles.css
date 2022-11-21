@@ -853,6 +853,10 @@ table {
 .l-flag {
   display: table;
   width: 100%;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 1rem;
 }
 .l-flag__body,
 .l-flag__image {
@@ -1629,7 +1633,6 @@ table {
 .branding {
   display: block;
   margin-right: auto;
-  padding: 0.625rem;
   padding-left: 0;
   color: #fff;
 }
