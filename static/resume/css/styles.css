@@ -179,30 +179,7 @@ td,
 th {
   padding: 0;
 }
-@font-face {
-  font-family: Quando;
-  font-style: normal;
-  font-weight: 400;
-  src: local("Quando-Regular"),
-    url(https://web.archive.org/web/20180621091040im_/http://fonts.gstatic.com/s/quando/v5/r5DvKXdPMFvthtcoLLAk3w.ttf)
-      format("truetype");
-}
-@font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 700;
-  src: local("Lato Bold"), local("Lato-Bold"),
-    url(https://web.archive.org/web/20180621091040im_/http://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf)
-      format("truetype");
-}
-@font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 900;
-  src: local("Lato Black"), local("Lato-Black"),
-    url(https://web.archive.org/web/20180621091040im_/http://fonts.gstatic.com/s/lato/v11/4cKlrioa77J2iqTqBgkRWg.ttf)
-      format("truetype");
-}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -511,7 +488,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: Quando, serif;
+  font-family: 'Quando', serif;
   font-weight: 400;
   height: 100%;
   background: #fff;
@@ -571,38 +548,38 @@ body {
 h1 {
   font-size: 2.25em;
   line-height: 1.3333333333;
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 900;
   margin: 0 0 1.5rem;
 }
 h2 {
   font-size: 1.875em;
   line-height: 1.6;
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 900;
   margin: 0 0 1.5rem;
 }
 h3 {
   font-size: 1.5em;
   line-height: 1;
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 900;
   margin: 0 0 1.5rem;
 }
 h4 {
   font-size: 1.25em;
   line-height: 1.2;
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 900;
   margin: 0 0 1.5rem;
 }
 h5 {
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 900;
   margin: 0 0 1.5rem;
 }
 h6 {
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 900;
   margin: 0 0 1.5rem;
 }
@@ -639,7 +616,7 @@ button {
   appearance: none;
 }
 input {
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   width: 100%;
   padding: 0.5625rem;
@@ -656,12 +633,12 @@ input[type] {
   -webkit-appearance: none;
 }
 input::-webkit-input-placeholder {
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   color: #cfd2d2;
 }
 input:-moz-placeholder {
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   color: #cfd2d2;
 }
@@ -2280,7 +2257,7 @@ table {
   }
 }
 .nav__item > a {
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   display: block;
   padding: 0.375rem;
@@ -2879,26 +2856,4 @@ table {
 .shame-safari .shame-primary-btn {
   display: none !important;
 }
-/*# sourceMappingURL=main.css.map */
 
-/*
-     FILE ARCHIVED ON 09:10:40 Jun 21, 2018 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 04:33:51 May 29, 2020.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
-/*
-playback timings (ms):
-  exclusion.robots.policy: 0.19
-  LoadShardBlock: 72.586 (3)
-  CDXLines.iter: 10.192 (3)
-  exclusion.robots: 0.206
-  load_resource: 110.383
-  captures_list: 140.272
-  esindex: 0.027
-  PetaboxLoader3.datanode: 63.014 (4)
-  RedisCDXSource: 54.306
-  PetaboxLoader3.resolve: 117.781 (2)
-*/
