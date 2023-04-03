@@ -2,7 +2,7 @@
 
 # Corey Bruyere v3
 
-A starter template to build amazing static websites with Gatsby, Contentful and Netlify. Inspired by [gatsby-contentful-starter](https://github.com/contentful-userland/gatsby-contentful-starter).
+Personal website using Gatsby, Contentful and Netlify. 
 
 ## Additional README items
 
