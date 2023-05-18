@@ -2,7 +2,7 @@
 
 # Corey Bruyere v3
 
-Personal website using Gatsby, Contentful and Netlify. 
+Personal website using Gatsby, Contentful and Netlify. Link to v4
 
 ## Additional README items
 
