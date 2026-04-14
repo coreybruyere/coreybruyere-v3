@@ -14,6 +14,7 @@
     "contentful-import": "^7.6.1",
     "cross-env": "^7.0.2",
     "dayjs": "^1.8.19",
+    "dotenv": "^8.0.0",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
     "gatsby": "^2.17.15",
@@ -61,8 +62,8 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
+    "start": "node scripts/run-gatsby.cjs develop",
+    "build": "node scripts/run-gatsby.cjs build",
     "serve": "npm run build && cross-env NODE_ENV=production gatsby serve",
     "test": "npm run lint:css && npm run lint:js && npm run check-pretty",
     "setup": "node ./bin/setup.js",
@@ -76,7 +77,6 @@
     "sharp": "0.32.6"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0",
     "eslint": "^6.6.0",
     "eslint-config-gatsby-standard": "^2.2.0",
     "prettier": "^1.19.1",

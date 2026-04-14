@@ -1,7 +1,17 @@
+const path = require('path')
 const configure = require('./src/utils/siteConfig')
 
+const envDir = __dirname
+require('dotenv').config({ path: path.resolve(envDir, '.env') })
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: path.resolve(envDir, `.env.${process.env.NODE_ENV}`),
+})
+require('dotenv').config({
+  path: path.resolve(envDir, `.env.${process.env.NODE_ENV}.local`),
+})
+require('dotenv').config({
+  path: path.resolve(envDir, '.env.local'),
+  override: true,
 })
 
 const contentfulConfig = {
