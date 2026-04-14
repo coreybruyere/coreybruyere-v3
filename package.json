@@ -72,6 +72,9 @@
     "format": "prettier --write \"src/**/*.js\"",
     "clean": "gatsby clean"
   },
+  "overrides": {
+    "sharp": "0.32.6"
+  },
   "devDependencies": {
     "dotenv": "^8.0.0",
     "eslint": "^6.6.0",
